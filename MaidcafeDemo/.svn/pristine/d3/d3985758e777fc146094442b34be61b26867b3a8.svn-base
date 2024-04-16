@@ -1,0 +1,43 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DeletePoint : MonoBase
+{
+    public static bool arriveDelete = false;
+    private string msgInfor;
+    private Player player;
+    // Use this for initialization
+    void Start()
+    {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        IsArrive(arriveDelete, gameObject.name, player);
+    }
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        player = msg.Content as Player;
+        if (msg.Command == MyMessageType.Event_DeleteData)
+        {
+            arriveDelete = true;
+            foreach (var item in MessageSend.instance.messageInforCfgs.Values)
+            {
+                if (item.ID == msg.Command)
+                {
+                    msgInfor = item.MessageContent;
+                }
+            }
+        }
+        else
+        {
+            arriveDelete = false;
+        }
+    }
+}

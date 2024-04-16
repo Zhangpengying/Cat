@@ -1,0 +1,45 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Bed : MonoBase
+{
+    //玩家是否到达位置
+    public static bool arriveBed = false;
+    private Player player;
+    //提示语
+    private string msginfor;
+    // Use this for initialization
+    void Start() {
+    
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+
+    private void Update()
+    {
+
+        IsArrive(arriveBed, gameObject.name, player);
+    }
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        if (msg.Command == MyMessageType.Event_Bed)
+        {
+            player = (Player)msg.Content;
+            arriveBed = true;
+            foreach (var item in MessageSend.instance.messageInforCfgs.Values)
+            {
+                if (item.ID == msg.Command)
+                {
+                    msginfor = item.MessageContent;
+                }
+            }
+        }
+        else
+        {
+            arriveBed = false;
+        }
+    }
+}

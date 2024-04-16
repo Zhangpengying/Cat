@@ -1,0 +1,162 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerTrigger : MonoBase{
+
+    private Player player;
+	// Use this for initialization
+	void Awake () {
+        //将当前类注册到管理类中，接收消息
+        PlayerManager.instance.RegisterReceiver(this);
+        player = transform.parent.GetComponent<Player>();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    //接收消息
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        //判断消息类型
+        if (msg.Command == MyMessageType.UI_AddScore)
+        {
+          
+        }
+    }
+
+    
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!player.IsLockPlayer)
+        {
+            if (collision.name == "HomeToStreet")
+            {
+                StaticVar.InteractiveProp = collision.gameObject;
+                if (!MessageSend.instance.triggerEventID.Contains(collision.GetComponent<ToStreet>().ID))
+                {
+                    MessageSend.instance.triggerEventID.Add(collision.GetComponent<ToStreet>().ID);
+                }
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_OpenHomeToStreet, player);
+            }
+            //触发经营前准备工作
+            else if (collision.transform.parent.name == "Menu")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                if (!MessageSend.instance.triggerEventID.Contains(collision.GetComponent<AllMenu>().ID))
+                {
+                    MessageSend.instance.triggerEventID.Add(collision.GetComponent<AllMenu>().ID);
+                }
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_AdjustAllMenus, player);
+            }
+            //触发结束中场休息
+            else if (collision.name == "EndRest")
+            {
+                StaticVar.InteractiveProp = collision.gameObject;
+                if (!MessageSend.instance.triggerEventID.Contains(collision.GetComponent<EndRest>().ID))
+                {
+                    MessageSend.instance.triggerEventID.Add(collision.GetComponent<EndRest>().ID);
+                }
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_EndRest, player);
+            }
+            else if (collision.name == "StreetToHome")
+            {
+                StaticVar.InteractiveProp = collision.gameObject;
+                if (!MessageSend.instance.triggerEventID.Contains(collision.GetComponent<ToHome>().ID))
+                {
+                    MessageSend.instance.triggerEventID.Add(collision.GetComponent<ToHome>().ID);
+                }
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_OpenStreetToHome, player);
+            }
+            else if (collision.transform.parent.name == "Bed")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                if (!MessageSend.instance.triggerEventID.Contains(collision.GetComponent<Bed>().ID))
+                {
+                    MessageSend.instance.triggerEventID.Add(collision.GetComponent<Bed>().ID);
+                }
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_Bed, player);
+            }
+
+            else if (collision.transform.parent.tag == "Chair" && collision.name == "SitPoint")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_EnterChair, player);
+            }
+            else if (collision.name == "WaiterStay")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_StartEvent, player);
+            }
+            
+
+        }
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+       
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    { 
+        if (collision.name == "HomeToStreet")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseHomeToStreet,player);
+            
+        }
+       
+        else if (collision.name == "StreetToHome")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseStreetToHome,player);
+        }
+        else if (collision.name == "StreetToCoffee")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseStreetToCoffee, player);
+        }
+        else if (collision.name == "CoffeeToStreet")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseCoffeeToStreet, player);
+        }
+       
+        else if (collision.name == "WaiterStay")
+        {
+            StaticVar.InteractiveProp =null;
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveEvent, player);
+        }
+       
+        else if (collision.transform.parent.tag == "Chair" && collision.name == "SitPoint")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveChair, player);
+        }
+       
+     
+        else if (collision.transform.parent.name == "Menu")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveAllMenus, player);
+            StaticVar.InteractiveProp = null;
+        }
+       
+
+
+        //触发结束中场休息
+        else if (collision.name == "EndRest")
+        {
+            EndRest.canEnd = false;
+            StaticVar.InteractiveProp = null;
+        }
+       
+       
+      
+        //离开床
+        else if (collision.transform.parent.name == "Bed")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveBed, player);
+            StaticVar.InteractiveProp = null;
+        }
+
+    }
+}

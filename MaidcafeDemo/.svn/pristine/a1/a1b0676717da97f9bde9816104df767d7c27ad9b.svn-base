@@ -1,0 +1,37 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TriggerRainFa : MonoBase
+{
+
+	// Use this for initialization
+	void Start () {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        if (msg.Command == MyMessageType.Event_RainFa)
+        {
+            //触发RainFa追赶玩家
+            InteractiveNpc RainFa = GameObject.Find("Characters/RainFa").GetComponent<InteractiveNpc>();
+            StaticVar.InteractiveNpc = RainFa;
+            StaticVar.MessageSendToFungus("CatchPlayer", msg.Content as Player);
+            (msg.Content as Player).InteractNPC = RainFa;
+            RainFa.player = msg.Content as Player;
+            RainFa.player.TransState(RainFa.player, ActorStateType.Player_Chivied);
+            RainFa.player._ani.SetBool("IsWalk", false);
+            RainFa._isMoving = true;
+            MessageSend.instance.Events[gameObject.name] = false;
+        }
+    }
+}

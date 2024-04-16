@@ -1,0 +1,41 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CoffeeToHome : MonoBase
+{
+    private Player player;
+    public bool openDoor = false;
+    // Use this for initialization
+    void Start()
+    {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+
+    private void Update()
+    {
+        if (openDoor)
+        {
+            StaticVar.GateWay(1101,player);
+        }
+    }
+
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        if (msg.Command == MyMessageType.Event_OpenCoffeeToHome)
+        {
+            openDoor = true;
+            StaticVar.LastGateway = MessageSend.instance.doorsCfg[901].Position;
+            StaticVar.NextScene = "Home_Normal_01";
+            player = msg.Content as Player;
+        }
+        else if (msg.Command == MyMessageType.Event_CloseCoffeeToHome)
+        {
+            openDoor = false;
+            StaticVar.NextScene = "";
+        }
+    }
+}

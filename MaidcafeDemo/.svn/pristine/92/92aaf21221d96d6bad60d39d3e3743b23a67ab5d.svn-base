@@ -1,0 +1,38 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ToCoffee : MonoBase
+{
+    public bool openDoor  =false;
+    private Player player;
+    private void Start()
+    {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+    private void Update()
+    {
+        if (openDoor)
+        {
+            StaticVar.Door(902,player);
+        }
+    }
+   
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        if (msg.Command == MyMessageType.Event_OpenStreetToCoffee)
+        {
+            openDoor = true;
+            player = msg.Content as Player;
+            StaticVar.NextScene = "KiSaTen_Date_Day_01";
+        }
+        else if (msg.Command == MyMessageType.Event_CloseStreetToCoffee)
+        {
+            openDoor = false;
+            StaticVar.NextScene = "";
+        }
+    }
+}

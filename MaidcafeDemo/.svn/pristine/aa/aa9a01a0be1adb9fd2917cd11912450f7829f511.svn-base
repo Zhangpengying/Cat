@@ -1,0 +1,270 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerTrigger : MonoBase{
+
+    private Player player;
+	// Use this for initialization
+	void Start () {
+        //将当前类注册到管理类中，接收消息
+        PlayerManager.instance.RegisterReceiver(this);
+        player = transform.parent.GetComponent<Player>();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    //接收消息
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        //判断消息类型
+        if (msg.Command == MyMessageType.UI_AddScore)
+        {
+          
+        }
+    }
+
+    
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "Talk1")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_Talk1, player);
+        }
+        else if (collision.name == "Talk2")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_Talk2, player);
+        }
+        //触发约会NPC
+        else if (collision.name == "TriggerDate")
+        {
+            if (player._stateType == ActorStateType.Player_Idle)
+            {
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_Date, player);
+            }
+        }
+        //触发猫
+        else if (collision.transform.parent.name == "TriggerCat")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_Cat, player);
+        }
+        //触发RainFa追赶玩家
+        else if (collision.transform.parent.name == "RainFa")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_RainFa, player);
+        }
+        //触发结束约会
+        else if (collision.name== "EndDate")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_EndDate, player);
+        }
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.name == "HomeToStreet")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_OpenHomeToStreet, player);
+        }
+        else if (collision.name == "StreetToHome")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_OpenStreetToHome, player);
+        }
+        else if (collision.name == "StreetToCoffee")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_OpenStreetToCoffee, player);
+        }
+        else if (collision.name == "CoffeeToStreet")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_OpenCoffeeToStreet, player);
+        }
+        else if (collision.tag == "Chair")
+        {
+            StaticVar.InteractiveProp = collision.gameObject;
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_EnterChair, player);
+        }
+       
+        //操作台（改良菜品）
+        else if (collision.name == "OperatingFloor")
+        {
+            if (player._stateType == ActorStateType.Player_Idle)
+            {
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_OperatingFloor, player);
+                StaticVar.InteractiveProp = collision.gameObject;
+            }
+        }
+        //食品柜（调整菜单）
+        else if (collision.name == "AdjustMenu")
+        {
+            if (player._stateType == ActorStateType.Player_Idle)
+            {
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_AdjustMenus, player);
+                StaticVar.InteractiveProp = collision.gameObject;
+            }
+        }
+        //宣传单（调整排班的女仆）
+        else if (collision.name == "AdjustWaiter")
+        {
+            if (player._stateType == ActorStateType.Player_Idle)
+            {
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_AdjustWaiters, player);
+                StaticVar.InteractiveProp = collision.gameObject;
+            }
+        }
+        //开始经营
+        else if (collision.name == "StartManage")
+        {
+            if (player._stateType == ActorStateType.Player_Idle)
+            {
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_StartManage, player);
+                StaticVar.InteractiveProp = collision.gameObject;
+            }
+        }
+        //商品柜（调整当天售卖的物品）
+        else if (collision.name == "AdjustCommodity")
+        {
+            if (player._stateType == ActorStateType.Player_Idle)
+            {
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_AdjustCommodity, player);
+                StaticVar.InteractiveProp = collision.gameObject;
+            }
+        }
+        //DIY功能触发区域
+        else if (collision.name == "DIY")
+        {
+            if (player._stateType == ActorStateType.Player_Idle)
+            {
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_DIY, player);
+                StaticVar.InteractiveProp = collision.gameObject;
+            }
+        }
+        //咖啡店一楼门
+        else if (collision.name == "FirstFloor")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_OpenCfFirFl, player);
+        }
+        //咖啡店二楼门
+        else if (collision.name == "SecondFloor")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_OpenCfSecFl, player);
+        }
+        //触发结束中场休息
+        else if (collision.name == "EndRest")
+        {
+            StaticVar.InteractiveProp = collision.gameObject;
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_EndRest, player);
+        }
+        //触发顾客绑定的事件
+        else if (collision.name == "Interaction")
+        {
+            StaticVar.InteractiveProp = collision.gameObject;
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_StartEvent,player);
+        }
+        //到达保存道具位置
+        else if (collision.name == "SavePoint")
+        {
+            StaticVar.InteractiveProp = collision.gameObject;
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_SaveGame, player);
+        }
+        //到达删除存档的位置
+        else if (collision.name == "DeletePoint")
+        {
+            StaticVar.InteractiveProp = collision.gameObject;
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_DeleteData, player);
+        }
+
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    { 
+        if (collision.name == "HomeToStreet")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseHomeToStreet,player);
+            
+        }
+        else if (collision.name == "StreetToHome")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseStreetToHome,player);
+        }
+        else if (collision.name == "StreetToCoffee")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseStreetToCoffee, player);
+        }
+        else if (collision.name == "CoffeeToStreet")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseCoffeeToStreet, player);
+        }
+        else if (collision.name == "TriggerDate")
+        {
+            if (player._stateType == ActorStateType.Player_Idle)
+            {
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveDate, player);
+            }
+        }
+        else if (collision.name == "OperatingFloor")
+        {
+            OperatingFloor.arriveOperating = false;
+        }
+        else if (collision.tag == "Chair")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveChair, player);
+        }
+        else if (collision.name == "AdjustWaiters")
+        {
+            AdjustWaiters.arriveAdjustWaiters = false;
+        }
+        else if (collision.name == "StartManage")
+        {
+            StartManage.arriveStartManage = false;
+
+        }
+        else if (collision.name == "AdjustMenu")
+        {
+            AdjustMenu.arriveAdjustMenu = false;
+        }
+        else if (collision.name == "DIY")
+        {
+            DIY.arriveDIY = false;
+        }
+        else if (collision.name == "AdjustCommodity")
+        {
+            AdjustCommodity.arriveAdjustCom = false;
+        }
+        else if (collision.name == "FirstFloor")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseCfFirFl, player);
+        }
+        else if (collision.name == "SecondFloor")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseCfSecFl, player);
+        }
+        //触发结束中场休息
+        else if (collision.name == "EndRest")
+        {
+            EndRest.canEnd = false;
+            StaticVar.InteractiveProp = null;
+        }
+        //离开顾客绑定的事件触发区域
+        else if (collision.name == "Interaction")
+        {
+            StaticVar.InteractiveProp =null;
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveEvent, player);
+        }
+        //离开保存道具
+        else if (collision.name == "SavePoint")
+        {
+            SavePoint.arriveSave = false;
+            StaticVar.InteractiveProp = null;
+        }
+        //离开删除位置
+        else if (collision.name == "DeletePoint")
+        {
+            DeletePoint.arriveDelete = false;
+            StaticVar.InteractiveProp = null;
+        }
+    }
+}

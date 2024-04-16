@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RestSceneInit : MonoBehaviour,SceneInitManager
+{
+
+    public void Start()
+    {
+        GameObject.Find("UI/Canvas").GetComponent<Canvas>().worldCamera = GameObject.Find("Environment/Camera/UICamera").GetComponent<Camera>();
+
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        StaticVar.LastGateway = MessageSend.instance.bornCfgs[601].Position;
+        //创建玩家
+        ActorManager.instance.CreateActorCon();
+        StaticVar.player = ActorManager.instance.GetActor(0) as Player;
+
+        //创建中场休息的顾客
+        MessageSend.instance.RestCustomers.Clear();
+        foreach (var item in MessageSend.instance.allcustomers)
+        {
+            if (item.RestPosition != null)
+            {
+                MessageSend.instance.RestCustomers.Add(item);
+            }
+        }
+       
+
+        foreach (var item in MessageSend.instance.restEventCfg.Values)
+        {
+            RoleCfg role = null;
+            foreach (var child in MessageSend.instance.RestCustomers)
+            {
+                if (child.ID == item.ID)
+                {
+                    role = child;
+                }
+            }
+          
+            //role.Behavior = ActorStateType.TakeOrder;
+            ActorManager.instance.CreateActor(role);
+            
+            Customer1 cus = ActorManager.instance.GetActor(role.ID) as Customer1;
+            cus.TransState(cus, ActorStateType.PlayComputer);
+            Transform chair = transform.Find("Events/" + role.RestPosition);
+            cus.GetComponent<SpriteRenderer>().flipX =!chair.GetComponent<SpriteRenderer>().flipX;
+            cus.transform.position = chair.Find("SitPoint").position;
+            //该顾客对应坐的椅子封闭与玩家的互动
+            chair.GetComponent<BoxCollider2D>().enabled = false;
+            chair.Find("Interaction").GetComponent<BoxCollider2D>().enabled = true;
+        }
+        
+        //事件监测
+        StaticVar.CheckEvents();
+
+
+    }
+
+    public void Finalise()
+    {
+        //场景的清算
+        StaticVar.ClearScene();
+    }
+    public void EndInteraction()
+    {
+        StaticVar.EndInteraction();
+    }
+    
+    public void ToInterScene1()
+    {
+        StaticVar.ToNextSecens("InteractionScene1", StaticVar.player);
+    }
+    public void OpenSelectWnd()
+    {
+        WindowManager.instance.Open<SelectWnd1>().Initialize();
+    }
+}

@@ -1,0 +1,59 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/// <summary>
+/// 结束中场休息
+/// </summary>
+public class EndRest : MonoBase
+{
+    //是否到达结束中场休息位置
+    public static bool canEnd = false;
+    public Player player;
+    //结束中场休息提示
+    private string msginfor;
+    public int ID = 500;
+    private Hashtable infor = new Hashtable();
+    // Use this for initialization
+    void Start()
+    {
+        EventManager.instance.RegisterReceiver(this);
+        //事件信息记录
+        infor.Add("Name", gameObject.name);
+
+        //注册事件
+        StaticVar.AddEvents(ID, infor);
+    }
+
+
+    private void Update()
+    {
+        if (canEnd)
+        {
+            MessageSend.instance.triggerEventID.Remove(ID);
+            StaticVar.GateWay(1102, player);
+        }
+       
+    }
+
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+     
+
+        if (msg.Command == MyMessageType.Event_EndRest)
+        {
+            if (StaticVar.PreferenceEvent(ID))
+            {
+                player = (Player)msg.Content;
+                canEnd = true;
+            }
+            
+           
+        }
+        else
+        {
+            canEnd = false;
+        }
+    }
+}

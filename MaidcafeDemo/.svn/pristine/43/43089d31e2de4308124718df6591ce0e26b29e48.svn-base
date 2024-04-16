@@ -1,0 +1,25 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DestorySelf : MonoBehaviour {
+
+    public Vector3 currentPosition = new Vector3();
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+        currentPosition = transform.localPosition;
+       
+	}
+    public void Destroy()
+    {
+        EventManager.instance.ReceiveList.Remove(transform.parent.GetChild(0).GetComponent<TriggerCat>());
+        transform.GetComponent<Animator>().SetBool("IsJump", false);
+        transform.parent.GetChild(0).GetComponent<TriggerCat>().enabled = false;
+       
+    }
+}

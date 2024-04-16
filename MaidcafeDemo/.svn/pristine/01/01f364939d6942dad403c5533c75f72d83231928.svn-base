@@ -1,0 +1,66 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Date : MonoBase
+{
+    //是否可以触发约会
+    public bool canDate = false;
+    //此事件对应的npc
+    public InteractiveNpc npc;
+	// Use this for initialization
+	void Start () {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        if (canDate) 
+        {
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                Player player = GameObject.FindWithTag("Player").GetComponent<Player>();
+                npc = (InteractiveNpc)ActorManager.instance.GetActor(713);
+                player.InteractNPC = npc;
+                
+                
+                //跳转对话
+                StaticVar.MessageSendToFungus("TriggerDate",player);
+                //开始交互
+                StaticVar.StartInteraction();
+                
+                player.TransState(player, ActorStateType.Player_Date);
+                if (npc!= null)
+                {
+                    StaticVar.InteractiveNpc = npc;
+                    npc.player = player;
+                }
+                transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                canDate = false;
+                npc.TransState(npc, ActorStateType.Date);
+            }
+        }
+
+      
+	}
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        if (msg.Command == MyMessageType.Event_Date)
+        {
+            if (MessageSend.instance.Events.ContainsKey(gameObject.name))
+            {
+                canDate = true;
+                transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+            }
+           
+        }
+        else if(msg.Command == MyMessageType.Event_LeaveDate)
+        {
+            canDate = false;
+            transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+        }
+    }
+}

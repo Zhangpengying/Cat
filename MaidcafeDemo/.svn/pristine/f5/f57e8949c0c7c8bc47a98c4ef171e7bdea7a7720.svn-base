@@ -1,0 +1,38 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+/// <summary>
+/// DIY背包界面的控制
+/// </summary>
+public class DIYBagContro : MonoBehaviour {
+    public Property property;
+	// Use this for initialization
+	void Start ()
+    {
+		
+	}
+	
+	// Update is called once per frame
+	void Update ()
+    {
+        if (StaticVar.CurrentMenu!= null)
+        {
+            if (StaticVar.CurrentMenu == transform)
+            {
+                transform.GetComponent<Image>().color = new Color(0, 1, 0, 1);
+            }
+            else
+            {
+                transform.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+
+            }
+        }
+        else
+        {
+            transform.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+
+        }
+	}
+}

@@ -1,0 +1,24 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class MainMenuWnd : BaseWnd
+{
+    public void Initialize()
+    {
+        Button startGame = _transform.Find("MenuList/StartGame").GetComponent<Button>();
+        startGame.onClick.AddListener(delegate {
+            //场景的清算
+            WindowManager.instance.Close<MainMenuWnd>();
+            StaticVar.ClearScene();
+            SceneManager.LoadScene("Home_Normal_01");
+            Time.timeScale = 1;
+            
+        });
+    }
+
+    
+}

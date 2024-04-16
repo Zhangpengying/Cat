@@ -1,0 +1,114 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
+
+public class ChangeValue : MonoBehaviour
+{
+    //当前结账金额
+    int value = 0;
+    //增加金额
+    public int damage = 0;
+    //起始金钱
+    int startValue = 0;
+    //结束金钱
+    int endValue = 0;
+    //结算初始时间
+    float startTime = 0;
+    //结算持续时间
+    float duration = 3;
+    //是否递增时间
+    bool isChangeTime = false;
+    //金钱TEXT
+    Text damageShow;
+    //初始位置        
+    Vector3 pos_Start;
+    //结束位置
+    Vector3 pos_End;
+    //是否收款
+    public bool collectMoney = false;
+    void Awake()
+    {
+        damageShow = GetComponent<Text>();
+      
+        pos_Start = transform.localPosition;
+        pos_End = pos_Start + new Vector3(0, 20, 0);
+
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ScrollNum();
+    }
+   
+    /// <summary>
+    /// 滚动数字显示
+    /// </summary>
+    void ScrollNum()
+    {
+        //顾客结账
+        if (collectMoney)
+        {
+            startValue = 0;
+            startValue = StaticVar.player.PlayerMoney;
+            
+            isChangeTime = true;
+           
+            startTime = 0;
+            endValue = startValue + damage;
+            
+            StaticVar.player.PlayerMoney = endValue;
+            collectMoney = false;
+        }
+        //时间递增
+        if (isChangeTime)
+        {
+            startTime += Time.deltaTime;
+            //是否到达设置的变化时间
+            if (startTime <= duration)
+            {
+                value = (int)Mathf.Lerp(startValue, endValue,  startTime / duration);
+                int n = value;
+                damageShow.text = n.ToString(); ;
+                Debug.Log(value);
+            }
+            else
+            {
+                damageShow.text = endValue.ToString();
+                value = 0;
+                isChangeTime = false;
+                startValue = endValue;
+                //Hide();
+            }
+        }
+       
+    }
+   
+    /// <summary>
+    /// 延迟隐藏
+    /// </summary>
+    void  Hide() 
+    {
+        if (damageShow!= null)
+        {
+            damageShow.text = startValue.ToString();
+            damageShow.enabled = false;
+            transform.localPosition = pos_Start;
+
+        }
+      
+
+    }
+    /// <summary>
+    /// 显示
+    /// </summary>
+    void Show()
+    {
+        damageShow.enabled = true;
+    }
+   
+}
+

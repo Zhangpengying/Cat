@@ -1,0 +1,32 @@
+﻿
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+/// <summary>
+/// 全局方法和变量的传递监听
+/// </summary>
+public class GlobalVariable : MonoBehaviour
+{
+    public string d;
+    private void Start()
+    {
+            
+    }
+    private void Update()
+    {
+        if (StaticVar.player!= null)
+        {
+            if (!StaticVar.player.IsLockPlayer)
+            {
+                if (Input.GetKeyDown(KeyCode.B))
+                {
+                    WindowManager.instance.Open<SystemMenuWnd>().Initialize();
+                    
+                }
+            }
+        }
+    }
+}

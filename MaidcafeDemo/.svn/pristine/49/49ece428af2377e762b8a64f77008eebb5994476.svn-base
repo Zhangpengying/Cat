@@ -1,0 +1,37 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EndDate : MonoBase
+{
+	// Use this for initialization
+	void Start () {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+        
+    }
+	
+	// Update is called once per frame
+	void Update ()
+    {
+       
+    }
+
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        if (msg.Command == MyMessageType.Event_EndDate)
+        {
+            Player player = (Player)msg.Content;
+            //触发对话
+            if (player._stateType == ActorStateType.Player_Date)
+            {
+                StaticVar.MessageSendToFungus("EndDate", player);
+                StaticVar.StartInteraction();
+                StaticVar.DeleteEvent(gameObject.name);
+            }
+        }
+
+    }
+}

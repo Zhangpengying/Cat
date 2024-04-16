@@ -1,0 +1,50 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ToStreet : MonoBase
+{
+    public bool openDoor = false;
+    public Player player;
+    // Use this for initialization
+    void Start()
+    {
+        EventManager.instance.RegisterReceiver(this); 
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+   
+    
+    private void Update()
+    {
+        if (openDoor)
+        {
+            if (player!=null)
+            {
+                //if (Input.GetKeyDown(KeyCode.W))
+                //{
+                //    StaticVar.ToNextSecens("Rest", player);
+                //}
+                StaticVar.Door(901, player);
+            }
+           
+        }
+    }
+    
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        if (msg.Command == MyMessageType.Event_OpenHomeToStreet)
+        {
+            openDoor = true;
+            player = msg.Content as Player;
+            StaticVar.LastGateway = MessageSend.instance.gatewaysCfg[1101].Position + new Vector3(1.0f, 0, 0);
+            StaticVar.NextScene = "BusinessStreet_001_Normal_Day_01";
+        }
+        else if (msg.Command == MyMessageType.Event_CloseHomeToStreet)
+        {
+            openDoor = false;
+            StaticVar.NextScene = "";
+        }
+    }
+}

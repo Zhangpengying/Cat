@@ -1,0 +1,41 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CoffeeToStreet : MonoBase
+{
+    private Player player;
+    public bool openDoor = false;
+    // Use this for initialization
+    void Start()
+    {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+
+    private void Update()
+    {
+        if (openDoor)
+        {
+            StaticVar.GateWay(1102,player);
+        }
+    }
+
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        if (msg.Command == MyMessageType.Event_OpenCoffeeToStreet)
+        {
+            openDoor = true;
+            StaticVar.LastGateway = MessageSend.instance.doorsCfg[902].Position;
+            StaticVar.NextScene = "BusinessStreet_001_Normal_Day_01";
+            player = msg.Content as Player;
+        }
+        else if (msg.Command == MyMessageType.Event_CloseCoffeeToStreet)
+        {
+            openDoor = false;
+            StaticVar.NextScene = "";
+        }
+    }
+}
