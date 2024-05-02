@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
         WindowManager.instance.Update(dt);
         TimerManager.instance.Update(dt);
         ActorManager.instance.Update();
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+
+        }
     }
 
     //加载配置文件

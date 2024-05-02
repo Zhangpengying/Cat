@@ -124,6 +124,27 @@ public class MyMessageType
     public static int Event_LeaveBed = 441;
     //离开测试事件
     public static int Event_LeaveTalk1 = 442;
+
+    //触发道具
+    public static int Event_TouchProperty1 = 500;
+    public static int Event_LeaveProperty1 = 501;
+
+    public static int Event_TouchProperty2 = 502;
+    public static int Event_LeaveProperty2 = 503;
+
+    //触发传送门
+    public static int Event_TouchGateWay1 = 550;
+    //public static int Event_LeaveGateWay1 = 551;
+    //解锁传送门
+    public static int Event_UnlockGateWay1 = 552;
+
+    //触发NPC
+    public static int Event_TouchNPC1 = 600;
+    public static int Event_LeaveNPC1 = 601;
+
+    public static int Event_TouchNPC2 = 602;
+    public static int Event_LeaveNPC2 = 603;
+
 }
 
 

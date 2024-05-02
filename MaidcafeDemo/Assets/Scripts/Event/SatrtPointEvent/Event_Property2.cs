@@ -1,42 +1,42 @@
-ï»¿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AllMenu : MonoBase
+public class Event_Property2 : MonoBase
 {
     public Player player;
-   
-    private Hashtable infor = new Hashtable();
+
     public bool isArrive = false;
     private Action tempAct;
-    //äº‹ä»¶ID
-    public int ID_AllMenu = 300;
-    //è¯¥äº‹ä»¶æ‰§è¡Œæ¬¡æ•°
-    public int DoNum_AllMenu = 0;
-    private Hashtable Infor_AllMenu = new Hashtable();
+    //ÊÂ¼şID
+    public int ID_Property2 = 501;
+    //¸ÃÊÂ¼şÖ´ĞĞ´ÎÊı
+    public int DoNum_Property2 = 0;
+    private Hashtable Infor_Property2 = new Hashtable();
 
-    //è¯¥é“å…·ä¸Šç»‘å®šçš„æ‰€æœ‰äº‹ä»¶
-    public Dictionary<int, Hashtable> MenuEvents = new Dictionary<int, Hashtable>();
+    //¸ÃµÀ¾ßÉÏ°ó¶¨µÄËùÓĞÊÂ¼ş
+    public Dictionary<int, Hashtable> Property2Events = new Dictionary<int, Hashtable>();
 
     // Use this for initialization
     void Start()
     {
         EventManager.instance.RegisterReceiver(this);
 
-        //äº‹ä»¶ä¿¡æ¯è®°å½•
+        //ÊÂ¼şĞÅÏ¢¼ÇÂ¼
         tempAct = AllMenuEvent;
-        Infor_AllMenu.Add("DoNum", DoNum_AllMenu);
-        Infor_AllMenu.Add("Action", tempAct);
+        Infor_Property2.Add("DoNum", DoNum_Property2);
+        Infor_Property2.Add("Action", tempAct);
 
-        //æ³¨å†Œäº‹ä»¶
-        MenuEvents.Add(ID_AllMenu, Infor_AllMenu);
+        //×¢²áÊÂ¼ş
+        Property2Events.Add(ID_Property2, Infor_Property2);
 
-        StaticVar.AddEvents(ID_AllMenu, Infor_AllMenu);
+        StaticVar.AddEvents(ID_Property2, Infor_Property2);
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (isArrive)
         {
             if (Input.GetKeyDown(KeyCode.I))
@@ -45,34 +45,34 @@ public class AllMenu : MonoBase
                 {
                     Destroy(GameObject.Find("Environment/Events/Tips"));
                 }
-                //è¿›å…¥äº’åŠ¨
+                //½øÈë»¥¶¯
                 if (!player.IsLockPlayer)
                 {
                     StaticVar.MessageSendToFungus(transform.parent.name, player);
                 }
             }
         }
-	}
+    }
 
     public override void ReciveMessage(Message msg)
     {
         base.ReciveMessage(msg);
         player = msg.Content as Player;
-        if (msg.Command == MyMessageType.Event_AdjustAllMenus)
+        if (msg.Command == MyMessageType.Event_TouchProperty2)
         {
             player = msg.Content as Player;
-            //éå†Aï¼Œæ ¹æ®IDè¯»å–Aé‡Œå¯¹åº”çš„Valueèµ‹å€¼ç»™B
+            //±éÀúA£¬¸ù¾İID¶ÁÈ¡AÀï¶ÔÓ¦µÄValue¸³Öµ¸øB
             foreach (var item in MessageSend.instance.Events)
             {
-                if (MenuEvents.ContainsKey(item.Key))
+                if (Property2Events.ContainsKey(item.Key))
                 {
-                    MenuEvents[item.Key] = item.Value;
+                    Property2Events[item.Key] = item.Value;
                 }
             }
-            ((Action)MenuEvents[ID_AllMenu]["Action"])();
+            ((Action)Property2Events[ID_Property2]["Action"])();
             isArrive = true;
         }
-        else if(msg.Command == MyMessageType.Event_LeaveAllMenus)
+        else if (msg.Command == MyMessageType.Event_LeaveProperty2)
         {
             if (GameObject.Find("Environment/Events/Tips") != null)
             {
@@ -84,7 +84,7 @@ public class AllMenu : MonoBase
 
     public void AllMenuEvent()
     {
-        
+
         GameObject.Find("UI").GetComponent<GlobalVariable>().ActiveTips();
     }
 }

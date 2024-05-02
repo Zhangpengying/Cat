@@ -286,6 +286,12 @@ public static class StaticVar
         {
             obj.GetComponent<Player>().IsLockPlayer = false;
         }
+        GameObject say = GameObject.Find("Fungus/SayDialog");
+        if (say != null)
+        {
+            say.SetActive(false);
+        }
+        
     }
 
     //事件添加

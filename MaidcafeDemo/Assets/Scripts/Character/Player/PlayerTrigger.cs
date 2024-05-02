@@ -87,7 +87,36 @@ public class PlayerTrigger : MonoBase{
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_StartEvent, player);
             }
-            
+
+            else if (collision.transform.parent.name == "道具1")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchProperty1, player);
+            }
+            else if (collision.transform.parent.name == "道具2")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchProperty2, player);
+            }
+            else if (collision.transform.parent.name == "莉莉丝")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC1, player);
+            }
+            else if (collision.transform.parent.name == "莉莉安")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC2, player);
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_UnlockGateWay1, player);
+            }
+            else if (collision.transform.parent.name == "出口")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchGateWay1, player);
+            }
 
         }
     }
@@ -122,36 +151,26 @@ public class PlayerTrigger : MonoBase{
         {
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_CloseCoffeeToStreet, player);
         }
-       
         else if (collision.name == "WaiterStay")
         {
             StaticVar.InteractiveProp =null;
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveEvent, player);
         }
-       
         else if (collision.transform.parent.tag == "Chair" && collision.name == "SitPoint")
         {
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveChair, player);
         }
-       
-     
         else if (collision.transform.parent.name == "Menu")
         {
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveAllMenus, player);
             StaticVar.InteractiveProp = null;
         }
-       
-
-
         //触发结束中场休息
         else if (collision.name == "EndRest")
         {
             EndRest.canEnd = false;
             StaticVar.InteractiveProp = null;
         }
-       
-       
-      
         //离开床
         else if (collision.transform.parent.name == "Bed")
         {
@@ -159,5 +178,26 @@ public class PlayerTrigger : MonoBase{
             StaticVar.InteractiveProp = null;
         }
 
+
+        else if (collision.transform.parent.name == "道具1")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveProperty1, player);
+            StaticVar.InteractiveProp = null;
+        }
+        else if (collision.transform.parent.name == "道具2")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveProperty2, player);
+            StaticVar.InteractiveProp = null;
+        }
+        else if (collision.transform.parent.name == "莉莉丝")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveNPC1, player);
+            StaticVar.InteractiveProp = null;
+        }
+        else if (collision.transform.parent.name == "莉莉安")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveNPC2, player);
+            StaticVar.InteractiveProp = null;
+        }
     }
 }

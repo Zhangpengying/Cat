@@ -15,7 +15,7 @@ public class RestSceneInit : MonoBehaviour,SceneInitManager
 
     public void Initialize()
     {
-        StaticVar.LastGateway = MessageSend.instance.bornCfgs[601].Position;
+        StaticVar.LastGateway = MessageSend.instance.bornCfgs[603].Position;
         //创建玩家
         ActorManager.instance.CreateActorCon();
         StaticVar.player = ActorManager.instance.GetActor(0) as Player;

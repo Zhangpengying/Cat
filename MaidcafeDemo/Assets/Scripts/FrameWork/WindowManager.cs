@@ -68,7 +68,7 @@ public class WindowManager : Singleton<WindowManager>
     public void Initialize()
     {
         _canvas = GameObject.Find("UI/Canvas").transform;
-        Open<MainMenuWnd>().Initialize();
+        Open<StartMenuWnd>().Initialize();
         
     }
      
