@@ -36,6 +36,7 @@
 -define:USE_PROPERTY_DATABASE
 -define:USE_QUERY_BUILDER
 -define:USE_SEARCH_EXTENSION_API
+-define:UNITY_ANALYTICS
 -define:SCENE_TEMPLATE_MODULE
 -define:ENABLE_AR
 -define:ENABLE_AUDIO
@@ -506,6 +507,12 @@
 "Assets/Scripts/Event/RestEvent/EndRest.cs"
 "Assets/Scripts/Event/RestEvent/Interaction.cs"
 "Assets/Scripts/Event/RestEvent/RestSceneInit.cs"
+"Assets/Scripts/Event/SatrtPointEvent/Event_GateWay.cs"
+"Assets/Scripts/Event/SatrtPointEvent/Event_NPC1.cs"
+"Assets/Scripts/Event/SatrtPointEvent/Event_NPC2.cs"
+"Assets/Scripts/Event/SatrtPointEvent/Event_Property1.cs"
+"Assets/Scripts/Event/SatrtPointEvent/Event_Property2.cs"
+"Assets/Scripts/Event/SatrtPointEvent/StartPointSceneInit.cs"
 "Assets/Scripts/Event/StreetEvent/Chair.cs"
 "Assets/Scripts/Event/StreetEvent/StreetInit.cs"
 "Assets/Scripts/Event/StreetEvent/ToHome.cs"
@@ -576,8 +583,10 @@
 "Assets/Scripts/Wnd/ManagePlanWnd.cs"
 "Assets/Scripts/Wnd/MessageBox1.cs"
 "Assets/Scripts/Wnd/NewDIYWmd.cs"
+"Assets/Scripts/Wnd/PersonInforWnd.cs"
 "Assets/Scripts/Wnd/ReturnHomeWnd.cs"
 "Assets/Scripts/Wnd/SelectWnd1.cs"
+"Assets/Scripts/Wnd/StartMenuWnd.cs"
 "Assets/Scripts/Wnd/StartPreparationWnd.cs"
 "Assets/Scripts/Wnd/SystemMenuWnd.cs"
 "Assets/Scripts/Wnd/SystemWnd/BuyWnd.cs"
