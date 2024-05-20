@@ -74,7 +74,7 @@ public class RestSceneInit : MonoBehaviour,SceneInitManager
     
     public void ToInterScene1()
     {
-        StaticVar.ToNextSecens("InteractionScene1", StaticVar.player);
+        StaticVar.ToNextScenes("InteractionScene1", StaticVar.player);
     }
     public void OpenSelectWnd()
     {

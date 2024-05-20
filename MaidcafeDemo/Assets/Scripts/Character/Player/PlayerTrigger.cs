@@ -87,18 +87,22 @@ public class PlayerTrigger : MonoBase{
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_StartEvent, player);
             }
-
+            //初始房间//////////////////////////////////////
+            #region
             else if (collision.transform.parent.name == "道具1")
             {
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
-
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchProperty1, player);
             }
             else if (collision.transform.parent.name == "道具2")
             {
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
-
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchProperty2, player);
+            }
+            else if (collision.transform.parent.name == "道具3")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchProperty3  , player);
             }
             else if (collision.transform.parent.name == "莉莉丝")
             {
@@ -110,13 +114,33 @@ public class PlayerTrigger : MonoBase{
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
 
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC2, player);
-                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_UnlockGateWay1, player);
             }
             else if (collision.transform.parent.name == "出口")
             {
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchGateWay1, player);
             }
+            #endregion
+
+            //村庄/////////////////////////////
+            #region
+            else if (collision.transform.parent.name == "村长")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC_CunZhang, player);
+            }
+            else if (collision.transform.parent.name == "铁匠")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC_TieJiang, player);
+            }
+            else if (collision.transform.parent.name == "占卜师")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC_ZhanBuShi, player);
+            }
+            #endregion
+
 
         }
     }
@@ -178,7 +202,8 @@ public class PlayerTrigger : MonoBase{
             StaticVar.InteractiveProp = null;
         }
 
-
+        //初始房间///////////////////////////
+        #region
         else if (collision.transform.parent.name == "道具1")
         {
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveProperty1, player);
@@ -187,6 +212,11 @@ public class PlayerTrigger : MonoBase{
         else if (collision.transform.parent.name == "道具2")
         {
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveProperty2, player);
+            StaticVar.InteractiveProp = null;
+        }
+        else if (collision.transform.parent.name == "道具3")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveProperty3, player);
             StaticVar.InteractiveProp = null;
         }
         else if (collision.transform.parent.name == "莉莉丝")
@@ -199,5 +229,25 @@ public class PlayerTrigger : MonoBase{
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveNPC2, player);
             StaticVar.InteractiveProp = null;
         }
+        #endregion
+
+        //村庄///////////////////////////
+        #region
+        else if (collision.transform.parent.name == "村长")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveNPC_CunZhang, player);
+            StaticVar.InteractiveProp = null;
+        }
+        else if (collision.transform.parent.name == "铁匠")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveNPC_TieJiang, player);
+            StaticVar.InteractiveProp = null;
+        }
+        else if (collision.transform.parent.name == "占卜师")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveNPC_ZhanBuShi, player);
+            StaticVar.InteractiveProp = null;
+        }
+        #endregion
     }
 }

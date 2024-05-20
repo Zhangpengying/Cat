@@ -39,7 +39,7 @@ public class HomeScene2Init : MonoBehaviour ,SceneInitManager
     }
     public void Sleep()
     {
-        TimerManager.instance.Invoke(2, delegate { StaticVar.ClearScene(); StaticVar.ToNextSecens("Home_Normal_01", StaticVar.player); AdjustBasicInfor(); });
+        TimerManager.instance.Invoke(2, delegate { StaticVar.ClearScene(); StaticVar.ToNextScenes("Home_Normal_01", StaticVar.player); AdjustBasicInfor(); });
     }
 
     private void AdjustBasicInfor()

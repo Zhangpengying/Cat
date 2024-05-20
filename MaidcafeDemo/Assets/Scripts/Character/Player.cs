@@ -17,6 +17,8 @@ public class Player : Actor
     public int PlayerMoney = 100;
     //玩家当前交互的NPC
     public Actor InteractNPC;
+    //背包物品
+    public List<ItemInfo> ItemList = new List<ItemInfo>();
 
     public bool IsLockPlayer
     {

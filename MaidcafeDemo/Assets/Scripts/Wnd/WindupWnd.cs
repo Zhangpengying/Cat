@@ -115,7 +115,7 @@ public class WindupWndControl:MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                StaticVar.ToNextSecens("Home_Normal_01", StaticVar.player);
+                StaticVar.ToNextScenes("Home_Normal_01", StaticVar.player);
                 WindowManager.instance.Close<WindupWnd>();
             }
         }

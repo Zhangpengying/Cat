@@ -49,6 +49,13 @@ public class Event_Property2 : MonoBase
                 if (!player.IsLockPlayer)
                 {
                     StaticVar.MessageSendToFungus(transform.parent.name, player);
+                    //获得物品
+                    ItemInfo newItem = new ItemInfo();
+                    newItem.itemType = ItemType.SingleItem;
+                    newItem.itemName = "宝剑";
+                    newItem.itemNum = 1;
+                    newItem.itemDesc = "一把很贵的剑";
+                    player.ItemList.Add(newItem);
                 }
             }
         }

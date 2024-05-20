@@ -85,7 +85,7 @@ public class SystemMenuWndControl : MonoBehaviour
             else if (StaticVar.CurrentMenu == (Transform)menulist[4])
             {
                 WindowManager.instance.Close<SystemMenuWnd>();
-                StaticVar.ToNextSecens("Start", null);
+                StaticVar.ToNextScenes("Start", null);
             }
         }
     }

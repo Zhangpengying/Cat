@@ -14,7 +14,7 @@ public class StartPointSceneInit : MonoBehaviour, SceneInitManager
         GameObject.Find("UI/Canvas").GetComponent<Canvas>().worldCamera = GameObject.Find("Environment/Camera/UICamera").GetComponent<Camera>();
 
         Initialize();
-        //WindowManager.instance.Open<PersonInforWnd>().Initialize();
+        WindowManager.instance.Open<BasicInforWnd>().Initialize();
     }
 
     public void Initialize()

@@ -58,7 +58,7 @@ public class StartPreparationWndCon :MonoBehaviour
                         if (MessageSend.instance.currentDayWaiters.Count != 0 && MessageSend.instance.CurrentDayMenus.Count != 0 && MessageSend.instance.CurrentDayCom.Count != 0)
                         {
                             MessageSend.instance.propertyIDs.Clear();
-                            StaticVar.ToNextSecens("Manage", GameObject.FindWithTag("Player").GetComponent<Player>());
+                            StaticVar.ToNextScenes("Manage", GameObject.FindWithTag("Player").GetComponent<Player>());
                             WindowManager.instance.Close<StartPreparationWnd>();
                         }
                         break;

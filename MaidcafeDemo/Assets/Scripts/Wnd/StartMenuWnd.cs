@@ -34,51 +34,47 @@ public class StartMenuWndContro : MonoBehaviour
     private bool havePlayAni = false;
 
     //选项列表
-    private ArrayList menuList = new ArrayList();
     private void Start()
     {
-        foreach (var item in GetComponentsInChildren<ButtonStateAdjust>())
-        {
-            if (!menuList.Contains(item.transform))
-            {
-                menuList.Add(item.transform);
-            }
-        }
-        StaticVar.CurrentMenu = menuList[0] as Transform;
+
+       
+
+        Transform startBtn = transform.Find("MenuList/StartGame");
+        startBtn.GetComponent<Button>().onClick.AddListener(LoadScene);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (StaticVar.CurrentMenu == transform.Find("MenuList/StartGame"))
-            {
-                StaticVar.CurrentMenu.GetComponent<Animation>().Play("StartGame");
-                havePlayAni = true;
-            }
-            else if (StaticVar.CurrentMenu == transform.Find("MenuList/Continue"))
-            {
-                WindowManager.instance.Close<MainMenuWnd>();
-                WindowManager.instance.Open<LoadWnd>().Initialize();
-            }
-            else if (StaticVar.CurrentMenu == transform.Find("MenuList/Exit"))
-            {
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    if (StaticVar.CurrentMenu == transform.Find("MenuList/StartGame"))
+        //    {
+        //        StaticVar.CurrentMenu.GetComponent<Animation>().Play("StartGame");
+        //        havePlayAni = true;
+        //    }
+        //    else if (StaticVar.CurrentMenu == transform.Find("MenuList/Continue"))
+        //    {
+        //        WindowManager.instance.Close<MainMenuWnd>();
+        //        WindowManager.instance.Open<LoadWnd>().Initialize();
+        //    }
+        //    else if (StaticVar.CurrentMenu == transform.Find("MenuList/Exit"))
+        //    {
 
-            }
-        }
+        ////    }
+        //}
 
-        if (StaticVar.CurrentMenu != null)
-        {
-            if (havePlayAni)
-            {
-                TimerManager.instance.Invoke(1.5f, LoadScene);
-                havePlayAni = false;
-            }
-            else
-            {
-                StaticVar.InputControl1(menuList);
-            }
-        }
+        //if (StaticVar.CurrentMenu != null)
+        //{
+        //    if (havePlayAni)
+        //    {
+        //        TimerManager.instance.Invoke(1.5f, LoadScene);
+        //        havePlayAni = false;
+        //    }
+        //    else
+        //    {
+        //        StaticVar.InputControl1(menuList);
+        //    }
+        //}
     }
 
     void LoadScene()
@@ -86,7 +82,7 @@ public class StartMenuWndContro : MonoBehaviour
         //场景的清算
         WindowManager.instance.Close<StartMenuWnd>();
         StaticVar.ClearScene();
-        SceneManager.LoadScene("StartVillage");
+        SceneManager.LoadScene("StartHouse");
         //BusinessStreet_001_Normal_Day_01
         //StartVillage
         Time.timeScale = 1;

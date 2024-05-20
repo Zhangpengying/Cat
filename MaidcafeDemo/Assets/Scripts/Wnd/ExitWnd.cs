@@ -50,7 +50,7 @@ public class ExitWndControl:MonoBehaviour
         WindowManager.instance.Close<ExitWnd>();
         WindowManager.instance.Close<JingYing>();
 
-        StaticVar.ToNextSecens("Rest", GameObject.FindWithTag("Player").GetComponent<Player>());
+        StaticVar.ToNextScenes("Rest", GameObject.FindWithTag("Player").GetComponent<Player>());
 
         //开启特殊模式场景
         //if (StaticVar.ManageComData.Count > 3)

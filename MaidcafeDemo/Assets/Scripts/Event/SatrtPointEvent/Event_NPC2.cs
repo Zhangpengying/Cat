@@ -10,7 +10,7 @@ public class Event_NPC2 : MonoBase
     public bool isArrive = false;
     private Action tempAct;
     //事件ID
-    public int ID_NPC2 = 601;
+    public int ID_NPC2 = 602;
     //该事件执行次数
     public int DoNum_NPC2 = 0;
     private Hashtable Infor_NPC2 = new Hashtable();
@@ -49,6 +49,15 @@ public class Event_NPC2 : MonoBase
                 if (!player.IsLockPlayer)
                 {
                     StaticVar.MessageSendToFungus(transform.parent.name, player);
+                    //解锁出口
+                    SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_UnlockGateWay1, player);
+                    //获得物品
+                    ItemInfo newItem = new ItemInfo();
+                    newItem.itemType = ItemType.SingleItem;
+                    newItem.itemName = "盾牌";
+                    newItem.itemNum = 1;
+                    newItem.itemDesc = "神奇之盾";
+                    player.ItemList.Add(newItem);
                 }
             }
         }

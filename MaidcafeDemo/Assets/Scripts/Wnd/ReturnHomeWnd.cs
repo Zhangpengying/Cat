@@ -16,7 +16,7 @@ public class ReturnHomeWnd : BaseWnd
 
     public void Return()
     {
-        StaticVar.ToNextSecens("Home_Normal_01", StaticVar.player);
+        StaticVar.ToNextScenes("Home_Normal_01", StaticVar.player);
         WindowManager.instance.Close<ReturnHomeWnd>();
     }
 }

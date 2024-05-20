@@ -191,9 +191,15 @@ public class ActorManager : Singleton<ActorManager>
         {
             actor._uid = (int)StaticVar.PlayerAttribute["ActorID"];
             actor._name = (string)StaticVar.PlayerAttribute["ActorName"];
+
             actor.name = actor._name;
             actor._moveSpeed = (float)StaticVar.PlayerAttribute["ActorMoveSpeed"];
             ((Player)actor).PlayerMoney = (int)StaticVar.PlayerAttribute["Money"];
+            ((Player)actor).ItemList.Clear();
+            foreach (var item in (List<ItemInfo>)StaticVar.PlayerAttribute["ItemList"])
+            {
+                ((Player)actor).ItemList.Add(item);
+            }
             _actorDic[actor._uid] = actor;
             actor._curState = actor._actorStateDic[(ActorStateType)StaticVar.PlayerAttribute["ActorStatetype"]];
         }

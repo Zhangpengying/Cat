@@ -213,7 +213,7 @@ public static class StaticVar
     /// 前往下个场景
     /// </summary>
     /// <param name="SceneNmae"> 目标场景</param>
-    public static void ToNextSecens(string SceneName, Actor act)
+    public static void ToNextScenes(string SceneName, Actor act)
     {
         ClearScene();
 
@@ -225,6 +225,8 @@ public static class StaticVar
             PlayerAttribute.Add("ActorStatetype", act._stateType);
             int money = ((Player)act).PlayerMoney;
             PlayerAttribute.Add("Money", money);
+            PlayerAttribute.Add("ItemList", ((Player)act).ItemList);
+
         }
         SceneManager.LoadScene(SceneName);
 
@@ -406,7 +408,7 @@ public static class StaticVar
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     MessageSend.instance.triggerEventID.Remove(eventID);
-                    ToNextSecens(NextScene, player);
+                    ToNextScenes(NextScene, player);
                 }
                 break;
         }
@@ -420,13 +422,13 @@ public static class StaticVar
         {
             case 1101:
                 //街上场景返回家里
-                ToNextSecens(NextScene, player);
+                ToNextScenes(NextScene, player);
 
                 break;
             case 1102:
                 //场景的清算
                 ClearScene();
-                ToNextSecens("BusinessStreet_001_Normal_Day_01", player);
+                ToNextScenes("Village", player);
                 break;
             default:
                 break;

@@ -36,7 +36,6 @@
 -define:USE_PROPERTY_DATABASE
 -define:USE_QUERY_BUILDER
 -define:USE_SEARCH_EXTENSION_API
--define:UNITY_ANALYTICS
 -define:SCENE_TEMPLATE_MODULE
 -define:ENABLE_AR
 -define:ENABLE_AUDIO
@@ -488,6 +487,7 @@
 "Assets/Scripts/DIY/DIYTypeContro.cs"
 "Assets/Scripts/DIY/NewBuildingCon.cs"
 "Assets/Scripts/DIY/NormalizeBtn.cs"
+"Assets/Scripts/Event/BusinessEvent/Event_Property3.cs"
 "Assets/Scripts/Event/CoffeeEvent/AllMenu.cs"
 "Assets/Scripts/Event/CoffeeEvent/CoffeeSceneInit.cs"
 "Assets/Scripts/Event/EventAttribute.cs"
@@ -510,12 +510,16 @@
 "Assets/Scripts/Event/SatrtPointEvent/Event_GateWay.cs"
 "Assets/Scripts/Event/SatrtPointEvent/Event_NPC1.cs"
 "Assets/Scripts/Event/SatrtPointEvent/Event_NPC2.cs"
+"Assets/Scripts/Event/SatrtPointEvent/Event_NPC_CunZhang.cs"
+"Assets/Scripts/Event/SatrtPointEvent/Event_NPC_TieJiang.cs"
+"Assets/Scripts/Event/SatrtPointEvent/Event_NPC_ZhanBuShi.cs"
 "Assets/Scripts/Event/SatrtPointEvent/Event_Property1.cs"
 "Assets/Scripts/Event/SatrtPointEvent/Event_Property2.cs"
 "Assets/Scripts/Event/SatrtPointEvent/StartPointSceneInit.cs"
 "Assets/Scripts/Event/StreetEvent/Chair.cs"
 "Assets/Scripts/Event/StreetEvent/StreetInit.cs"
 "Assets/Scripts/Event/StreetEvent/ToHome.cs"
+"Assets/Scripts/Event/VillageInit.cs"
 "Assets/Scripts/FrameWork/Actor.cs"
 "Assets/Scripts/FrameWork/ActorManager.cs"
 "Assets/Scripts/FrameWork/ActorState.cs"
@@ -528,6 +532,7 @@
 "Assets/Scripts/FrameWork/EventManager.cs"
 "Assets/Scripts/FrameWork/GameManager.cs"
 "Assets/Scripts/FrameWork/GlobalVariable.cs"
+"Assets/Scripts/FrameWork/ItemInfo.cs"
 "Assets/Scripts/FrameWork/LoadTexture.cs"
 "Assets/Scripts/FrameWork/MessageManager.cs"
 "Assets/Scripts/FrameWork/MessageSend.cs"
