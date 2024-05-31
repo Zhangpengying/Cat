@@ -17,16 +17,19 @@ public class BasicInforWndCon : MonoBehaviour
     {
         transform.Find("Menu").GetComponent<Button>().onClick.AddListener(()=> {
             WindowManager.instance.Open<PersonInforWnd>().Initialize();
-
         });
 
     }
     private void Update()
     {
-        //transform.Find("Day/Text").GetComponent<Text>().text = "第" + StaticVar.CurrentDay + "天";
-        //transform.Find("Week/Text").GetComponent<Text>().text =  StaticVar.CurrentWeek;
-        //transform.Find("TimeFrame/Text").GetComponent<Text>().text = StaticVar.CurrentTimeFrame;
-        //transform.Find("HaveMoney/Text").GetComponent<Text>().text ="$"+ StaticVar.player.PlayerMoney.ToString();
-      
+        RefreshHP();
+    }
+    private void RefreshHP()
+    {
+        Button[] HPArr = transform.Find("HP").GetComponentsInChildren<Button>();
+        for (int i = 0; i < HPArr.Length; i++)
+        {
+            HPArr[i].interactable = i < StaticVar.player.PlayerHP;
+        }
     }
 }

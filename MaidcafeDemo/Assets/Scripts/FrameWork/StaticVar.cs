@@ -226,6 +226,7 @@ public static class StaticVar
             int money = ((Player)act).PlayerMoney;
             PlayerAttribute.Add("Money", money);
             PlayerAttribute.Add("ItemList", ((Player)act).ItemList);
+            PlayerAttribute.Add("PlayerHP", ((Player)act).PlayerHP);
 
         }
         SceneManager.LoadScene(SceneName);

@@ -104,6 +104,11 @@ public class PlayerTrigger : MonoBase{
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchProperty3  , player);
             }
+            else if (collision.transform.parent.name == "道具4")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchProperty4, player);
+            }
             else if (collision.transform.parent.name == "莉莉丝")
             {
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
@@ -138,6 +143,10 @@ public class PlayerTrigger : MonoBase{
             {
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC_ZhanBuShi, player);
+            }
+            else if (collision.transform.parent.name == "血包")
+            {
+              SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_AddHP, player);
             }
             #endregion
 
@@ -217,6 +226,12 @@ public class PlayerTrigger : MonoBase{
         else if (collision.transform.parent.name == "道具3")
         {
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveProperty3, player);
+            StaticVar.InteractiveProp = null;
+        }
+
+        else if (collision.transform.parent.name == "道具4")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveProperty4, player);
             StaticVar.InteractiveProp = null;
         }
         else if (collision.transform.parent.name == "莉莉丝")

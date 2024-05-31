@@ -135,6 +135,9 @@ public class MyMessageType
     public static int Event_TouchProperty3 = 504;
     public static int Event_LeaveProperty3 = 505;
 
+    public static int Event_TouchProperty4 = 506;
+    public static int Event_LeaveProperty4 = 507;
+
     //触发传送门
     public static int Event_TouchGateWay1 = 550;
     //public static int Event_LeaveGateWay1 = 551;
@@ -156,6 +159,8 @@ public class MyMessageType
 
     public static int Event_TouchNPC_ZhanBuShi = 608;
     public static int Event_LeaveNPC_ZhanBuShi = 609;
+
+    public static int Event_AddHP = 700;
 
 }
 

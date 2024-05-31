@@ -34,7 +34,9 @@ public class GlobalVariable : MonoBehaviour
     {
         GameObject obj = (Object.Instantiate(Resources.Load("Prefabs/Items/Tips"))) as GameObject;
         obj.transform.SetParent(GameObject.Find("Environment/Events").transform);
-        obj.transform.position = StaticVar.InteractiveProp.transform.Find("Trigger").position + new Vector3(0, 1.76f, 0);
+        obj.transform.position = StaticVar.InteractiveProp.transform.Find("BG-Counter").position + new Vector3(0, 0.7f* StaticVar.InteractiveProp.transform.parent.localScale.x, 0);
+        obj.transform.localScale = Vector3.one;
+
         obj.name = "Tips";
         obj.SetActive(true);
     }

@@ -200,6 +200,7 @@ public class ActorManager : Singleton<ActorManager>
             {
                 ((Player)actor).ItemList.Add(item);
             }
+            ((Player)actor).PlayerHP = (int)StaticVar.PlayerAttribute["PlayerHP"];
             _actorDic[actor._uid] = actor;
             actor._curState = actor._actorStateDic[(ActorStateType)StaticVar.PlayerAttribute["ActorStatetype"]];
         }

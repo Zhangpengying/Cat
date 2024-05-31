@@ -18,6 +18,7 @@ public class BagWndControl : MonoBehaviour
     private Transform content;
     private void Start()
     {
+        
         content = transform.Find("Scroll View/Viewport/Content");
         foreach (var item in content.GetComponentsInChildren<ButtonStateAdjust>())
         {

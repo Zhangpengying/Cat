@@ -49,6 +49,10 @@ public class Event_NPC_TieJiang : MonoBase
                 if (!player.IsLockPlayer)
                 {
                     StaticVar.MessageSendToFungus(transform.parent.name, player);
+                    if (StaticVar.player.PlayerHP>0)
+                    {
+                        StaticVar.player.PlayerHP -= 1;
+                    }
                 }
             }
         }
