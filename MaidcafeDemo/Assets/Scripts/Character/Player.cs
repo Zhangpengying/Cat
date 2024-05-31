@@ -19,6 +19,8 @@ public class Player : Actor
     public Actor InteractNPC;
     //背包物品
     public List<ItemInfo> ItemList = new List<ItemInfo>();
+    //当前血量
+    public int PlayerHP = 3;
 
     public bool IsLockPlayer
     {
