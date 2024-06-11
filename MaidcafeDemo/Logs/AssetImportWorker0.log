@@ -15,7 +15,7 @@ E:/GitHub仓库/Cat/MaidcafeDemo
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-9050
+8824
 Successfully changed project path to: E:/GitHub仓库/Cat/MaidcafeDemo
 E:/GitHub仓库/Cat/MaidcafeDemo
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ E:/GitHub仓库/Cat/MaidcafeDemo
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 323.92 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 47.03 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.1.23f1c1 (46637c7592ee)
 [Subsystems] Discovering subsystems at path D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/Resources/UnitySubsystems
@@ -63,83 +63,83 @@ Initialize mono
 Mono path[0] = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56356
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56400
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.152088 seconds.
+Registered in 0.001606 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 45.24 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 42.76 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.708 seconds
+- Completed reload, in  0.357 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1708ms)
-		BeginReloadAssembly (104ms)
+	ReloadAssembly (357ms)
+		BeginReloadAssembly (39ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (691ms)
-			LoadAssemblies (74ms)
+		EndReloadAssembly (260ms)
+			LoadAssemblies (38ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (482ms)
-				TypeCache.Initialize (481ms)
-					TypeCache.ScanAssembly (481ms)
+			SetupTypeCache (62ms)
+				TypeCache.Initialize (62ms)
+					TypeCache.ScanAssembly (61ms)
 				ResolveRequiredComponents (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (16ms)
-			SetupLoadedEditorAssemblies (161ms)
+			SetupLoadedEditorAssemblies (151ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (5ms)
-				RefreshPlugins (45ms)
+				SetLoadedEditorAssemblies (4ms)
+				RefreshPlugins (43ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (77ms)
-				ProcessInitializeOnLoadMethodAttributes (29ms)
+				ProcessInitializeOnLoadAttributes (74ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 1.177793 seconds.
+Registered in 0.004591 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 41.31 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 41.34 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  6.678 seconds
+- Completed reload, in  1.268 seconds
 Domain Reload Profiling:
-	ReloadAssembly (6679ms)
-		BeginReloadAssembly (64ms)
+	ReloadAssembly (1268ms)
+		BeginReloadAssembly (63ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (11ms)
-		EndReloadAssembly (3075ms)
-			LoadAssemblies (212ms)
+		EndReloadAssembly (1138ms)
+			LoadAssemblies (58ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (599ms)
-				TypeCache.Initialize (592ms)
-					TypeCache.ScanAssembly (590ms)
-				ResolveRequiredComponents (6ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (39ms)
-			SetupLoadedEditorAssemblies (2191ms)
+			SetupTypeCache (161ms)
+				TypeCache.Initialize (154ms)
+					TypeCache.ScanAssembly (152ms)
+				ResolveRequiredComponents (7ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (41ms)
+			SetupLoadedEditorAssemblies (842ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (2ms)
 				SetLoadedEditorAssemblies (4ms)
 				RefreshPlugins (41ms)
-				BeforeProcessingInitializeOnLoad (40ms)
-				ProcessInitializeOnLoadAttributes (1225ms)
-				ProcessInitializeOnLoadMethodAttributes (875ms)
+				BeforeProcessingInitializeOnLoad (39ms)
+				ProcessInitializeOnLoadAttributes (716ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -147,13 +147,13 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.58 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3571 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 59 unused Assets / (60.0 KB). Loaded Objects now: 4017.
 Memory consumption went from 0.54 GB to 0.54 GB.
-Total: 3.974100 ms (FindLiveObjects: 0.174200 ms CreateObjectMapping: 0.048300 ms MarkObjects: 3.666700 ms  DeleteObjects: 0.084000 ms)
+Total: 4.446000 ms (FindLiveObjects: 0.157800 ms CreateObjectMapping: 0.041200 ms MarkObjects: 4.182600 ms  DeleteObjects: 0.063700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -168,127 +168,86 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 76898.411298 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation
-  artifactKey: Guid(f6e650f7539b2274f8cedc54e9336784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation using Guid(f6e650f7539b2274f8cedc54e9336784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '299fc7843a901445c862545e2f5d233f') in 0.014315 seconds 
+  Time since last request: 78102.370559 seconds.
+  path: Assets/Resources/Atlas/StartHouse/Bed1.png
+  artifactKey: Guid(7771b353d6c999b4e92101dc7440e2c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse/Bed1.png using Guid(7771b353d6c999b4e92101dc7440e2c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfbd1bb855abee8e3b081753f9ec4a5e') in 0.069078 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 487.194851 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/walk_side.png
-  artifactKey: Guid(509a0a7775d77164ca399850dc2f3179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/walk_side.png using Guid(509a0a7775d77164ca399850dc2f3179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31da6fd693a2130568fdf269fe791461') in 0.073277 seconds 
+  Time since last request: 0.418907 seconds.
+  path: Assets/Resources/Atlas/StartHouse/box.png
+  artifactKey: Guid(994660ea2b77a8d4596d001c0b762da5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse/box.png using Guid(994660ea2b77a8d4596d001c0b762da5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb0bb5710689dd8dd5721e9cb10a0b29') in 0.025728 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.974865 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/walk_front.png
-  artifactKey: Guid(fb7e454a8ee742b408d815e1a94e8c6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/walk_front.png using Guid(fb7e454a8ee742b408d815e1a94e8c6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c23b86d2127c9ad5270068022650a56') in 0.019384 seconds 
+  Time since last request: 0.421172 seconds.
+  path: Assets/Resources/Atlas/StartHouse/carpeting01.png
+  artifactKey: Guid(69b74972a8400e9449b7bfc4f2aaf49d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse/carpeting01.png using Guid(69b74972a8400e9449b7bfc4f2aaf49d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '407d2731e99bd5c8698d3e6fbe19094b') in 0.026677 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 85.905057 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/walk_front.png
-  artifactKey: Guid(fb7e454a8ee742b408d815e1a94e8c6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/walk_front.png using Guid(fb7e454a8ee742b408d815e1a94e8c6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebdec89e6b2cb815e8c9751d5c0d4c91') in 0.012812 seconds 
+  Time since last request: 11.358602 seconds.
+  path: Assets/Scenes/StartHouse.unity
+  artifactKey: Guid(7c7d909a33d293345b4bd69d0d31ffc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/StartHouse.unity using Guid(7c7d909a33d293345b4bd69d0d31ffc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8edfa8d84199918ebe04a1bb6c15743') in 0.010319 seconds 
 ========================================================================
-Received Import Request.
-  Time since last request: 33.099154 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/walk_front.png
-  artifactKey: Guid(fb7e454a8ee742b408d815e1a94e8c6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/walk_front.png using Guid(fb7e454a8ee742b408d815e1a94e8c6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '548a9c40815a11102400f037f7e27d0b') in 0.041587 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.605329 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/walk_back.png
-  artifactKey: Guid(e67cb13f1cb6cb44eb8b5d722c959995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/walk_back.png using Guid(e67cb13f1cb6cb44eb8b5d722c959995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78d401c25e90079145fd0c7fcfadae20') in 0.017006 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 18.427928 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/walk_back.png
-  artifactKey: Guid(e67cb13f1cb6cb44eb8b5d722c959995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/walk_back.png using Guid(e67cb13f1cb6cb44eb8b5d722c959995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dedef0cf456267a5beb3f0fc8d085b7') in 0.007717 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.872852 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/walk_back.png
-  artifactKey: Guid(e67cb13f1cb6cb44eb8b5d722c959995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/walk_back.png using Guid(e67cb13f1cb6cb44eb8b5d722c959995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '385fbeb29b8b46a3728610db41d4e669') in 0.041182 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.025351 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_side01.png
-  artifactKey: Guid(d3733dc661e012d4fbebdf61dbfbddf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_side01.png using Guid(d3733dc661e012d4fbebdf61dbfbddf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a01f0430989bbe6f77b85d98fe8653d') in 0.026416 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.787656 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_side01.png
-  artifactKey: Guid(d3733dc661e012d4fbebdf61dbfbddf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_side01.png using Guid(d3733dc661e012d4fbebdf61dbfbddf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13895459ce905103089a0b3803d47afc') in 0.011641 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.642800 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_side01.png
-  artifactKey: Guid(d3733dc661e012d4fbebdf61dbfbddf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_side01.png using Guid(d3733dc661e012d4fbebdf61dbfbddf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeeb200d1d4b27dc6fbbe58108b4374b') in 0.029893 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.510980 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_side.png
-  artifactKey: Guid(3dd63138876d59041aff48c5d33051bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_side.png using Guid(3dd63138876d59041aff48c5d33051bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b7d8fbb4f8b0fb26236b505b7931720') in 0.019305 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.836052 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_side.png
-  artifactKey: Guid(3dd63138876d59041aff48c5d33051bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_side.png using Guid(3dd63138876d59041aff48c5d33051bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2188a5b1636677c368b04ca5505db918') in 0.011118 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.096080 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_side.png
-  artifactKey: Guid(3dd63138876d59041aff48c5d33051bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_side.png using Guid(3dd63138876d59041aff48c5d33051bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8582cb8a38d4347e1191cb35655da8a') in 0.034391 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.502655 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_front.png
-  artifactKey: Guid(bb27edb5e5857874db8b0514225330ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_front.png using Guid(bb27edb5e5857874db8b0514225330ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '083a8a9d94992b194a2118bcbd3ff831') in 0.029443 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.238078 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_front.png
-  artifactKey: Guid(bb27edb5e5857874db8b0514225330ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_front.png using Guid(bb27edb5e5857874db8b0514225330ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ded8d2407991447aa73f6ec29a703a9a') in 0.011033 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.703271 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_front.png
-  artifactKey: Guid(bb27edb5e5857874db8b0514225330ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_front.png using Guid(bb27edb5e5857874db8b0514225330ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02c32fc43bf2007c0cd33fe82c292a1c') in 0.035822 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.508647 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_back.png
-  artifactKey: Guid(2cdc447439cd9dd4685cc65b1ad2af5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_back.png using Guid(2cdc447439cd9dd4685cc65b1ad2af5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8b2f1819244607f5035a8f296d11029') in 0.018164 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.308897 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_back.png
-  artifactKey: Guid(2cdc447439cd9dd4685cc65b1ad2af5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_back.png using Guid(2cdc447439cd9dd4685cc65b1ad2af5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '435722b0d7a47decc2d80b447ec89a7e') in 0.012104 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.045089 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/attack_back.png
-  artifactKey: Guid(2cdc447439cd9dd4685cc65b1ad2af5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_back.png using Guid(2cdc447439cd9dd4685cc65b1ad2af5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74df64b2a44ca9dde1cebd5dbdbd0c65') in 0.032630 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.719449 seconds.
-  path: Assets/Resources/Arts Resources/Sprite Animation/walk_back.png
-  artifactKey: Guid(e67cb13f1cb6cb44eb8b5d722c959995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Arts Resources/Sprite Animation/walk_back.png using Guid(e67cb13f1cb6cb44eb8b5d722c959995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdcc02b0a3f03b3a6bbbcdb54f0a1fda') in 0.023329 seconds 
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005363 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  1.105 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1105ms)
+		BeginReloadAssembly (88ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (966ms)
+			LoadAssemblies (43ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (118ms)
+				TypeCache.Initialize (112ms)
+					TypeCache.ScanAssembly (110ms)
+				ResolveRequiredComponents (6ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (720ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (4ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (38ms)
+				ProcessInitializeOnLoadAttributes (629ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3551 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (33.7 KB). Loaded Objects now: 4030.
+Memory consumption went from 0.54 GB to 0.54 GB.
+Total: 3.621800 ms (FindLiveObjects: 0.156000 ms CreateObjectMapping: 0.041700 ms MarkObjects: 3.398700 ms  DeleteObjects: 0.024300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
