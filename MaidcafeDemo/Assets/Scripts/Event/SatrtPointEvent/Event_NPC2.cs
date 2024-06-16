@@ -53,6 +53,7 @@ public class Event_NPC2 : MonoBase
                     SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_UnlockGateWay1, player);
                     //获得物品
                     ItemInfo newItem = new ItemInfo();
+                    newItem.itemID = 1002;
                     newItem.itemType = ItemType.SingleItem;
                     newItem.itemName = "盾牌";
                     newItem.itemNum = 1;

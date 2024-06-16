@@ -138,6 +138,12 @@ public class MyMessageType
     public static int Event_TouchProperty4 = 506;
     public static int Event_LeaveProperty4 = 507;
 
+    public static int Event_TouchProperty5 = 508;
+    public static int Event_LeaveProperty5 = 509;
+
+    public static int Event_TouchProperty8 = 510;
+    public static int Event_LeaveProperty8 = 511;
+
     //触发传送门
     public static int Event_TouchGateWay1 = 550;
     //public static int Event_LeaveGateWay1 = 551;
@@ -160,7 +166,20 @@ public class MyMessageType
     public static int Event_TouchNPC_ZhanBuShi = 608;
     public static int Event_LeaveNPC_ZhanBuShi = 609;
 
+    public static int Event_TouchNPC_LaErFu = 610;
+    public static int Event_LeaveNPC_LaErFu = 611;
+
     public static int Event_AddHP = 700;
+    public static int Event_Monster = 701;
+
+    //触发障碍1
+    public static int Event_TouchObstacles1 = 750;
+    //解除障碍1
+    public static int Event_UnlockObstacles1 = 751;
+    //触发障碍2
+    public static int Event_TouchObstacles2 = 752;
+    //解除障碍2
+    public static int Event_UnlockObstacles2 = 753;
 
 }
 

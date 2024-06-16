@@ -534,6 +534,20 @@ public static class StaticVar
         }
         ((Action)events[minID]["Action"])();
     }
+    //判定物品是否存在
+    public static bool GetItem(int itemID)
+    {
+        bool isHave = false;
+        foreach (var item in StaticVar.player.ItemList)
+        {
+            if (item.itemID == itemID)
+            {
+                isHave = true;
+            }
+        }
+        return isHave;
 
+    }
+    
 
 }

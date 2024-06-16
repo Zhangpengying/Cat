@@ -51,6 +51,7 @@ public class Event_Property2 : MonoBase
                     StaticVar.MessageSendToFungus(transform.parent.name, player);
                     //获得物品
                     ItemInfo newItem = new ItemInfo();
+                    newItem.itemID = 1003;
                     newItem.itemType = ItemType.SingleItem;
                     newItem.itemName = "宝剑";
                     newItem.itemNum = 1;

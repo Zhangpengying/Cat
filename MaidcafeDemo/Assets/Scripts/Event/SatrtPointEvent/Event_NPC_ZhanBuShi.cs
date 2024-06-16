@@ -48,6 +48,29 @@ public class Event_NPC_ZhanBuShi : MonoBase
                 //进入互动
                 if (!player.IsLockPlayer)
                 {
+                    //判定是否有草药
+                    if (StaticVar.GetItem(1005))
+                    {
+                        StaticVar.MessageSendToFungus(transform.parent.name + 1, player);
+                        //SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_UnlockObstacles2, player);
+                        //获得钥匙
+                        ItemInfo newItem = new ItemInfo();
+                        newItem.itemID = 1007;
+                        newItem.itemType = ItemType.SingleItem;
+                        newItem.itemName = "金疮药";
+                        newItem.itemNum = 1;
+                        newItem.itemDesc = "治疗伤势的神药";
+                        player.ItemList.Add(newItem);
+                    }
+                    else
+                    {
+                        StaticVar.MessageSendToFungus(transform.parent.name + 0, player);
+                    }
+
+
+                }
+                if (!player.IsLockPlayer)
+                {
                     StaticVar.MessageSendToFungus(transform.parent.name, player);
                 }
             }

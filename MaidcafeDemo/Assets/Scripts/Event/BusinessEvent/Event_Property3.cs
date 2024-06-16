@@ -50,6 +50,7 @@ public class Event_Property3 : MonoBase
                 {
                     //获得物品
                     ItemInfo newItem = new ItemInfo();
+                    newItem.itemID = 1001;
                     newItem.itemType = ItemType.MoreItem;
                     newItem.itemName = "魔法粉尘";
                     newItem.itemNum = 10;

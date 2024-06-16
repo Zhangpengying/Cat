@@ -4,6 +4,8 @@ using UnityEngine;
 
 public  class ItemInfo
 {
+    //道具ID
+    public int itemID;
     //道具类型
     public ItemType itemType;
     //道具数量

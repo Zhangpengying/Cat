@@ -86,8 +86,13 @@ namespace Fungus
 
             if (writer != null)
             {
-                if (Input.GetButtonDown(currentStandaloneInputModule.submitButton) ||
-                    (cancelEnabled && Input.GetButton(currentStandaloneInputModule.cancelButton)))
+                //if (Input.GetButtonDown(currentStandaloneInputModule.submitButton) ||
+                //    (cancelEnabled && Input.GetButton(currentStandaloneInputModule.cancelButton)))
+                //{
+                //    SetNextLineFlag();
+                //}
+                if (Input.GetKeyDown(KeyCode.I) ||
+                      (cancelEnabled && Input.GetButton(currentStandaloneInputModule.cancelButton)))
                 {
                     SetNextLineFlag();
                 }

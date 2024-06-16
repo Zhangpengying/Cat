@@ -125,6 +125,7 @@ public class PlayerTrigger : MonoBase{
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchGateWay1, player);
             }
+            
             #endregion
 
             //村庄/////////////////////////////
@@ -144,9 +145,38 @@ public class PlayerTrigger : MonoBase{
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC_ZhanBuShi, player);
             }
+            else if (collision.transform.parent.name == "仓库")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchProperty5, player);
+            }
             else if (collision.transform.parent.name == "血包")
             {
               SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_AddHP, player);
+            }
+            else if (collision.transform.parent.name == "怪物")
+            {
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_Monster, player);
+            }
+            else if (collision.transform.parent.name == "森林障碍1")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchObstacles1, player);
+            }
+            else if (collision.transform.parent.name == "森林障碍2")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchObstacles2, player);
+            }
+            else if (collision.transform.parent.name == "草药")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchProperty8, player);
+            }
+            else if (collision.transform.parent.name == "拉尔夫")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC_LaErFu, player);
             }
             #endregion
 
@@ -258,9 +288,24 @@ public class PlayerTrigger : MonoBase{
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveNPC_TieJiang, player);
             StaticVar.InteractiveProp = null;
         }
+        else if (collision.transform.parent.name == "仓库")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveProperty5, player);
+            StaticVar.InteractiveProp = null;
+        }
         else if (collision.transform.parent.name == "占卜师")
         {
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveNPC_ZhanBuShi, player);
+            StaticVar.InteractiveProp = null;
+        }
+        else if (collision.transform.parent.name == "草药")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveProperty8, player);
+            StaticVar.InteractiveProp = null;
+        }
+        else if (collision.transform.parent.name == "拉尔夫")
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveNPC_LaErFu, player);
             StaticVar.InteractiveProp = null;
         }
         #endregion
