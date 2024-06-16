@@ -1,0 +1,947 @@
+Using pre-set license
+Built from 'HEAD' branch; Version is '2022.1.23f1c1 (46637c7592ee) revision 4612988'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit Enterprise' Language: 'zh' Physical Memory: 32581 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\Program Files\Unity3d Edition\Unity 2022.1.23f1c1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker6
+-projectPath
+E:/GitHub仓库/Cat/MaidcafeDemo
+-logFile
+Logs/AssetImportWorker6.log
+-srvPort
+8348
+Successfully changed project path to: E:/GitHub仓库/Cat/MaidcafeDemo
+E:/GitHub仓库/Cat/MaidcafeDemo
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 49.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.1.23f1c1 (46637c7592ee)
+[Subsystems] Discovering subsystems at path D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/GitHub仓库/Cat/MaidcafeDemo/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4070 Ti (ID=0x2782)
+    Vendor:   NVIDIA
+    VRAM:     11996 MB
+    Driver:   32.0.15.5599
+Initialize mono
+Mono path[0] = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/Managed'
+Mono path[1] = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56200
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001339 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 46.56 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.367 seconds
+Domain Reload Profiling:
+	ReloadAssembly (368ms)
+		BeginReloadAssembly (41ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (265ms)
+			LoadAssemblies (40ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (63ms)
+				TypeCache.Initialize (62ms)
+					TypeCache.ScanAssembly (61ms)
+				ResolveRequiredComponents (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (15ms)
+			SetupLoadedEditorAssemblies (155ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (4ms)
+				RefreshPlugins (47ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (74ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004430 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 44.08 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  1.187 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1188ms)
+		BeginReloadAssembly (66ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (13ms)
+		EndReloadAssembly (1055ms)
+			LoadAssemblies (46ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (122ms)
+				TypeCache.Initialize (115ms)
+					TypeCache.ScanAssembly (113ms)
+				ResolveRequiredComponents (7ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (39ms)
+			SetupLoadedEditorAssemblies (815ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (2ms)
+				SetLoadedEditorAssemblies (4ms)
+				RefreshPlugins (44ms)
+				BeforeProcessingInitializeOnLoad (39ms)
+				ProcessInitializeOnLoadAttributes (685ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (3ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3578 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (59.9 KB). Loaded Objects now: 4024.
+Memory consumption went from 0.54 GB to 0.54 GB.
+Total: 4.045800 ms (FindLiveObjects: 0.194600 ms CreateObjectMapping: 0.058200 ms MarkObjects: 3.713100 ms  DeleteObjects: 0.078900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 307964.475932 seconds.
+  path: Assets/Resources/Atlas/StartHouse/tea.png
+  artifactKey: Guid(19f759d2cfe494c4fae34f770115a073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse/tea.png using Guid(19f759d2cfe494c4fae34f770115a073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20fc0da624e63dbc34866e2f2212ff3d') in 0.067006 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.021209 seconds.
+  path: Assets/Sprites/Scenes/电器街2/softmap/softmap_0001_门-左.png
+  artifactKey: Guid(1647195e00a1e4a4eb6e4a56906352ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街2/softmap/softmap_0001_门-左.png using Guid(1647195e00a1e4a4eb6e4a56906352ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfc718fbb63e138ca4ecbc3d5ccf530c') in 0.016042 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Resources/Atlas/StartHouse/stool.png
+  artifactKey: Guid(8c04d9f175aab1e40a765276eae1e611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse/stool.png using Guid(8c04d9f175aab1e40a765276eae1e611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ebaf946344a72a41f9cde507091bc64') in 0.012887 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugin/PolyNav2D/DEMO/spaceship.png
+  artifactKey: Guid(19bbb0e77d8074a42a9e2c9de8736ec9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/PolyNav2D/DEMO/spaceship.png using Guid(19bbb0e77d8074a42a9e2c9de8736ec9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75f1b03fddfda438ecae74af13986658') in 0.014062 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.579599 seconds.
+  path: Assets/Sprites/Characters/角色/Rin.png
+  artifactKey: Guid(fdbe01d2fe93f954fba0c6fe966869da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/角色/Rin.png using Guid(fdbe01d2fe93f954fba0c6fe966869da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40428f10e18be9b19b15f559383cf97e') in 0.026692 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.012123 seconds.
+  path: Assets/Plugin/Fungus/Textures/rewind.png
+  artifactKey: Guid(62573ea76cbf34643bf28a259a6c901c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/Fungus/Textures/rewind.png using Guid(62573ea76cbf34643bf28a259a6c901c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1da4f4849a457993dccd8388a8391a23') in 0.013366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.247689 seconds.
+  path: Assets/Resources/Arts Resources/Sprite Animation/walk_front.png
+  artifactKey: Guid(fb7e454a8ee742b408d815e1a94e8c6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Sprite Animation/walk_front.png using Guid(fb7e454a8ee742b408d815e1a94e8c6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '548a9c40815a11102400f037f7e27d0b') in 0.036817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Scenes/电器街/咖啡店_0003_外墙.png
+  artifactKey: Guid(3e48aad71e3afbb4ca505605962319e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街/咖啡店_0003_外墙.png using Guid(3e48aad71e3afbb4ca505605962319e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5c624b7981a6daa7cdcd87b116cc91c') in 0.013526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Scenes/电器街/动漫店12_0008_扭蛋机6.png
+  artifactKey: Guid(e99d3f34f5c1c7c4db7db822d824f475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街/动漫店12_0008_扭蛋机6.png using Guid(e99d3f34f5c1c7c4db7db822d824f475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef4978cac2e57d2c8fff9a90a0b96c29') in 0.014222 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Scenes/电器街/动漫店12_0014_广告牌8.png
+  artifactKey: Guid(7709dfab6e650a34a8c1cbef157c908b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街/动漫店12_0014_广告牌8.png using Guid(7709dfab6e650a34a8c1cbef157c908b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2423efcc33d60bf47a001d88682a09e0') in 0.017815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Characters/NPC-电影院服务员2/角色动画-NPC-电影院服务员2-待机_0002_3.png
+  artifactKey: Guid(d013d9b535e5f294089873f60eab4833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-电影院服务员2/角色动画-NPC-电影院服务员2-待机_0002_3.png using Guid(d013d9b535e5f294089873f60eab4833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46ea159293691e55a54e65776d5f2f9b') in 0.015322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Sprites/Characters/NPC-男警/角色动画-NPC-男警-待机_0001_2.png
+  artifactKey: Guid(4bbec066334bc2b468af7d8477f9355b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-男警/角色动画-NPC-男警-待机_0001_2.png using Guid(4bbec066334bc2b468af7d8477f9355b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c08d1136943bd7b088a42d49bbf6b5a8') in 0.010932 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Resources/Atlas/StartHouse 1/wood.png
+  artifactKey: Guid(e29cf5640c73ae045a8642c89d2497d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse 1/wood.png using Guid(e29cf5640c73ae045a8642c89d2497d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '110ec31317b61871504209ec37c89f13') in 0.019026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Sprites/Characters/女主3/角色动画-女主3-跑_0002_3.png
+  artifactKey: Guid(7ca7af056d4ff9145898ca098bfd268d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女主3/角色动画-女主3-跑_0002_3.png using Guid(7ca7af056d4ff9145898ca098bfd268d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35f588fe7cacb370f34282dd7bc881b2') in 0.010865 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Characters/NPC-龍老板/角色动画-NPC-龍老板-移动_0000_1.png
+  artifactKey: Guid(74b226bef9d14624089f5d9cfc08f1a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-龍老板/角色动画-NPC-龍老板-移动_0000_1.png using Guid(74b226bef9d14624089f5d9cfc08f1a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7befeb42dd2ba4bd3195cf6606ad81bd') in 0.011540 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Characters/女仆1/角色动画-女仆1-施法_0011_12.png
+  artifactKey: Guid(66c5d2b1a25e4b646bc96325722a7361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆1/角色动画-女仆1-施法_0011_12.png using Guid(66c5d2b1a25e4b646bc96325722a7361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bcdb347f5f76f00ca00c43ea2f6bae7') in 0.012457 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Characters/女仆1/角色动画-女仆1-移动_0004_IrecorderP艾尔-走路5.png
+  artifactKey: Guid(38a4b9a7e203570498e36282e35840fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆1/角色动画-女仆1-移动_0004_IrecorderP艾尔-走路5.png using Guid(38a4b9a7e203570498e36282e35840fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4f5bfd4fdf4c7e72f7acc4d271360c9') in 0.012608 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Scenes/电器街/动漫店12_0011_广告牌5.png
+  artifactKey: Guid(82b0579b7b23cae47a941eb298d4037a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街/动漫店12_0011_广告牌5.png using Guid(82b0579b7b23cae47a941eb298d4037a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5ff8bef74715903d88f61dd4b61f2dc') in 0.013741 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-待机_0000_IrecorderP艾尔-待机1.png
+  artifactKey: Guid(a17838e2e48d9194c813ad67cffc2fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-待机_0000_IrecorderP艾尔-待机1.png using Guid(a17838e2e48d9194c813ad67cffc2fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32e5e9afef7f2ff73a4fd36616ee03ed') in 0.011232 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-移动_0000_IrecorderP艾尔-走路1.png
+  artifactKey: Guid(38fdfa8e8973c014a983b7e2e9374150) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-移动_0000_IrecorderP艾尔-走路1.png using Guid(38fdfa8e8973c014a983b7e2e9374150) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf2444297e3512b39e128234820a787f') in 0.011584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-移动_0004_IrecorderP艾尔-走路5.png
+  artifactKey: Guid(76607be6bbdffcc45b7215eec1914178) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-移动_0004_IrecorderP艾尔-走路5.png using Guid(76607be6bbdffcc45b7215eec1914178) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8c1bbdae33779cda417c85cfdbb5dd3') in 0.011532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Characters/女主1/角色动画-女主1-待机_0003_4.png
+  artifactKey: Guid(2117c83072c35a949a005ffc2e67d433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女主1/角色动画-女主1-待机_0003_4.png using Guid(2117c83072c35a949a005ffc2e67d433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5739c0fc11ff2cb4d5c3c2aa4094ddf7') in 0.010882 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Scenes/电器街3/风格设计-场景-角色-修改-加光影-白天-平视-导出_0005_天空.png
+  artifactKey: Guid(dac107d052595d4478a4ce90a1df59b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街3/风格设计-场景-角色-修改-加光影-白天-平视-导出_0005_天空.png using Guid(dac107d052595d4478a4ce90a1df59b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db023d46c7a4561f3dca1fb5b5f8d923') in 0.059360 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Characters/女仆1/角色动画-女仆1-施法_0010_11.png
+  artifactKey: Guid(3270991d23a54564c890130aef969a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆1/角色动画-女仆1-施法_0010_11.png using Guid(3270991d23a54564c890130aef969a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e33d64d3eb69d9da2d238026858a8e24') in 0.010005 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-送餐_0000_IrecorderP艾尔-走路1.png
+  artifactKey: Guid(dca9f893fdec65743b0364747990d117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-送餐_0000_IrecorderP艾尔-走路1.png using Guid(dca9f893fdec65743b0364747990d117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e613819b481ac90aa80cc52f9bb0934a') in 0.012470 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Characters/上班族/角色动画-上班族-切图_0015_上班族-坐-期待4.png
+  artifactKey: Guid(bdd0aa89cfd47f942ba7de26e8f51dd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/上班族/角色动画-上班族-切图_0015_上班族-坐-期待4.png using Guid(bdd0aa89cfd47f942ba7de26e8f51dd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16c53de4824371479e429b2b981632e4') in 0.013977 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0003_广告牌-广告条2.png
+  artifactKey: Guid(5c79b414713508f44bf40ba0b7ed6a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0003_广告牌-广告条2.png using Guid(5c79b414713508f44bf40ba0b7ed6a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d8fb9f86010618a0716353b3b361afe') in 0.014338 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Scenes/电器街/动漫店12_0004_扭蛋机2.png
+  artifactKey: Guid(7ebfcf3818ef99340b3747c90a816df0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街/动漫店12_0004_扭蛋机2.png using Guid(7ebfcf3818ef99340b3747c90a816df0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '429ee21c94dda1080c998e83f4e9f3b7') in 0.015707 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Characters/女主1/角色动画-女主1-待机_0000_1.png
+  artifactKey: Guid(e0b06dc4537fc694b98c07c573687613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女主1/角色动画-女主1-待机_0000_1.png using Guid(e0b06dc4537fc694b98c07c573687613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf6bc1d2125e15ca75deb33e7ec94d66') in 0.012985 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Resources/Atlas/宝剑.png
+  artifactKey: Guid(ba13889e4289f4847936d3c41b2dc4e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/宝剑.png using Guid(ba13889e4289f4847936d3c41b2dc4e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce58a28e35d86f56546c0a7ba959f48a') in 0.021889 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Characters/NPC-电影院服务员2/角色动画-NPC-电影院服务员2-待机_0003_4.png
+  artifactKey: Guid(008dca5e1f6a53f4bb79ffe6bd66e4d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-电影院服务员2/角色动画-NPC-电影院服务员2-待机_0003_4.png using Guid(008dca5e1f6a53f4bb79ffe6bd66e4d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7b9fede516cc8894d2a0d5f62b2fe9b') in 0.011440 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Characters/女仆1/角色动画-女仆1-施法_0005_6.png
+  artifactKey: Guid(6da87b88c2a019e4393b3e4e5f1bfe69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆1/角色动画-女仆1-施法_0005_6.png using Guid(6da87b88c2a019e4393b3e4e5f1bfe69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88ab7bffc7b3da500732169aa9f7f88b') in 0.010837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Resources/Atlas/魔法粉尘.png
+  artifactKey: Guid(24850d43a5b650b429d2e4956cde015c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/魔法粉尘.png using Guid(24850d43a5b650b429d2e4956cde015c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '761a79dd324f827ee6360919bfa2b2e3') in 0.020011 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0026_IrecorderP-艾尔-施法7.png
+  artifactKey: Guid(f172c69b47df5af439c4fce1cee20763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0026_IrecorderP-艾尔-施法7.png using Guid(f172c69b47df5af439c4fce1cee20763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66274d8ae34c85cf2c1947cc49830726') in 0.010879 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Resources/Atlas/UI/FunctionIcon/气泡.jpg
+  artifactKey: Guid(cd9aa3f3daa3089479bbb9cf92e79d30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/UI/FunctionIcon/气泡.jpg using Guid(cd9aa3f3daa3089479bbb9cf92e79d30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e118ab85bd8a275688e60d69a26fb21f') in 0.023101 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Scenes/电器街/咖啡店_0000_门-左.png
+  artifactKey: Guid(319271257aedad64bad7414c807f4610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街/咖啡店_0000_门-左.png using Guid(319271257aedad64bad7414c807f4610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7236015bfeeb1b7602dd4a74a631f3e5') in 0.012207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/Atlas/按钮-游戏开始.png
+  artifactKey: Guid(f38f6788a7fd1db4b86eee3cbce1803b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/按钮-游戏开始.png using Guid(f38f6788a7fd1db4b86eee3cbce1803b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d753f75cdd20c908b7b93836b1e441d') in 0.011161 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Characters/女主1/角色动画-女主1-移动_0004_5.png
+  artifactKey: Guid(e6b00c956851fa341b96d02e4c63949a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女主1/角色动画-女主1-移动_0004_5.png using Guid(e6b00c956851fa341b96d02e4c63949a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24a90c21d0584826808dc2ef1dbcb8f0') in 0.012451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-移动_0001_IrecorderP艾尔-走路2.png
+  artifactKey: Guid(90db6f63edc21544ca98488d8644be9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-移动_0001_IrecorderP艾尔-走路2.png using Guid(90db6f63edc21544ca98488d8644be9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4a17650f5b323e683865569cd073d85') in 0.012347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0004_广告牌-广告条3.png
+  artifactKey: Guid(7800b30a2d8779d4599f203552f42f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0004_广告牌-广告条3.png using Guid(7800b30a2d8779d4599f203552f42f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caf95341efb6f9481e7fa4423b0b3cfb') in 0.011144 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Characters/NPC-长脸大叔/角色动画-NPC-长脸大叔-待机_0000_1.png
+  artifactKey: Guid(49e20153db18d8a4c81db33335fb93e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-长脸大叔/角色动画-NPC-长脸大叔-待机_0000_1.png using Guid(49e20153db18d8a4c81db33335fb93e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fdf45541687e383993b9484fa051239') in 0.011355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/Atlas/UI/BaseFrame/BaseFrame.png
+  artifactKey: Guid(bb15f3c1166b49e48b6fbf3239febeb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/UI/BaseFrame/BaseFrame.png using Guid(bb15f3c1166b49e48b6fbf3239febeb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59b9ac71ca5dab0d6771ad3309616ca7') in 0.087623 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Scenes/电器街2/麦当劳/麦当劳_0001_门-左-.png
+  artifactKey: Guid(a8a3c64cde30e4642ac93f37bce43586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街2/麦当劳/麦当劳_0001_门-左-.png using Guid(a8a3c64cde30e4642ac93f37bce43586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a233472575dce6880b791e75c2f94812') in 0.014770 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0001_广告牌1.png
+  artifactKey: Guid(89ff31c46d2461048a39cc54887af74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0001_广告牌1.png using Guid(89ff31c46d2461048a39cc54887af74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6886fc9f8664c6b4c223c777309e0adc') in 0.011324 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Scenes/电器街2/居酒屋/居酒屋.png
+  artifactKey: Guid(6b2afc01e584d2b4897e5bc4cb5ee373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街2/居酒屋/居酒屋.png using Guid(6b2afc01e584d2b4897e5bc4cb5ee373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d8da1c748014baa1ffea5a83c497ed2') in 0.013985 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0002_广告牌-广告条1.png
+  artifactKey: Guid(8db8ea0adf4e0794ebed1408f8356ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0002_广告牌-广告条1.png using Guid(8db8ea0adf4e0794ebed1408f8356ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79db598e3c192ec767d095d9b14b3f39') in 0.010564 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Characters/NPC-龍老板/角色动画-龍老板-待机.psd_0003_4.png
+  artifactKey: Guid(7e8317bbc6ec2aa4bb5841e354d294c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-龍老板/角色动画-龍老板-待机.psd_0003_4.png using Guid(7e8317bbc6ec2aa4bb5841e354d294c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a6a2173c7520a713770d4c8ab964924') in 0.011750 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/Atlas/StartHouse/window1.png
+  artifactKey: Guid(d7a603b7e8cb7e942937064d8ad67371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse/window1.png using Guid(d7a603b7e8cb7e942937064d8ad67371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fd5894d0b7326b86c85e4a248959eb6') in 0.012222 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-放菜_0000_IrecorderP艾尔-放菜1.png
+  artifactKey: Guid(f5c03d5164c665c4c98ae253534c1a10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-放菜_0000_IrecorderP艾尔-放菜1.png using Guid(f5c03d5164c665c4c98ae253534c1a10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '515a43ebd55a4396d4711f5587d4173d') in 0.011383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Resources/Atlas/颠倒锤.png
+  artifactKey: Guid(9e13453e533c33c4f9c781ec8631f3c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/颠倒锤.png using Guid(9e13453e533c33c4f9c781ec8631f3c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f41961cdf5aa0c0d914909f4c65c5035') in 0.024047 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Resources/Atlas/图层 6.png
+  artifactKey: Guid(2b8d06c2f2f2e0047abc9cc9bdd4e7cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/图层 6.png using Guid(2b8d06c2f2f2e0047abc9cc9bdd4e7cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63c27c5de5140b7cab8d3f5f6af5b2e5') in 0.013380 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Sprites/Characters/NPC-龍老板/角色动画-NPC-龍老板-移动_0002_3.png
+  artifactKey: Guid(32bf0be9719afca47a9c4551a6b14784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-龍老板/角色动画-NPC-龍老板-移动_0002_3.png using Guid(32bf0be9719afca47a9c4551a6b14784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8368a95422e7e26635da46555a3c46b') in 0.010248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Resources/Atlas/StartHouse 1/window.png
+  artifactKey: Guid(68c9e92c8585ffc4d98ac21796b8a1d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse 1/window.png using Guid(68c9e92c8585ffc4d98ac21796b8a1d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1fc4be76c09a11408d07ee6bd4bd194') in 0.011402 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Characters/上班族/角色动画-上班族-切图_0012_上班族-坐-期待1.png
+  artifactKey: Guid(ae794c69aedfb164c8cb32733b8be344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/上班族/角色动画-上班族-切图_0012_上班族-坐-期待1.png using Guid(ae794c69aedfb164c8cb32733b8be344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5950b36e6878c63797c14423d162a9a5') in 0.011659 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Characters/女仆1/角色动画-女仆1-施法_0013_14.png
+  artifactKey: Guid(2be234a386b641749ab863ed7f8df848) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆1/角色动画-女仆1-施法_0013_14.png using Guid(2be234a386b641749ab863ed7f8df848) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35686a906d281d51c09ae7bcf514f9a2') in 0.012902 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Characters/NPC-龍老板/角色动画-龍老板-待机.psd_0000_1.png
+  artifactKey: Guid(808a114af3f5fd94ca6f128a5c2db178) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-龍老板/角色动画-龍老板-待机.psd_0000_1.png using Guid(808a114af3f5fd94ca6f128a5c2db178) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7767ba54df0869fff5fd5a9e90b3b083') in 0.011625 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.020925 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-送餐_0004_IrecorderP艾尔-走路5.png
+  artifactKey: Guid(2c0cf9cbf2ebb4546bd365da3be83fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-送餐_0004_IrecorderP艾尔-走路5.png using Guid(2c0cf9cbf2ebb4546bd365da3be83fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '925e5f6909d7c2142ea875253550fd84') in 0.011962 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.008799 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0022_IrecorderP-艾尔-施法3.png
+  artifactKey: Guid(78a1072b92a5b62418bc4373e6945668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0022_IrecorderP-艾尔-施法3.png using Guid(78a1072b92a5b62418bc4373e6945668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7bac4d3bae22bac03a51a52b8bc5bea') in 0.012895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0011_IrecorderP-艾尔-鞠躬2.png
+  artifactKey: Guid(ae1edc9f11d6a3e429b637a6a0b83c40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0011_IrecorderP-艾尔-鞠躬2.png using Guid(ae1edc9f11d6a3e429b637a6a0b83c40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '905234f410da8820f344ca924ac231da') in 0.015293 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0015_IrecorderP-艾尔-鞠躬6.png
+  artifactKey: Guid(882ad003de33ad34f946ced868db7b79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0015_IrecorderP-艾尔-鞠躬6.png using Guid(882ad003de33ad34f946ced868db7b79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81e93cf08b6b872d3b5ffa87b686ce8c') in 0.012346 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0020_IrecorderP-艾尔-施法1.png
+  artifactKey: Guid(64bb30c117ba3ad459cd815cf34b4a4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0020_IrecorderP-艾尔-施法1.png using Guid(64bb30c117ba3ad459cd815cf34b4a4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3945534aa8d7bcb7b333577b700ba7ed') in 0.012753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Characters/女仆1/角色动画-女仆1-切图_0015_IrecorderP-艾尔-鞠躬7.png
+  artifactKey: Guid(bd0351fc541e0ab409422e881c205e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆1/角色动画-女仆1-切图_0015_IrecorderP-艾尔-鞠躬7.png using Guid(bd0351fc541e0ab409422e881c205e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '314a77dfdea59bd5a1feaeb0c5f45840') in 0.011168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Sprites/Characters/上班族/角色动画-上班族-待机_0001_2.png
+  artifactKey: Guid(edb8f0dbeac04a544a24574c4e7c3fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/上班族/角色动画-上班族-待机_0001_2.png using Guid(edb8f0dbeac04a544a24574c4e7c3fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '831ffc69a6565d0696f85cd9b86a73ba') in 0.011266 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Sprites/Characters/女主/角色动画-女主-移动_0004_5.png
+  artifactKey: Guid(3c81877e9cb56144284c68b2e8f059b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女主/角色动画-女主-移动_0004_5.png using Guid(3c81877e9cb56144284c68b2e8f059b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfadda3aa3152ed48dd6cbfd1437e37b') in 0.010536 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Characters/上班族/角色动画-上班族-移动_0003_4.png
+  artifactKey: Guid(5821a13c23cde064b84ecbced180658e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/上班族/角色动画-上班族-移动_0003_4.png using Guid(5821a13c23cde064b84ecbced180658e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3dca1b65375cd2a06d8906432b77272') in 0.011645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Characters/NPC-水手服爷爷/角色动画-NPC-水手服爷爷-移动_0002_移动-3.png
+  artifactKey: Guid(ee1b79ae63af073408cc1914b2395f75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-水手服爷爷/角色动画-NPC-水手服爷爷-移动_0002_移动-3.png using Guid(ee1b79ae63af073408cc1914b2395f75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9effcf8a0b06e2f89964915d785b7b5c') in 0.012061 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0011_电影时刻表2.png
+  artifactKey: Guid(87e0e362470a3e94c8f0e0d5c3b4aaff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0011_电影时刻表2.png using Guid(87e0e362470a3e94c8f0e0d5c3b4aaff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '085c217c5d01ed09f41258afc6039071') in 0.012809 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-电影院-放映厅/场景-室内-电影院-放映厅-切图_0000_椅子-1排.png
+  artifactKey: Guid(51ee4c8a38cf9e7408fffcaf63c0615c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-电影院-放映厅/场景-室内-电影院-放映厅-切图_0000_椅子-1排.png using Guid(51ee4c8a38cf9e7408fffcaf63c0615c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56bf16dbe2559c38d7dc76a178a31a66') in 0.011558 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-麦当劳/场景-室内-麦当劳-切图_0003_桌面广告牌-2.png
+  artifactKey: Guid(d7938f8c5df54c644b21899d6cf4a7f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-麦当劳/场景-室内-麦当劳-切图_0003_桌面广告牌-2.png using Guid(d7938f8c5df54c644b21899d6cf4a7f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2873d80cfd25c93042ea2d7ab7cde0d') in 0.012301 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-电影院-放映厅/场景-室内-电影院-放映厅-切图_0006_放映窗-未发光.png
+  artifactKey: Guid(2353fdc69080cd047bd0af60f57d6bb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-电影院-放映厅/场景-室内-电影院-放映厅-切图_0006_放映窗-未发光.png using Guid(2353fdc69080cd047bd0af60f57d6bb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '149ae33682f023d71c12c8724b179706') in 0.012450 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Resources/Atlas/UI/FunctionIcon/FunctionIcon.png
+  artifactKey: Guid(ff8dd7ba8356bd94d9ccc242c6610c07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/UI/FunctionIcon/FunctionIcon.png using Guid(ff8dd7ba8356bd94d9ccc242c6610c07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a5b2189af63392573563bc371ebd1ca') in 0.050859 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Resources/Atlas/StartHouse 1/foundation.png
+  artifactKey: Guid(cd4c11bd54e8732428ac43cd83b5397d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse 1/foundation.png using Guid(cd4c11bd54e8732428ac43cd83b5397d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd66ea2f064487c900cb6746fca8000f0') in 0.012032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/Arts Resources/Character/Alex Pixels.png
+  artifactKey: Guid(47f60d558f156ed469ccc27cf9af2337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Character/Alex Pixels.png using Guid(47f60d558f156ed469ccc27cf9af2337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bdc72ac496058e9bdab676209c1e052') in 0.028187 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/Arts Resources/Character/Alex.png
+  artifactKey: Guid(e9b5cc597859a56459c07750c069036f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Character/Alex.png using Guid(e9b5cc597859a56459c07750c069036f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abf769df24b53eab9011047d0fa9248d') in 0.030239 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Gizmos/Cinemachine/cm_logo_lg.png
+  artifactKey: Guid(5f94c4de61bd2c440aeb5092130d20ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gizmos/Cinemachine/cm_logo_lg.png using Guid(5f94c4de61bd2c440aeb5092130d20ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5223894c2ffda6b66eebef9584653433') in 0.018694 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Resources/Arts Resources/Sprite Animation/attack_side.png
+  artifactKey: Guid(3dd63138876d59041aff48c5d33051bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Sprite Animation/attack_side.png using Guid(3dd63138876d59041aff48c5d33051bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8582cb8a38d4347e1191cb35655da8a') in 0.024639 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Resources/Atlas/StartHouse 1/box.png
+  artifactKey: Guid(7e064391bc080c341aba60e83d706a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse 1/box.png using Guid(7e064391bc080c341aba60e83d706a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e36200d5a040f72b7ac18e235d8f431') in 0.011172 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Resources/Arts Resources/Character/Lillian.png
+  artifactKey: Guid(ff8626e212e1db04da63e39380fe6808) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Character/Lillian.png using Guid(ff8626e212e1db04da63e39380fe6808) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf38362f64fd35935c4305b783cf44b4') in 0.034340 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-麦当劳/场景-室内-麦当劳-切图_0013_操作台.png
+  artifactKey: Guid(bcdcf878f24044442b1cef0ad001382a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-麦当劳/场景-室内-麦当劳-切图_0013_操作台.png using Guid(bcdcf878f24044442b1cef0ad001382a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b23c1bc75cbe71fd041700d1514ae8b') in 0.014162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/UI/功能图标/icon-物品分类-电器.png
+  artifactKey: Guid(047f71bf6d076a74895856a255ecc887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/功能图标/icon-物品分类-电器.png using Guid(047f71bf6d076a74895856a255ecc887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '261af1143285e16c58302f4dedddd995') in 0.010965 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-麦当劳/场景-室内-麦当劳-切图_0007_地板.png
+  artifactKey: Guid(30ac1519d55dad046b1b2b74c90fa8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-麦当劳/场景-室内-麦当劳-切图_0007_地板.png using Guid(30ac1519d55dad046b1b2b74c90fa8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e645370344cc0aa4678745652059233') in 0.011210 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Scenes/电器街2/西餐厅/西餐厅21_0006_门框.png
+  artifactKey: Guid(ce39dc5d8411ab44d850f417d1f66dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/电器街2/西餐厅/西餐厅21_0006_门框.png using Guid(ce39dc5d8411ab44d850f417d1f66dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2be35cab90829d6f503e9e91b85999ef') in 0.012810 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugin/codeandweb.com/Example/Sprites/capguy/turn/0006.png
+  artifactKey: Guid(e0ea78935ca4e4b3daa82eaa7f9b3730) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/codeandweb.com/Example/Sprites/capguy/turn/0006.png using Guid(e0ea78935ca4e4b3daa82eaa7f9b3730) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b84191323b2c45fe4d7dca847f9ff68') in 0.013746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-电影院-放映厅/场景-室内-电影院-放映厅-切图_0002_椅子-3排.png
+  artifactKey: Guid(5ad3e7d381f38554a8dd63f11bd79a73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-电影院-放映厅/场景-室内-电影院-放映厅-切图_0002_椅子-3排.png using Guid(5ad3e7d381f38554a8dd63f11bd79a73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5c7b0929cffce55a22591a711254e11') in 0.010684 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Plugin/DOTween/Editor/Imgs/DOTweenIcon.png
+  artifactKey: Guid(e7742b68cf5db07499f41f0f68a9b5be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/DOTween/Editor/Imgs/DOTweenIcon.png using Guid(e7742b68cf5db07499f41f0f68a9b5be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71bfb4cd106d5341ec119f0aa6ad2206') in 0.012023 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Characters/女仆1/角色动画-女仆1-待机_0003_IrecorderP艾尔-待机4.png
+  artifactKey: Guid(8c595fdd5544eed4188cb843a0a22184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆1/角色动画-女仆1-待机_0003_IrecorderP艾尔-待机4.png using Guid(8c595fdd5544eed4188cb843a0a22184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '137b877e03951994f842b6619413f161') in 0.012069 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Characters/NPC-女仆1/角色动画-NPC-女仆-待机_0001_2.png
+  artifactKey: Guid(39af65fdb41002a41ae40024db9b32d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-女仆1/角色动画-NPC-女仆-待机_0001_2.png using Guid(39af65fdb41002a41ae40024db9b32d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f316c31e54a382bbbaa42037d435f9c') in 0.011452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/Atlas/StartHouse/light.png
+  artifactKey: Guid(6fc76f9d9a8865740a7c6f243748ff73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse/light.png using Guid(6fc76f9d9a8865740a7c6f243748ff73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dbac12c8dbf18979cead0c7bbbe890b') in 0.011467 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Resources/Arts Resources/Character/Lilith.png
+  artifactKey: Guid(70eb52dbd11b88640b27016e515d49f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Character/Lilith.png using Guid(70eb52dbd11b88640b27016e515d49f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6eca2f8931c85e1206fd2c0c1ac79472') in 0.036194 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugin/codeandweb.com/Example/Sprites/capguy/walk/0012.png
+  artifactKey: Guid(35fccf465a3374bd7bdc3093b6da80e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/codeandweb.com/Example/Sprites/capguy/walk/0012.png using Guid(35fccf465a3374bd7bdc3093b6da80e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aff0eb1a0b107b42fae96dbc5127a04a') in 0.015212 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Characters/女主/角色动画-女主-移动_0002_3.png
+  artifactKey: Guid(099d5adbd9625f240961dcd57fed81f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女主/角色动画-女主-移动_0002_3.png using Guid(099d5adbd9625f240961dcd57fed81f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e1db84b4a8033a02914f8bebef36533') in 0.010931 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugin/codeandweb.com/Example/Sprites/capguy/turn/0008.png
+  artifactKey: Guid(92e6e615ac5284cd2ab5ef85bce00360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/codeandweb.com/Example/Sprites/capguy/turn/0008.png using Guid(92e6e615ac5284cd2ab5ef85bce00360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35ebb76236f6e58d52b3c1528cbd9793') in 0.013240 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Resources/Atlas/StartHouse/Bed1.png
+  artifactKey: Guid(7771b353d6c999b4e92101dc7440e2c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse/Bed1.png using Guid(7771b353d6c999b4e92101dc7440e2c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfbd1bb855abee8e3b081753f9ec4a5e') in 0.012239 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Characters/女主/角色动画-女主-待机_0003_4.png
+  artifactKey: Guid(34c1d9999b0d39e48b45abe8314d88f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女主/角色动画-女主-待机_0003_4.png using Guid(34c1d9999b0d39e48b45abe8314d88f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fafdc2163a3a98bc7dd8f93725370085') in 0.010523 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0016_桌子.png
+  artifactKey: Guid(491441252f06a0b45acaefdc9c9abf2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-电影院-大厅/场景-室内-电影院-大厅-切图_0016_桌子.png using Guid(491441252f06a0b45acaefdc9c9abf2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49a0308389167573937d906e76c4b5a4') in 0.012266 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Characters/上班族/角色动画-上班族-切图_0025_上班族-坐-吃2.png
+  artifactKey: Guid(d89fd2b473c43fe4fa61ac38f96201a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/上班族/角色动画-上班族-切图_0025_上班族-坐-吃2.png using Guid(d89fd2b473c43fe4fa61ac38f96201a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d691ca7926b52ff208c4f112d316da3') in 0.012665 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Characters/角色/角色_0002_IrecorderP艾尔-拷贝.png
+  artifactKey: Guid(4ec2a481f0abc834b915873079869d13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/角色/角色_0002_IrecorderP艾尔-拷贝.png using Guid(4ec2a481f0abc834b915873079869d13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '458224c0db19ff9dcd33f5e726b2f6d1') in 0.013245 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/UI/功能图标/icon-移动-未选中.png
+  artifactKey: Guid(2814cfa1a7336264d8bc54a86fe53e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/功能图标/icon-移动-未选中.png using Guid(2814cfa1a7336264d8bc54a86fe53e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2576bce789a0e79153197d01fb26532') in 0.011330 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-电影院-放映厅/场景-室内-电影院-放映厅-切图_0007_放映窗-发光.png
+  artifactKey: Guid(3be6aa48ee6915c4b83c1c15a9dff918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-电影院-放映厅/场景-室内-电影院-放映厅-切图_0007_放映窗-发光.png using Guid(3be6aa48ee6915c4b83c1c15a9dff918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29947bd1973697dcce3ae0e1190a8a09') in 0.011803 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Plugin/Fungus/Resources/Sprites/Image7.png
+  artifactKey: Guid(7206dfab45e70f142b1b984bd6efe976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/Fungus/Resources/Sprites/Image7.png using Guid(7206dfab45e70f142b1b984bd6efe976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bc2c7e1c10c032c7673ab6d03d3a48b') in 0.115658 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Resources/Atlas/StartHouse 1/carpeting02.png
+  artifactKey: Guid(c937f2f5fae53b543aec44c74a89ee58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse 1/carpeting02.png using Guid(c937f2f5fae53b543aec44c74a89ee58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad0c5b3d2419d277c9c84024a2041c04') in 0.014514 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugin/codeandweb.com/Example/Sprites/capguy/turn/0004.png
+  artifactKey: Guid(d68b788b41fd74fc09b1407967cd8c4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/codeandweb.com/Example/Sprites/capguy/turn/0004.png using Guid(d68b788b41fd74fc09b1407967cd8c4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a19c4688a6c011bdd62108ba166bd244') in 0.013117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Characters/NPC-水手服爷爷/角色动画-NPC-水手服爷爷-移动_0001_移动-2.png
+  artifactKey: Guid(5243b8a0e2c7db54aacfc9d4bd187699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/NPC-水手服爷爷/角色动画-NPC-水手服爷爷-移动_0001_移动-2.png using Guid(5243b8a0e2c7db54aacfc9d4bd187699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '507b8165ae0908aa1366a25eee28e7fe') in 0.012634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-麦当劳/场景-室内-麦当劳-切图_0000_灯.png
+  artifactKey: Guid(b6740750623e69145a527c58d2ec9460) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-麦当劳/场景-室内-麦当劳-切图_0000_灯.png using Guid(b6740750623e69145a527c58d2ec9460) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '954d5fcb5cb9445709a2f2e4db7079e6') in 0.010752 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Scenes/场景-室内-麦当劳/场景-室内-麦当劳-切图_0010_门框.png
+  artifactKey: Guid(568c566e7312f8c4ba34c510c3c50400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Scenes/场景-室内-麦当劳/场景-室内-麦当劳-切图_0010_门框.png using Guid(568c566e7312f8c4ba34c510c3c50400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b1e0855d0c3740ba618d3adcb91a7f3') in 0.011419 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Characters/女仆1/角色动画-女仆1-送餐_0001_IrecorderP艾尔-送餐2.png
+  artifactKey: Guid(cdde167d12378b9409087cdc94d93da2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆1/角色动画-女仆1-送餐_0001_IrecorderP艾尔-送餐2.png using Guid(cdde167d12378b9409087cdc94d93da2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60eeebc5e58e1fb3e0a70e9f456bd534') in 0.011793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Characters/角色/角色_0005_时髦的老头-站立.png
+  artifactKey: Guid(551ea09f2e9aca246b9f27812249f9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/角色/角色_0005_时髦的老头-站立.png using Guid(551ea09f2e9aca246b9f27812249f9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95fc16ad4a14bcf73596b0bd080dab10') in 0.012192 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugin/Fungus/Textures/GreyButton.png
+  artifactKey: Guid(9bdedfa4650174106a3115624f193b99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/Fungus/Textures/GreyButton.png using Guid(9bdedfa4650174106a3115624f193b99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df37f913b7fda817f8a879f4d6056d7c') in 0.012409 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/UI/功能图标/_0009_icon-增加-默认.png
+  artifactKey: Guid(9fd0b1e3ee7c7f44d8d69cfb6a45bfe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/功能图标/_0009_icon-增加-默认.png using Guid(9fd0b1e3ee7c7f44d8d69cfb6a45bfe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac0ffd794f5fea78474527dca1f919a2') in 0.011461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0009_IrecorderP艾尔-等待点单3.png
+  artifactKey: Guid(35c2b55e00b36d64ab659a66f94c6039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆2/角色动画-女仆2-切图_0009_IrecorderP艾尔-等待点单3.png using Guid(35c2b55e00b36d64ab659a66f94c6039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3af7c31e506bf160d48692b1cf1bbfc') in 0.010234 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Characters/女仆1/角色动画-女仆1-送餐_0000_IrecorderP艾尔-送餐1.png
+  artifactKey: Guid(657573409064af74fb77b8cba986b331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆1/角色动画-女仆1-送餐_0000_IrecorderP艾尔-送餐1.png using Guid(657573409064af74fb77b8cba986b331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a8a13aad8619d8dea13ade48c9ee915') in 0.013355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugin/Anima2D/Examples/TRex/jungle_1.png
+  artifactKey: Guid(35e9cacc81a6e4740b2de651b2e19532) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/Anima2D/Examples/TRex/jungle_1.png using Guid(35e9cacc81a6e4740b2de651b2e19532) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13fe96065e1aca4b0aed6ac39ab039f0') in 0.058308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Characters/角色/角色_0008_店长-站立.png
+  artifactKey: Guid(55a6a1a345e19ab40854f70708b141bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/角色/角色_0008_店长-站立.png using Guid(55a6a1a345e19ab40854f70708b141bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cee89d8ceeed1e923ddb88da429da118') in 0.013287 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/Atlas/StartHouse/door copy.png
+  artifactKey: Guid(47025208544e43f449f2ff2889ca444f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse/door copy.png using Guid(47025208544e43f449f2ff2889ca444f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42026016e8257a6c986e05fbe3bd46d3') in 0.014129 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Characters/女仆1/角色动画-女仆1-施法_0000_1.png
+  artifactKey: Guid(9cd66554f51bbd046aadc2f29172b711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/女仆1/角色动画-女仆1-施法_0000_1.png using Guid(9cd66554f51bbd046aadc2f29172b711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec06a897361fb82064ff276b80f244b7') in 0.012050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugin/codeandweb.com/Example/Sprites/capguy/turn/0002.png
+  artifactKey: Guid(43597c51dd50b4747b8285c33ea57329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/codeandweb.com/Example/Sprites/capguy/turn/0002.png using Guid(43597c51dd50b4747b8285c33ea57329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8d7189375996da11057e01e33ecc785') in 0.016894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.109201 seconds.
+  path: Assets/Resources/Atlas/StartHouse/compartment copy.png
+  artifactKey: Guid(f307def7d5cf2d0458176bdc022202e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Atlas/StartHouse/compartment copy.png using Guid(f307def7d5cf2d0458176bdc022202e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '092a9bc44b2787cf19445b9b4329f624') in 0.015620 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugin/Fungus/Textures/CreatedWith.psd
+  artifactKey: Guid(7adcbbe62d6554d81affcab2c56ad5ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugin/Fungus/Textures/CreatedWith.psd using Guid(7adcbbe62d6554d81affcab2c56ad5ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b2d212f229dca144ba9161dceae63f8') in 0.038806 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.076583 seconds.
+  path: Assets/Sprites/UI/功能图标/icon-删除-选中.png
+  artifactKey: Guid(ee5d9d20c15d569439a986d0b18da398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/功能图标/icon-删除-选中.png using Guid(ee5d9d20c15d569439a986d0b18da398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bc2cfee7fd99bd97d8484ea58961a36') in 0.023008 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006568 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.08 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  1.107 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1107ms)
+		BeginReloadAssembly (87ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (970ms)
+			LoadAssemblies (41ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (115ms)
+				TypeCache.Initialize (109ms)
+					TypeCache.ScanAssembly (106ms)
+				ResolveRequiredComponents (6ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (39ms)
+			SetupLoadedEditorAssemblies (743ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (9ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (40ms)
+				ProcessInitializeOnLoadAttributes (646ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3558 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (33.7 KB). Loaded Objects now: 4218.
+Memory consumption went from 0.54 GB to 0.54 GB.
+Total: 3.825400 ms (FindLiveObjects: 0.167400 ms CreateObjectMapping: 0.045700 ms MarkObjects: 3.585400 ms  DeleteObjects: 0.025500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
