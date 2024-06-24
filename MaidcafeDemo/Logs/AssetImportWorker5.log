@@ -15,7 +15,7 @@ E:/GitHub仓库/Cat/MaidcafeDemo
 -logFile
 Logs/AssetImportWorker5.log
 -srvPort
-8348
+1491
 Successfully changed project path to: E:/GitHub仓库/Cat/MaidcafeDemo
 E:/GitHub仓库/Cat/MaidcafeDemo
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ E:/GitHub仓库/Cat/MaidcafeDemo
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 47.24 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 54.13 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.1.23f1c1 (46637c7592ee)
 [Subsystems] Discovering subsystems at path D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/Resources/UnitySubsystems
@@ -63,97 +63,97 @@ Initialize mono
 Mono path[0] = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56852
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56716
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001214 seconds.
+Registered in 0.001888 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 41.57 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 47.00 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.328 seconds
+- Completed reload, in  0.380 seconds
 Domain Reload Profiling:
-	ReloadAssembly (329ms)
-		BeginReloadAssembly (36ms)
+	ReloadAssembly (380ms)
+		BeginReloadAssembly (41ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (239ms)
-			LoadAssemblies (35ms)
+		EndReloadAssembly (277ms)
+			LoadAssemblies (40ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (56ms)
-				TypeCache.Initialize (56ms)
-					TypeCache.ScanAssembly (55ms)
+			SetupTypeCache (65ms)
+				TypeCache.Initialize (65ms)
+					TypeCache.ScanAssembly (64ms)
 				ResolveRequiredComponents (0ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (14ms)
-			SetupLoadedEditorAssemblies (140ms)
+			RebuildScriptCaches (16ms)
+			SetupLoadedEditorAssemblies (163ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (4ms)
-				RefreshPlugins (42ms)
+				RefreshPlugins (47ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (68ms)
-				ProcessInitializeOnLoadMethodAttributes (22ms)
+				ProcessInitializeOnLoadAttributes (80ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004383 seconds.
+Registered in 0.007269 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 41.03 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 46.56 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  1.090 seconds
+- Completed reload, in  1.240 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1091ms)
-		BeginReloadAssembly (58ms)
+	ReloadAssembly (1240ms)
+		BeginReloadAssembly (66ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (10ms)
-		EndReloadAssembly (968ms)
-			LoadAssemblies (41ms)
+			CreateAndSetChildDomain (12ms)
+		EndReloadAssembly (1104ms)
+			LoadAssemblies (47ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (115ms)
-				TypeCache.Initialize (108ms)
-					TypeCache.ScanAssembly (106ms)
-				ResolveRequiredComponents (6ms)
+			SetupTypeCache (133ms)
+				TypeCache.Initialize (126ms)
+					TypeCache.ScanAssembly (124ms)
+				ResolveRequiredComponents (7ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (36ms)
-			SetupLoadedEditorAssemblies (745ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (843ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (2ms)
 				SetLoadedEditorAssemblies (4ms)
-				RefreshPlugins (41ms)
-				BeforeProcessingInitializeOnLoad (37ms)
-				ProcessInitializeOnLoadAttributes (624ms)
-				ProcessInitializeOnLoadMethodAttributes (34ms)
+				RefreshPlugins (47ms)
+				BeforeProcessingInitializeOnLoad (41ms)
+				ProcessInitializeOnLoadAttributes (706ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (3ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3578 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 59 unused Assets / (59.9 KB). Loaded Objects now: 4024.
 Memory consumption went from 0.54 GB to 0.54 GB.
-Total: 3.709400 ms (FindLiveObjects: 0.154100 ms CreateObjectMapping: 0.046000 ms MarkObjects: 3.447400 ms  DeleteObjects: 0.061100 ms)
+Total: 3.956200 ms (FindLiveObjects: 0.164100 ms CreateObjectMapping: 0.047200 ms MarkObjects: 3.658900 ms  DeleteObjects: 0.084900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -168,16 +168,40 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 306293.436880 seconds.
-  path: Assets/Sprites/UI/UI效果图/DIY/UI-经营-DIY-调整尺寸3.png
-  artifactKey: Guid(ca89c865941761e4380114bd4d9af4e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/UI/UI效果图/DIY/UI-经营-DIY-调整尺寸3.png using Guid(ca89c865941761e4380114bd4d9af4e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c413faf43820e387d178e151d43d78b9') in 0.097201 seconds 
+  Time since last request: 5516.472863 seconds.
+  path: Assets/Resources/Arts Resources/Bg Build/BG02.png
+  artifactKey: Guid(6f4ad07bbf4b42947855ea2fa76683db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Bg Build/BG02.png using Guid(6f4ad07bbf4b42947855ea2fa76683db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a0805e4f96c812493225ed48dedd418') in 0.084838 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.814209 seconds.
-  path: Assets/Sprites/UI/头像/Waiter4.png
-  artifactKey: Guid(39170f24f3142c4488168e3fb6842159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/UI/头像/Waiter4.png using Guid(39170f24f3142c4488168e3fb6842159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b96abe47d9d1f7786571b592d350e41') in 0.013603 seconds 
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/Arts Resources/Bg Build/BG04.png
+  artifactKey: Guid(e622c122ef148984ab2e44be44cf7d85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Bg Build/BG04.png using Guid(e622c122ef148984ab2e44be44cf7d85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0d63b80f39e49557592233d6ffca3ce') in 0.016147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/Arts Resources/Bg Build/BG12.png
+  artifactKey: Guid(9bdff9a54a0a9c2469edd40bd93aca58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Bg Build/BG12.png using Guid(9bdff9a54a0a9c2469edd40bd93aca58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f6618952c3636770cfa03407427fd8f') in 0.015422 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Resources/Arts Resources/Bg Build/BG06.png
+  artifactKey: Guid(40e32a0810d7f7a4eb0f3a668a622d00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Bg Build/BG06.png using Guid(40e32a0810d7f7a4eb0f3a668a622d00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e01779a8015c0a96342da9908f764f0') in 0.014853 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Resources/Arts Resources/Bg Build/BG08.png
+  artifactKey: Guid(2b2ab5deed294ad45be46b15ebe63fae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Bg Build/BG08.png using Guid(2b2ab5deed294ad45be46b15ebe63fae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '973f8ab1847ac282a586e4b157fdd89b') in 0.020327 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Arts Resources/Bg Build/BG11.png
+  artifactKey: Guid(ee8d1414774c5d245a56859bb56b54b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Arts Resources/Bg Build/BG11.png using Guid(ee8d1414774c5d245a56859bb56b54b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24b911079b65cabe708a01ac53eb4f72') in 0.019455 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

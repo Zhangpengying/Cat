@@ -15,6 +15,7 @@ TagManager:
   - Event
   - DIYController
   - DIYRange
+  - Favna
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - NPC
   - 
   - 
   - 
@@ -63,4 +64,7 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 726225721
+    locked: 0
+  - name: BGmap
+    uniqueID: 1291556727
     locked: 0
