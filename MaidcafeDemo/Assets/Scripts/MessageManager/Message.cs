@@ -169,6 +169,11 @@ public class MyMessageType
     public static int Event_TouchNPC_LaErFu = 610;
     public static int Event_LeaveNPC_LaErFu = 611;
 
+    public static int Event_TouchMovePoint = 612;
+    public static int Event_LeaveMovePoint = 613;
+
+
+
     public static int Event_AddHP = 700;
     public static int Event_Monster = 701;
 

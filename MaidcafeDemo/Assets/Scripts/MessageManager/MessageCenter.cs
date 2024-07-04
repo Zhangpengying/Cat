@@ -18,9 +18,13 @@ public class MessageCenter
     }
     public static void SendMessage(Message msg)
     {
-        foreach (var item in Managers)
+        if (Managers.Count!=0)
         {
-            item.ReciveMessage(msg);
+            foreach (var item in Managers)
+            {
+                item.ReciveMessage(msg);
+            }
         }
+        
     }
 }

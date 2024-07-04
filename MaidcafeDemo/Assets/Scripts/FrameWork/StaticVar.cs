@@ -252,7 +252,14 @@ public static class StaticVar
     public static void MessageSendToFungus(string blockname, Player player)
     {
         player.IsLockPlayer = true;
-        player._ani.SetBool("IsWalk", false);
+        //player._ani.SetBool("IsWalk", false);
+        player._ani.SetBool("RightIdleToWalk", false);
+        player._ani.SetBool("RightIdleToAtt", false);
+        player._ani.SetBool("BackIdleToWalk", false);
+        player._ani.SetBool("BackIdleToAtt", false);
+        player._ani.SetBool("FrontIdleToWalk", false);
+        player._ani.SetBool("FrontIdleToAtt", false);
+
         Flowchart[] aa = UnityEngine.Object.FindObjectsOfType<Flowchart>();
         foreach (var item in aa)
         {

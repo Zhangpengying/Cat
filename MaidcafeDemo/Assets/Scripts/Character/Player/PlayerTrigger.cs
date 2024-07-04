@@ -123,6 +123,8 @@ public class PlayerTrigger : MonoBase{
             else if (collision.transform.parent.name == "出口")
             {
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                Debug.Log("出口啤出发");
+
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchGateWay1, player);
             }
             
@@ -177,6 +179,16 @@ public class PlayerTrigger : MonoBase{
             {
                 StaticVar.InteractiveProp = collision.transform.parent.gameObject;
                 SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC_LaErFu, player);
+            }
+            else if (collision.transform.parent.name == "拉尔夫")
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchNPC_LaErFu, player);
+            }
+            else if (collision.transform.parent.name.Contains("传送门"))
+            {
+                StaticVar.InteractiveProp = collision.transform.parent.gameObject;
+                SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_TouchMovePoint, player);
             }
             #endregion
 
@@ -306,6 +318,11 @@ public class PlayerTrigger : MonoBase{
         else if (collision.transform.parent.name == "拉尔夫")
         {
             SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveNPC_LaErFu, player);
+            StaticVar.InteractiveProp = null;
+        }
+        else if (collision.transform.parent.name.Contains("传送门") )
+        {
+            SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_LeaveMovePoint, player);
             StaticVar.InteractiveProp = null;
         }
         #endregion

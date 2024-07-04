@@ -13,7 +13,7 @@ public class Event_GateWay : MonoBase
     public Player player;
     private Action tempAct;
     //事件ID
-    public int ID_GateWay = 400;
+    public int ID_GateWay = 550;
     //该事件执行次数
     public int DoNum_GateWay = 0;
 
