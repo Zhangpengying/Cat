@@ -1,0 +1,137 @@
+﻿
+using UnityEngine;
+using System.Collections;
+
+//	diy物品类型
+public enum BuildingTypes {
+	Barrack = 0,	//	兵营
+	Flag,	//	旗帜
+	Factory,	//	工厂
+	Keng,	//	矿坑
+	Wood,	//	伐木场
+}
+
+//	diy物品的状态
+public enum BuildingStates {
+	Normal = 0,	//	正常状态
+	Build,	//	创建状态（跟随鼠标）
+}
+
+public class Building : MonoBehaviour
+{
+    public int propertyID; //物品的ID
+    public int w;    //	物品的宽度
+    public int l;   //	物品的高度
+    public BuildingStates state;    //	当前状态
+    public BuildingTypes type;  //	物品类型
+    public  BuildingController bc; //diy控制器
+    public Transform targetDiyPoint; //物品在diy区域的投影位置
+
+    public Vector3 buildposition; //物品跟随鼠标所在的位置
+
+    void Awake()
+    {
+        //bc = GameObject.FindWithTag("DIYController").GetComponent<BuildingController>();
+    }
+
+   
+
+    //	建筑物的状态机
+    private void FSM()
+    {
+        //	判断当前状态
+        switch (state)
+        {
+            case BuildingStates.Normal:
+                //	正常状态下
+                //Normal();
+                break;
+            case BuildingStates.Build:
+                //创建状态下
+                //Build();
+                break;
+        }
+    }
+
+    //	正常状态下
+    private void Normal()
+    {
+
+    }
+
+    //	创建状态下
+    private void Build()
+    {
+        ////点击左键创建物品定位
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    //判定点击区域
+        //    Collider2D[] col = Physics2D.OverlapPointAll(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+        //    if (col.Length > 0)
+        //    {
+        //        foreach (Collider2D c in col)
+        //        {
+        //            if (c.transform.tag == "DIYRange")
+        //            {
+        //                if (bc.normalizState[targetDiyPoint])
+        //                {
+        //                    //给diy物品位置赋值
+        //                    transform.position = targetDiyPoint.position;
+        //                    state = BuildingStates.Normal;
+        //                    //修改该基准格属性
+        //                    bc.normalizState[targetDiyPoint] = false;
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+        ////	按下鼠标右键取消创建
+        //else if (Input.GetMouseButtonDown(1))
+        //{
+        //    Destroy(gameObject);
+        //    MessageSend.instance.CreatPropertys.Remove(this);
+        //}
+        ////未按下鼠标则创建物跟随鼠标
+        //else
+        //{
+        //    float width = 1.80f;
+        //    float height = 2.24f;
+        //    Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    transform.position = new Vector3(target.x + width / 2 * (w - 1), target.y - height / 2 * (l - 1), 0);
+        //}
+    }
+
+
+
+
+    //修改物品跟随鼠标时的位置
+    //public Vector3 EnsurePivot(Vector3 mouse)
+    //{
+    //    float width = 1.80f;
+    //    float height = 2.24f;
+    //    buildposition = new Vector3(mouse.x + width / 2 * (w - 1), mouse.y - height / 2 * (l - 1), 0);
+    //    if (w == 1 )
+    //    {
+    //        //占一个基准格
+    //        if (l == 1)
+    //        {
+    //            buildposition = new Vector3(mouse.x, mouse.y, 0);
+    //        }
+    //        //占上下两格
+    //        else if (l == 2)
+    //        {
+    //            buildposition = new Vector3(mouse.x - w / 2 * 1, mouse.y , 0);
+    //        }
+    //    }
+    //    if (l == 1)
+    //    {
+    //        //占左右两格
+    //        if (w == 2)
+    //        {
+
+    //        }
+    //    }
+    //    return buildposition;
+    //}
+}

@@ -1,0 +1,1057 @@
+﻿
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+
+public class BuildingController : MonoBehaviour {
+
+    //基准格及其状态
+    public Dictionary<Transform, bool> normalizState = new Dictionary<Transform, bool>();
+    //基准格ID
+    public Dictionary<Transform, Vector2> normalizID = new Dictionary<Transform, Vector2>();
+    //基准格ID对应状态
+    public Dictionary<Vector2, bool> IDToState = new Dictionary<Vector2, bool>();
+    //背包
+    public List<Transform> bagPropertys = new List<Transform>();
+    //基准格的宽度
+    public float width;
+    //基准格的高度
+    public float height;
+    //创建后选择状态下物品覆盖的格子数组
+    public ArrayList currentBuildID = new ArrayList();
+    //撤销键按下后当前选中的物品
+    public Building deleteBuild;
+    //级别一默认选择
+    public Transform firstDefault;
+    //级别二默认选择
+    public Transform secondDefault;
+    //撤销的默认选择
+    public Transform cancelDefault;
+    //撤销键是否按下
+    public bool clickCancel = false;
+    //默认基准格位置坐标
+    public Vector3 defaultCreatPosition;
+    void Start ()
+    {
+        //基准格宽高赋值
+        width = 2.29f;
+        height =1.85f;
+        defaultCreatPosition = new Vector3(-10.39f, 3.78f, 0);
+        LoadDIYData();
+    }
+    private void Update()
+    {
+        if (StaticVar.CurrentMenu!= null)
+        {
+            if (StaticVar.CurrentMenu.parent == firstDefault.parent )
+            {
+                //控制DIY删除
+                if (clickCancel)
+                {
+                    DIYDeleteController();
+                }
+                //控制背包选择
+                else
+                {
+                    MenuController();
+                }
+            }
+        }
+        //控制DIY
+        else if(StaticVar.CurrentMenu == null)
+        {
+            DIYController();
+        }
+        
+    }
+
+
+    //背包区域选项控制
+    public void MenuController()
+    {
+        //左右选择调整
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            //判定当前选择是否是取消按钮
+            if (StaticVar.CurrentMenu != firstDefault)
+            {
+                int n = bagPropertys.IndexOf(StaticVar.CurrentMenu);
+                StaticVar.CurrentMenu = bagPropertys[n - 1];
+            }
+
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            //判定当前选择按钮是否是背包最后一个
+            if (StaticVar.CurrentMenu != bagPropertys[bagPropertys.Count - 1])
+            {
+                int n = bagPropertys.IndexOf(StaticVar.CurrentMenu);
+                StaticVar.CurrentMenu = bagPropertys[n + 1];
+            }
+
+        }
+        //确认选中
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            //判定当前选中按钮是否是取消键
+            //选中取消键
+            if (StaticVar.CurrentMenu == bagPropertys[0])
+            {
+                ClickCancel();
+            }
+            //选中物品
+            else
+            {
+                //创建DIY物品
+                GameObject property = Instantiate(Resources.Load("Prefabs/Items/" + StaticVar.CurrentMenu.GetComponent<DIYBagContro>().property.PropertyName) as GameObject);
+                property.name = StaticVar.CurrentMenu.GetComponent<DIYBagContro>().property.PropertyName;
+                property.GetComponent<SpriteRenderer>().sortingOrder = StaticVar.CurrentMenu.GetComponent<DIYBagContro>().property.OrderLayer;
+                property.transform.SetParent(GameObject.Find("DIYCreatPropertys").transform);
+                Building b = property.GetComponent<Building>();
+                b.bc = transform.GetComponent<BuildingController>();
+                b.propertyID = StaticVar.CurrentMenu.GetComponent<DIYBagContro>().property.ID; 
+                b.state = BuildingStates.Build;
+                MessageSend.instance.CreatPropertys.Add(b);
+                BuildingController bc = gameObject.GetComponent<BuildingController>();
+                Transform _defaultPosition = secondDefault;
+                //修正临时图片位置在默认基准格
+                property.transform.position = new Vector3((defaultCreatPosition.x + width * (b.w - 1) / 2), (defaultCreatPosition.y - height * (b.l - 1) / 2), 0);
+
+                //当前物品覆盖基准格
+                Vector2 temp = bc.normalizID[_defaultPosition];
+
+                for (int i = 0; i < b.l; i++)
+                {
+                    for (int j = 0; j < b.w; j++)
+                    {
+                        bc.currentBuildID.Add(new Vector2(temp.x + i, temp.y + j));
+
+                    }
+                }
+                //背包删除该物品
+                MessageSend.instance.CurrentHavePropertys.Remove(StaticVar.CurrentMenu.GetComponent<DIYBagContro>().property);
+                //整理背包
+                NeatenBag();
+                //当前选项置空
+                StaticVar.CurrentMenu = null;
+            }
+        }
+        //返回
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+
+            StaticVar.EndInteraction();
+            WindowManager.instance.Close<DIYWnd>();
+        }
+    }
+    //DIY区域选择控制
+    public void DIYController()
+    {
+        //当前有创建物品可以被控制
+        if (currentBuildID.Count!=0)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                //判断物体是否在在DIY上边缘
+                bool top = false;
+                for (int i = 0; i < currentBuildID.Count; i++)
+                {
+                    Vector2 tempID = (Vector2)currentBuildID[i];
+                    if (tempID.x ==1)
+                    {
+                        top = true;
+                    }
+                }
+
+                //判定是否在一楼顶部
+                bool floorTop = false;
+                for (int i = 0; i < currentBuildID.Count; i++)
+                {
+                    Vector2 tempID = (Vector2)currentBuildID[i];
+                    if (tempID.x == 4)
+                    {
+                        floorTop = true;
+                    }
+                }
+                if (!top)
+                {
+                    if (floorTop)
+                    {
+                        Building currentBuild = new Building();
+                        //修改物品所在实际位置
+                        foreach (var item in MessageSend.instance.CreatPropertys)
+                        {
+                            if (item.state == BuildingStates.Build)
+                            {
+                                item.transform.position += new Vector3(0, height * (1 + item.l), 0);
+                                currentBuild = item;
+                            }
+                        }
+                        //修改物品当前覆盖区域
+                        for (int i = 0; i < currentBuildID.Count; i++)
+                        {
+                            Vector2 tempID = (Vector2)currentBuildID[i];
+                            tempID.x -= (1 + currentBuild.l);
+                            currentBuildID[i] = tempID;
+                        }
+                       
+                    }
+                    else
+                    {
+                        //修改物品当前覆盖区域
+                        for (int i = 0; i < currentBuildID.Count; i++)
+                        {
+                            Vector2 tempID = (Vector2)currentBuildID[i];
+                            tempID.x -= 1;
+                            currentBuildID[i] = tempID;
+                        }
+                        //修改物品所在实际位置
+                        foreach (var item in MessageSend.instance.CreatPropertys)
+                        {
+                            if (item.state == BuildingStates.Build)
+                            {
+                                item.transform.position += new Vector3(0, height, 0);
+                            }
+                        }
+                    }
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                //判断物体是否在在DIY上边缘
+                bool left = false;
+                for (int i = 0; i < currentBuildID.Count; i++)
+                {
+                    Vector2 tempID = (Vector2)currentBuildID[i];
+                    if (tempID.y == 1)
+                    {
+                        left = true;
+                    }
+                }
+                if (!left)
+                {
+                    //修改物品当前覆盖区域
+                    for (int i = 0; i < currentBuildID.Count; i++)
+                    {
+                        Vector2 tempID = (Vector2)currentBuildID[i];
+                        tempID.y -= 1;
+                        currentBuildID[i] = tempID;
+                        
+                    }
+                    //修改物品所在实际位置
+                    foreach (var item in MessageSend.instance.CreatPropertys)
+                    {
+                        if (item.state == BuildingStates.Build)
+                        {
+                            item.transform.position -= new Vector3(width, 0, 0);
+                        }
+                    }
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                //判断物体是否在在DIY下边缘
+                bool bottom = false;
+                for (int i = 0; i < currentBuildID.Count; i++)
+                {
+                    Vector2 tempID = (Vector2)currentBuildID[i];
+                    if (tempID.x == 5)
+                    {
+                        bottom = true;
+                    }
+                }
+                //判断物体是否在二楼下边缘
+                bool floorBottom = false;
+                for (int i = 0; i < currentBuildID.Count; i++)
+                {
+                    Vector2 tempID = (Vector2)currentBuildID[i];
+                    if (tempID.x == 2)
+                    {
+                        floorBottom = true;
+                    }
+                }
+                if (!bottom)
+                {
+                    if (floorBottom)
+                    {
+                        //修改物品所在实际位置
+                        Building currentBuild = new Building();
+                        foreach (var item in MessageSend.instance.CreatPropertys)
+                        {
+                            if (item.state == BuildingStates.Build)
+                            {
+                                item.transform.position -= new Vector3(0, height * (1+item.l), 0);
+                                currentBuild = item;
+                            }
+                        }
+                        //修改物品当前覆盖区域
+                        for (int i = 0; i < currentBuildID.Count; i++)
+                        {
+                            Vector2 tempID = (Vector2)currentBuildID[i];
+                            tempID.x += (1+currentBuild.l);
+                            currentBuildID[i] = tempID;
+
+                        }
+                       
+                    }
+                    else
+                    {
+                        //修改物品当前覆盖区域
+                        for (int i = 0; i < currentBuildID.Count; i++)
+                        {
+                            Vector2 tempID = (Vector2)currentBuildID[i];
+                            tempID.x += 1;
+                            currentBuildID[i] = tempID;
+
+                        }
+                        //修改物品所在实际位置
+                        foreach (var item in MessageSend.instance.CreatPropertys)
+                        {
+                            if (item.state == BuildingStates.Build)
+                            {
+                                item.transform.position -= new Vector3(0, height, 0);
+                            }
+                        }
+                    }
+                  
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                //判断物体是否在在DIY上边缘
+                bool right = false;
+                for (int i = 0; i < currentBuildID.Count; i++)
+                {
+                    Vector2 tempID = (Vector2)currentBuildID[i];
+                    if (tempID.y == transform.Find("DIYRange/Viewport/Content").GetComponent<GridLayoutGroup>().constraintCount)
+                    {
+                        right = true;
+                    }
+                }
+                if (!right)
+                {
+                    //修改物品当前覆盖区域
+                    for (int i = 0; i < currentBuildID.Count; i++)
+                    {
+                        Vector2 tempID = (Vector2)currentBuildID[i];
+                        tempID.y += 1;
+                        currentBuildID[i] = tempID;
+
+                    }
+                    //修改物品所在实际位置
+                    foreach (var item in MessageSend.instance.CreatPropertys)
+                    {
+                        if (item.state == BuildingStates.Build)
+                        {
+                            item.transform.position += new Vector3(width, 0, 0);
+                        }
+                    }
+                }
+            }
+            //Z键放置
+            else if (Input.GetKeyDown(KeyCode.Z))
+            {
+                //定位（把物品放置在该位置）
+                CheckState();
+                
+            }
+            //X键取消放置
+            else if (Input.GetKeyDown(KeyCode.X))
+            {
+
+                StaticVar.CurrentMenu = firstDefault;
+                Building cancelBuild = new Building();
+                //添加进背包
+                foreach (var item in MessageSend.instance.CreatPropertys)
+                {
+                    if (item.state == BuildingStates.Build)
+                    {
+                        cancelBuild = item;
+                    }
+                }
+                if (cancelBuild!= null)
+                {
+                    MessageSend.instance.CurrentHavePropertys.Insert(0, MessageSend.instance.propertyCfgs[cancelBuild.propertyID]);
+                    //删除该物体
+                    MessageSend.instance.CreatPropertys.Remove(cancelBuild);
+                    Destroy(cancelBuild.gameObject);
+                }
+                
+                //修改这几个基准格的颜色
+                foreach (var item in normalizID)
+                {
+                    if (currentBuildID.Contains(item.Value))
+                    {
+                        item.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+                        
+                    }
+                }
+                currentBuildID.Clear();
+                //整理背包
+                NeatenBag();
+            }
+        }
+    }
+    //DIY区域删除控制
+    public void DIYDeleteController() 
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            //当前选中物品
+            List<Building> directionBuild = new List<Building>();
+            foreach (var item in MessageSend.instance.CreatPropertys)
+            {
+
+                if ((item.transform.position - deleteBuild.transform.position).normalized == Vector3.left)
+                {
+                    directionBuild.Add(item);
+                }
+            }
+            //挑选一个备用的下一个选中物品
+            Building nextPro = new Building();
+            //规定方向上有可选择物品
+            if (directionBuild.Count != 0)
+            {
+                nextPro = directionBuild[0];
+                foreach (var item in directionBuild)
+                {
+                    if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) < Vector3.Distance(nextPro.transform.position, deleteBuild.transform.position))
+                    {
+                        if (Vector3.Distance(item.transform.position, deleteBuild.transform.position)>0.5f)
+                        {
+                            nextPro = item;
+                        }
+                        
+                    }
+                }
+            }
+
+            //规定方向上没有可选择物品
+            else
+            {
+                //找寻当前删除物品左侧最靠近的物品
+                foreach (var item in MessageSend.instance.CreatPropertys)
+                {
+                    if (item.transform.position.x - deleteBuild.transform.position.x < 0)
+                    {
+                        if (nextPro == null)
+                        {
+                            nextPro = item;
+                        }
+                        else
+                        {
+                            if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) < Vector3.Distance(nextPro.transform.position, deleteBuild.transform.position))
+                            {
+                                if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) > 0.5f)
+                                {
+                                    nextPro = item;
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+            if (nextPro != null)
+            {
+                deleteBuild = nextPro;
+            }
+            //最边缘，切换到相反边缘的物体
+            else
+            {
+                for (int i = 0; i < MessageSend.instance.CreatPropertys.Count; i++)
+                {
+                    if (nextPro == null)
+                    {
+                        nextPro = MessageSend.instance.CreatPropertys[i];
+                    }
+                    else
+                    {
+                        if (MessageSend.instance.CreatPropertys[i].transform.position.x > nextPro.transform.position.x)
+                        {
+                            nextPro = MessageSend.instance.CreatPropertys[i];
+                        }
+                    }
+                }
+                deleteBuild = nextPro;
+            }
+
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            //当前选中物品
+            List<Building> directionBuild = new List<Building>();
+            foreach (var item in MessageSend.instance.CreatPropertys)
+            {
+
+                if ((item.transform.position - deleteBuild.transform.position).normalized == Vector3.right)
+                {
+                    directionBuild.Add(item);
+                }
+            }
+
+            //挑选一个备用的下一个选中物品
+            Building nextPro = new Building();
+            //规定方向上有可选择物品
+            if (directionBuild.Count != 0)
+            {
+                nextPro = directionBuild[0];
+                foreach (var item in directionBuild)
+                {
+                    if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) < Vector3.Distance(nextPro.transform.position, deleteBuild.transform.position))
+                    {
+                        if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) > 0.5f)
+                        {
+                            nextPro = item;
+                        }
+                    }
+                }
+            }
+            //规定方向上没有可选择物品
+            else
+            {
+
+                //找寻当前删除物品左侧最靠近的物品
+                foreach (var item in MessageSend.instance.CreatPropertys)
+                {
+                    if (item.transform.position.x - deleteBuild.transform.position.x > 0)
+                    {
+                        if (nextPro == null)
+                        {
+                            nextPro = item;
+                        }
+                        else
+                        {
+                            if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) < Vector3.Distance(nextPro.transform.position, deleteBuild.transform.position))
+                            {
+                                if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) > 0.5f)
+                                {
+                                    nextPro = item;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+            if (nextPro != null)
+            {
+                deleteBuild = nextPro;
+            }
+            //最边缘，切换到相反边缘的物体
+            else
+            {
+                for (int i = 0; i < MessageSend.instance.CreatPropertys.Count; i++)
+                {
+                    if (nextPro == null)
+                    {
+                        nextPro = MessageSend.instance.CreatPropertys[i];
+                    }
+                    else
+                    {
+                        if (MessageSend.instance.CreatPropertys[i].transform.position.x < nextPro.transform.position.x)
+                        {
+                            nextPro = MessageSend.instance.CreatPropertys[i];
+                        }
+                    }
+                }
+                deleteBuild = nextPro;
+            }
+
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            //当前选中物品
+            List<Building> directionBuild = new List<Building>();
+            foreach (var item in MessageSend.instance.CreatPropertys)
+            {
+                if ((item.transform.position - deleteBuild.transform.position).normalized == Vector3.up)
+                {
+                    directionBuild.Add(item);
+                }
+            }
+            //下一个选中物品
+            Building nextPro = new Building();
+            //规定方向上有可选择物品
+            if (directionBuild.Count != 0)
+            {
+                nextPro = directionBuild[0];
+                foreach (var item in directionBuild)
+                {
+                    if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) < Vector3.Distance(nextPro.transform.position, deleteBuild.transform.position))
+                    {
+                        if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) > 0.5f)
+                        {
+                            nextPro = item;
+                        }
+                    }
+                }
+            }
+            //规定方向上没有可选择物品
+            else
+            {
+
+                //找寻当前删除物品左侧最靠近的物品
+                foreach (var item in MessageSend.instance.CreatPropertys)
+                {
+                    if (item.transform.position.y - deleteBuild.transform.position.y > 0)
+                    {
+                        if (nextPro == null)
+                        {
+                            nextPro = item;
+                        }
+                        else
+                        {
+                            if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) < Vector3.Distance(nextPro.transform.position, deleteBuild.transform.position))
+                            {
+                                if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) > 0.5f)
+                                {
+                                    nextPro = item;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+            if (nextPro != null)
+            {
+                deleteBuild = nextPro;
+            }
+            //最边缘，切换到相反边缘的物体
+            else
+            {
+                for (int i = 0; i < MessageSend.instance.CreatPropertys.Count; i++)
+                {
+                    if (nextPro == null)
+                    {
+                        nextPro = MessageSend.instance.CreatPropertys[i];
+                    }
+                    else
+                    {
+                        if (MessageSend.instance.CreatPropertys[i].transform.position.y < nextPro.transform.position.y)
+                        {
+                            nextPro = MessageSend.instance.CreatPropertys[i];
+                        }
+                    }
+                }
+                deleteBuild = nextPro;
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            //当前选中物品
+            List<Building> directionBuild = new List<Building>();
+            foreach (var item in MessageSend.instance.CreatPropertys)
+            {
+                if ((item.transform.position - deleteBuild.transform.position).normalized == Vector3.down)
+                {
+                    directionBuild.Add(item);
+                }
+            }
+            //下一个选中物品
+            Building nextPro = new Building();
+            //规定方向上有可选择物品
+            if (directionBuild.Count != 0)
+            {
+                nextPro = directionBuild[0];
+                foreach (var item in directionBuild)
+                {
+                    if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) < Vector3.Distance(nextPro.transform.position, deleteBuild.transform.position))
+                    {
+                        if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) > 0.5f)
+                        {
+                            nextPro = item;
+                        }
+                    }
+                }
+            }
+            //规定方向上没有可选择物品
+            else
+            {
+
+                //找寻当前删除物品左侧最靠近的物品
+                foreach (var item in MessageSend.instance.CreatPropertys)
+                {
+                    if (item.transform.position.y - deleteBuild.transform.position.y < 0)
+                    {
+                        if (nextPro == null)
+                        {
+                            nextPro = item;
+                        }
+                        else
+                        {
+                            if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) < Vector3.Distance(nextPro.transform.position, deleteBuild.transform.position))
+                            {
+                                if (Vector3.Distance(item.transform.position, deleteBuild.transform.position) > 0.5f)
+                                {
+                                    nextPro = item;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+            if (nextPro != null)
+            {
+                deleteBuild = nextPro;
+            }
+            //最边缘，切换到相反边缘的物体
+            else
+            {
+                for (int i = 0; i < MessageSend.instance.CreatPropertys.Count; i++)
+                {
+                    if (nextPro == null)
+                    {
+                        nextPro = MessageSend.instance.CreatPropertys[i];
+                    }
+                    else
+                    {
+                        if (MessageSend.instance.CreatPropertys[i].transform.position.y > nextPro.transform.position.y)
+                        {
+                            nextPro = MessageSend.instance.CreatPropertys[i];
+                        }
+                    }
+                }
+                deleteBuild = nextPro;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+           
+            clickCancel = false;
+            //恢复基准格属性
+            foreach (var item in MessageSend.instance.propertyIDs[deleteBuild])
+            {
+                Vector2 Vectemp = (Vector2)item;
+                foreach (KeyValuePair<Transform, Vector2> kvp in normalizID)
+                {
+                    if (Vectemp == kvp.Value)
+                    {
+                        normalizState[kvp.Key] = true;
+                        IDToState[kvp.Value] = true;
+                        kvp.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+                        
+                    }
+                }
+            }
+            //删除已拥有
+            MessageSend.instance.propertyIDs.Remove(deleteBuild);
+            MessageSend.instance.CreatPropertys.Remove(deleteBuild);
+            MessageSend.instance.CreatPropertysInfo.Remove(MessageSend.instance.propertyCfgs[deleteBuild.propertyID]);
+            MessageSend.instance.PropertyToID.Remove(MessageSend.instance.propertyCfgs[deleteBuild.propertyID]);
+            
+            //添加进背包
+            MessageSend.instance.CurrentHavePropertys.Add(MessageSend.instance.propertyCfgs[deleteBuild.propertyID]);
+            
+            //整理背包
+            NeatenBag();
+            //删除该物体
+            Destroy(deleteBuild.gameObject);
+        }
+        //取消选择删除
+        else if(Input.GetKeyDown(KeyCode.X))
+        {
+            clickCancel = false;
+            //恢复所有基准格
+            foreach (var item in normalizID)
+            {
+                if (item.Key.GetComponent<DIYGrid>() != null)
+                {
+                    item.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0.3f);
+                }
+               
+            }
+            deleteBuild = null;
+            //背包恢复默认
+            NeatenBag();
+
+        }
+        //切换物品 层级
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            //判定该位置是否有重复物品
+            if (CheckSamePosi() != null)
+            {
+                deleteBuild = CheckSamePosi();
+            }
+        }
+    }
+
+    
+    //检测该位置是否可以放置
+    public void  CheckState()
+    {
+        //该位置是否放有物品
+        if (CheckHavePro())
+        {
+            //判定层级（之前物品是否和当前物品层级相同）
+            if (!CheckSortOrder())
+            {
+                //判定是否是特殊物品
+                if (!CheckSpecial())
+                {
+                    PutBuild();
+                }
+            }
+            
+        }
+        else
+        {
+            //判定是否是特殊物品
+            if (!CheckSpecial())
+            {
+                PutBuild();
+            }
+        }
+    }
+
+    //整理背包
+    public void NeatenBag()
+    {
+        bagPropertys.Clear();
+        StaticVar.CurrentMenu = firstDefault;
+        Transform content = transform.Find("Store/Viewport/Content");
+        //初始化
+        for (int i = 0; i < 20; i++)
+        {
+            if (content.Find("Button" + (i + 1)).GetComponent<DIYBagContro>()!= null)
+            {
+                Destroy(content.Find("Button" + (i + 1)).GetComponent<DIYBagContro>());
+            }
+            content.Find("Button" + (i + 1) + "/Image").GetComponent<Image>().sprite = null;
+        }
+        //取消键功能添加
+        Transform Cancel = content.Find("Button1");
+        Cancel.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>("Atlas/Cancel");
+        Cancel.gameObject.AddComponent<DIYBagContro>();
+        bagPropertys.Add(Cancel);
+        //梳理赋值
+        foreach (var item in MessageSend.instance.CurrentHavePropertys)
+        {
+            int n = MessageSend.instance.CurrentHavePropertys.IndexOf(item) + 2;
+            Transform temp = transform.Find("Store/Viewport/Content/Button" + n);
+            temp.gameObject.AddComponent<DIYBagContro>().property = item;
+            transform.GetComponent<BuildingController>().bagPropertys.Add(temp);
+            //加载图片
+            temp.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>("Atlas/" + item.PropertyName);
+            temp.Find("Image").GetComponent<Image>().raycastTarget = false;
+            temp.Find("Image").GetComponent<Image>().preserveAspect = true;
+        }
+       
+    }
+
+    //取消键功能
+    public void ClickCancel()
+    {
+        if (MessageSend.instance.propertyIDs.Count!=0)
+        {
+            clickCancel = true;
+            Destroy(StaticVar.CurrentMenu.GetComponent<DIYBagContro>());
+            StaticVar.CurrentMenu.GetComponent<Image>().color = new Color(1, 0, 0, 1);
+            //为默认删除物赋值(选中从上到下第一个已创建的物品)
+            Vector2 temp1 = new Vector2();
+            foreach (KeyValuePair<Transform,bool> kvp in normalizState)
+            {
+                if (kvp.Value == false)
+                {
+                    temp1 = normalizID[kvp.Key];
+                    break;
+                }
+            }
+            Property tempProperty = new Property();
+
+            foreach (var item in MessageSend.instance.PropertyToID)
+            {
+                if (item.Value == temp1)
+                {
+                    tempProperty = item.Key;
+                    break;
+                }
+            }
+            foreach (var item in MessageSend.instance.CreatPropertys)
+            {
+                if (item.propertyID == tempProperty.ID)
+                {
+                    deleteBuild = item;
+                }
+            }
+        }
+
+;   }
+
+    //放置物品
+    public void PutBuild()
+    {
+        //修改这几个基准格的状态
+        ArrayList temp = new ArrayList();
+        foreach (var item in normalizID)
+        {
+            if (currentBuildID.Contains(item.Value))
+            {
+                item.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+                temp.Add(item.Value);
+                normalizState[item.Key] = false;
+                IDToState[item.Value] = false;
+            }
+        }
+        //切换物体状态
+        foreach (var item in MessageSend.instance.CreatPropertys)
+        {
+            if (item.state == BuildingStates.Build)
+            {
+                //已创建物品和覆盖基准格ID对应关系 
+                MessageSend.instance.propertyIDs.Add(item, temp);
+                item.state = BuildingStates.Normal;
+                //保存当前创建物体的位置信息
+                Property cfg = MessageSend.instance.propertyCfgs[item.propertyID];
+                MessageSend.instance.CreatPropertysInfo.Add(cfg, item.transform.position);
+                //保存当前创建物体和对应的基准格
+                MessageSend.instance.PropertyToID.Add(cfg, (Vector2)currentBuildID[0]);
+            }
+        }
+        //清空当前占据基准格ID
+        currentBuildID.Clear();
+        //跳转到上一级默认选项
+        StaticVar.CurrentMenu = firstDefault;
+    }
+
+    //检测该位置是否放有物品
+    public bool CheckHavePro()
+    {
+        foreach (var item in currentBuildID)
+        {
+            if (!IDToState[(Vector2)item])
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    //检测该位置上的物品层级是否和当前创建的物品层级相同
+    public bool CheckSortOrder()
+    {
+        foreach (KeyValuePair<Building,ArrayList> kvp in MessageSend.instance.propertyIDs)
+        {
+            foreach (var item in currentBuildID)
+            {
+                if (kvp.Value.Contains((Vector2)item))
+                {
+                    if (kvp.Key.GetComponent<SpriteRenderer>().sortingOrder == MessageSend.instance.CreatPropertys[MessageSend.instance.CreatPropertys.Count - 1].GetComponent<SpriteRenderer>().sortingOrder)
+                    {
+                        return true;
+                        //wofanmanlebudiao,zhongyuzha
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
+    //检测当前位置是否可以放特殊物品
+    public bool CheckSpecial()
+    {
+         if (MessageSend.instance.CreatPropertys[MessageSend.instance.CreatPropertys.Count - 1].name == "Table" )
+        {
+            //判定基准格是否为最下面一排
+            bool IsGround = false;
+            foreach (var item in currentBuildID)
+            {
+                if (((Vector2)item).x == 5)
+                {
+                    IsGround = true;
+                }
+            }
+            if (IsGround)
+            {
+                PutBuild();
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    //历史记录读取
+    public void LoadDIYData()
+    {
+        //修改已创建物品对应的基准格属性
+        if (MessageSend.instance.CreatPropertysInfo.Count != 0)
+        {
+            ArrayList builds = new ArrayList();
+            foreach (var item in GameObject.Find("DIYCreatPropertys").GetComponentsInChildren<Building>())
+            {
+                builds.Add(item);
+                if (!MessageSend.instance.CreatPropertys.Contains(item))
+                {
+                    MessageSend.instance.CreatPropertys.Add(item);
+                }
+
+            }
+            foreach (var item in builds)
+            {
+                Building b = (Building)item;
+                ArrayList IDs = new ArrayList();
+                Property property = MessageSend.instance.propertyCfgs[b.propertyID];
+                Vector2 temp = MessageSend.instance.PropertyToID[property];
+                for (int i = 0; i < b.l; i++)
+                {
+                    for (int j = 0; j < b.w; j++)
+                    {
+                        IDs.Add(new Vector2(temp.x + i, temp.y + j));
+                    }
+                }
+                if (!MessageSend.instance.propertyIDs.ContainsKey(b))
+                {
+                    MessageSend.instance.propertyIDs.Add(b, IDs);
+                }
+            }
+        }
+        if (MessageSend.instance.propertyIDs.Count != 0)
+        {
+            ArrayList IDs = new ArrayList();
+            foreach (KeyValuePair<Building, ArrayList> kvp in MessageSend.instance.propertyIDs)
+            {
+                foreach (var item in kvp.Value)
+                {
+                    IDs.Add(item);
+                }
+            }
+
+            foreach (KeyValuePair<Transform, Vector2> kvp in normalizID)
+            {
+                if (IDs.Contains(kvp.Value))
+                {
+                    normalizState[kvp.Key] = false;
+                    IDToState[kvp.Value] = false;
+                }
+            }
+        }
+    }
+
+    //检测已创建的物品当中是否有和当前删除物品重合的物品
+    public Building CheckSamePosi()
+    {
+        foreach (var item in MessageSend.instance.CreatPropertys)
+        {
+            if (item != deleteBuild)
+            {
+                if (Mathf.Abs(Vector3.Distance(item.transform.position, deleteBuild.transform.position)) < 0.5f)
+                {
+                    return item;
+
+                }
+            }
+          
+        }
+        return null;
+    }
+  
+}

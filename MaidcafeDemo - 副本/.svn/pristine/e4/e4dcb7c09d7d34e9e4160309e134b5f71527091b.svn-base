@@ -1,0 +1,55 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MyScrollBar : MonoBehaviour {
+
+    public ArrayList ScrollList = new ArrayList();
+    public Vector3 StartPos;
+    public Vector3 EndPos;
+    private int Step;
+    private Vector3 Space;
+    private Transform Handle;
+    private Transform ScrollBar;
+    public Transform Content;
+    private Vector3 ContentStartPos;
+    public void Start()
+    {
+        ScrollBar = transform.Find("Scrollbar");
+        Handle = transform.Find("Scrollbar/Handle");
+        Handle.localPosition = StartPos;
+        ContentStartPos = Content.localPosition;
+    }
+
+
+    // Update is called once per frame
+    void Update ()
+    {
+        //当前列表的长度是否大于显示长度
+        if (ScrollList.Count > 5 )
+        {
+            //界定滑动的步数和每一步的长度
+            Step = ScrollList.Count-5;
+            Space =(EndPos-StartPos)/Step ;
+        }
+        //当前列表长度小于显示长度
+        else
+        {
+            gameObject.SetActive(false);
+        }
+
+        if (ScrollBar.gameObject.activeSelf)
+        {
+            //在当前选择按钮的索引大于显示极限值时，再往下选滑动条滑动
+            if (ScrollList.IndexOf(StaticVar.CurrentMenu) >= 4)
+            {
+                int n = ScrollList.IndexOf(StaticVar.CurrentMenu)-4;
+                Handle.localPosition = StartPos + Space * n;
+                Content.localPosition = ContentStartPos - Space * n;
+            }
+        }
+        
+	}
+
+
+}

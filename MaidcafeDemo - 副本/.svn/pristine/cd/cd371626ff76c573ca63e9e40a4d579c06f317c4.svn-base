@@ -1,0 +1,50 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ToHome : MonoBase {
+
+    public bool openDoor  ;
+    private Player player;
+
+    int ID = 600;
+    private Hashtable infor = new Hashtable();
+    // Use this for initialization
+    void Start()
+    {
+        EventManager.instance.RegisterReceiver(this);
+        //事件信息记录
+        infor.Add("obj", gameObject);
+        infor.Add("Name", gameObject.name);
+
+        //注册事件
+        StaticVar.AddEvents(ID, infor);
+    }
+
+    private void Update()
+    {
+        if (openDoor)
+        {
+            if (StaticVar.NextScene != "")
+            {
+                StaticVar.GateWay(1101,player);
+            }
+        }
+    }
+   
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        if (msg.Command == MyMessageType.Event_OpenStreetToHome)
+        {
+            StaticVar.NextScene = "Home_Normal_01";
+            openDoor = true;
+            player = msg.Content as Player;
+        }
+        else if (msg.Command == MyMessageType.Event_CloseStreetToHome)
+        {
+            StaticVar.NextScene = "";
+            openDoor = false;
+        }
+    }
+}

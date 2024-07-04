@@ -1,0 +1,47 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class OperatingFloor : MonoBase
+{
+    //玩家是否到达操作台位置
+    public static bool arriveOperating = false;
+    private Player player;
+    //操作台提示语
+    private string msginfor;
+    // Use this for initialization
+    void Start()
+    {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+    private void Update()
+    {
+        IsArrive(arriveOperating, gameObject.name, player);
+    }
+   
+
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        
+        if (msg.Command == MyMessageType.Event_OperatingFloor)
+        {
+            player =(Player)msg.Content;
+            arriveOperating = true;
+            foreach (var item in MessageSend.instance.messageInforCfgs.Values)
+            {
+                if (item.ID == msg.Command)
+                {
+                    msginfor = item.MessageContent;
+                }
+            }
+        }
+        else
+        {
+            arriveOperating = false;
+        }
+    }
+
+}

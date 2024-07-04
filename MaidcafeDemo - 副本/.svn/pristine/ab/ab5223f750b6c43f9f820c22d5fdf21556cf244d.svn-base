@@ -1,0 +1,72 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AllMenu : MonoBase
+{
+    public Player player;
+    public int ID = 300;
+    private Hashtable infor = new Hashtable();
+    public bool isArrive = false;
+	// Use this for initialization
+	void Start () {
+        EventManager.instance.RegisterReceiver(this);
+        //事件信息记录
+        infor.Add("Name", transform.parent.name);
+
+        //注册事件
+        StaticVar.AddEvents(ID,infor);
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        if (isArrive)
+        {
+            //显示提示符
+            if (GameObject.Find("Environment/Events/Tips") == null)
+            {
+                GameObject.Find("UI").GetComponent<GlobalVariable>().ActiveTips();
+
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    if (GameObject.Find("Environment/Events/Tips") != null)
+                    {
+                        Destroy(GameObject.Find("Environment/Events/Tips"));
+                    }
+                    //进入互动
+                    if (!player.IsLockPlayer)
+                    {
+                        StaticVar.MessageSendToFungus(transform.parent.name, player);
+                    }
+                }
+            }
+        }
+	}
+
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        player = msg.Content as Player;
+        if (msg.Command == MyMessageType.Event_AdjustAllMenus)
+        {
+            if (StaticVar.PreferenceEvent(ID))
+            {
+                isArrive = true;
+               
+            }
+        }
+        else if(msg.Command == MyMessageType.Event_LeaveAllMenus)
+        {
+            if (GameObject.Find("Environment/Events/Tips") != null)
+            {
+                Destroy(GameObject.Find("Environment/Events/Tips"));
+            }
+            isArrive = false;
+            MessageSend.instance.triggerEventID.Remove(ID);
+
+        }
+    }
+}

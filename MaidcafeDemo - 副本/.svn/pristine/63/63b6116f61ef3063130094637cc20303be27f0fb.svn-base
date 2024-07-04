@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Waiter1 : Actor
+{
+    /// <summary>
+    /// 初始化状态机
+    /// </summary>
+    protected override void InitState()
+    {
+        _actorStateDic[ActorStateType.LoopMove] = new MoveLoopState();
+        _actorStateDic[ActorStateType.Hospitality] = new HospitalityState();
+        _actorStateDic[ActorStateType.TakeFood] = new TakeFoodState();
+        _actorStateDic[ActorStateType.WaitFood] = new WaitFoodState();
+        _actorStateDic[ActorStateType.SendFood] = new SendFoodState();
+        _actorStateDic[ActorStateType.Talk] = new TalkState();
+        _actorStateDic[ActorStateType.Dance] = new DancingState();
+        _actorStateDic[ActorStateType.Training] = new TrainingState();
+        _actorStateDic[ActorStateType.Idle] = new IdleState();
+        _actorStateDic[ActorStateType.Transit] = new TransitState();
+    }
+
+    /// <summary>
+    /// 初始化当前状态
+    /// </summary>
+    protected override void InitCurState()
+    {
+       
+    }
+    
+    void Start()
+    {
+       //transform.parent.Find("Manager").gameObject.SetActive(true);
+    }
+
+  
+   
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        Waiter1 waiter = transform.GetComponent<Waiter1>();
+        
+        //触发事件
+        if ( MessageSend.instance.customerSeat.Count !=0 && MessageSend.instance.combine.ContainsKey(waiter))
+        {
+            Customer1 customer = MessageSend.instance.combine[waiter];
+
+            //顾客点菜
+            if (collision.transform == MessageSend.instance.seatToService[MessageSend.instance.customerSeat[customer]] && _curState == _actorStateDic[ActorStateType.Hospitality])
+            {
+                //调整朝向
+                GetComponent<SpriteRenderer>().flipX = customer.transform.localPosition.x - StaticVar.VecTranslate(MessageSend.instance.seatToService[MessageSend.instance.customerSeat[customer]]) .x < 0 ? false : true;
+                WindowManager.instance.Get<JingYing>().ActiveTalk(waiter, customer);
+            }
+            // 
+            if (collision.transform == MessageSend.instance.seatToService[MessageSend.instance.customerSeat[customer]] && _curState == _actorStateDic[ActorStateType.SendFood])
+            {
+                //调整朝向
+                GetComponent<SpriteRenderer>().flipX = customer.transform.localPosition.x - StaticVar.VecTranslate(MessageSend.instance.seatToService[MessageSend.instance.customerSeat[customer]]).x < 0 ? false : true;
+                _ani.SetBool("TakeFood", false);
+                //上菜
+                _ani.SetTrigger("PutDown");
+            }
+            //女仆等菜
+            else if (collision.gameObject.name == "PayMoney" && waiter._stateType == ActorStateType.TakeFood)
+            {
+                //切换状态
+                TransState(this, ActorStateType.WaitFood);
+                
+            }
+        }
+
+    }
+    //激活施法后续
+    public void Active1()
+    {
+        TimerManager.instance.Invoke(_ani.GetCurrentAnimatorClipInfo(0)[0].clip.length, delegate
+        {
+            //鞠躬
+            _ani.SetTrigger("Bow");
+            TimerManager.instance.Invoke(1.67f, delegate { TransState(this, ActorStateType.Transit); });
+            
+        });
+    }
+    //激活放菜后续
+    public void Active2()
+    {
+        Customer1 customer = MessageSend.instance.combine[this];
+      
+
+        //激活桌上的菜品
+        ActiveOnDesk(customer);
+        //播放施法动画
+        TimerManager.instance.Invoke(StaticVar.waiteConjure, delegate
+        {
+            PlayAnim("Conjure");
+            customer.PlayAnim("Expect");
+            //客人期待过后切换感谢状态
+            TimerManager.instance.Invoke(StaticVar.expectTime, delegate
+            { customer.TransState(customer, ActorStateType.Thanks); });
+        });
+    }
+    //激活菜品
+    public void ActiveOnDesk(Customer1 customer)
+    {
+        GameObject OnDeskItem = Instantiate(Resources.Load("Prefabs/Items/" + customer._loveOrder) as GameObject);
+        //判断楼层
+        if (customer.currentFloor == 1)
+        {
+            OnDeskItem.transform.SetParent(GameObject.Find("FirstFloorItems").transform);
+        }
+        else
+        {
+            OnDeskItem.transform.SetParent(GameObject.Find("SecondFloorItems").transform);
+        }
+        
+        OnDeskItem.transform.localPosition = StaticVar.VecTranslate(MessageSend.instance.customerSeat[customer].parent.Find("OnDeskItem"));
+        OnDeskItem.SetActive(true);
+        OnDeskItem.name = customer._loveOrder;
+    }
+}

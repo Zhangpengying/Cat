@@ -1,0 +1,27 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class BasicInforWnd : BaseWnd
+{
+     public void  Initialize()
+    {
+        _transform.gameObject.AddComponent<BasicInforWndCon>();
+    }
+}
+
+public class BasicInforWndCon : MonoBehaviour
+{
+    private void Start()
+    {
+        
+    }
+    private void Update()
+    {
+        transform.Find("Day/Text").GetComponent<Text>().text = "第15天";
+        transform.Find("Week/Text").GetComponent<Text>().text = "星期五";
+        transform.Find("TimeFrame/Text").GetComponent<Text>().text = "下午";
+        transform.Find("HaveMoney/Text").GetComponent<Text>().text ="$"+ StaticVar.player.PlayerMoney.ToString();
+    }
+}

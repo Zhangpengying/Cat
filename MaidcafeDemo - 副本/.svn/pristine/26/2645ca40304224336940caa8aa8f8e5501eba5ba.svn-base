@@ -1,0 +1,41 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SavePoint : MonoBase
+{
+    public static bool arriveSave = false;
+    private string msgInfor;
+    private Player player;
+    // Use this for initialization
+    void Start () {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        IsArrive(arriveSave, gameObject.name, player);
+    }
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        player = msg.Content as Player;
+        if (msg.Command == MyMessageType.Event_SaveGame)
+        {
+            arriveSave = true;
+            foreach (var item in MessageSend.instance.messageInforCfgs.Values)
+            {
+                if (item.ID == msg.Command)
+                {
+                    msgInfor = item.MessageContent;
+                }
+            }
+        }
+        else
+        {
+            arriveSave = false;
+        }
+    }
+}

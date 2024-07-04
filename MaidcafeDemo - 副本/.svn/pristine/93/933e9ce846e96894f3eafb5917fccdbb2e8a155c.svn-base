@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+public class DIYWnd : BaseWnd
+{
+    //默认格
+    public Transform defaultPosition;
+    
+    //初始化DIY界面
+    public void Initialize()
+    {
+        
+        //添加界面控制监听
+        _transform.gameObject.AddComponent<BuildingController>();
+
+        defaultPosition = _transform.Find("DIYRange/Viewport/Content/Button1");
+        //取消键功能添加
+        Transform Cancel = _transform.Find("Store/Viewport/Content/Button1");
+        Cancel.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>("Atlas/Cancel");
+        _transform.GetComponent<BuildingController>().bagPropertys.Add(Cancel);
+        Cancel.gameObject.AddComponent<DIYBagContro>();
+        //遍历背包,添加监听
+        foreach (var item in MessageSend.instance.CurrentHavePropertys)
+        {
+            int n = MessageSend.instance.CurrentHavePropertys.IndexOf(item) + 2;
+            Transform temp = _transform.Find("Store/Viewport/Content/Button" + n);
+            temp.gameObject.AddComponent<DIYBagContro>().property = item;
+            _transform.GetComponent<BuildingController>().bagPropertys.Add(temp);  
+            //加载图片
+            temp.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>("Atlas/" + item.PropertyName);
+            temp.Find("Image").GetComponent<Image>().raycastTarget = false;
+            temp.Find("Image").GetComponent<Image>().preserveAspect = true;
+        }
+        
+        //DIY区域
+        Transform content = _transform.Find("DIYRange/Viewport/Content");
+        for (int i = 0; i < content.GetComponentsInChildren<Button>().Length; i++)
+        {
+            Transform a = content.Find("Button" + (i + 1));
+            //初始化基准格状态
+         
+            _transform.GetComponent<BuildingController>().normalizState.Add(a, true);
+            //基准格ID
+            int columnCount = content.GetComponent<GridLayoutGroup>().constraintCount;
+            float b ;
+            float c;
+            if ((i+1)%  columnCount== 0)
+            {
+                b = (i + 1) / columnCount;
+            }
+            else
+            {
+                b = (i + 1) / columnCount + 1;
+            }
+            c = i % columnCount + 1;
+          
+            Vector2 _id = new Vector2(b, c);
+            if (b!= 3)
+            {
+                a.gameObject.AddComponent<DIYGrid>();
+                a.GetComponent<DIYGrid>().ID = _id;
+            }
+            _transform.GetComponent<BuildingController>().normalizID.Add(a, _id);
+            _transform.GetComponent<BuildingController>().IDToState.Add(_id,true);
+        }
+
+        //设定各级别默认选项
+        BuildingController bc = _transform.GetComponent<BuildingController>();
+        bc.firstDefault = _transform.Find("Store/Viewport/Content/Button1");
+        bc.secondDefault = _transform.Find("DIYRange/Viewport/Content/Button1");
+        StaticVar.CurrentMenu = bc.firstDefault;
+
+       
+          
+    }
+
+    
+}
+
+

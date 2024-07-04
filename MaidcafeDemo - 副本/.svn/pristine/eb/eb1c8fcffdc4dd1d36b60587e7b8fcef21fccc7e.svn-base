@@ -1,0 +1,56 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TextCollider : MonoBase
+{
+
+    public static bool arriveStore = false;
+    private string msgInfor;
+    private Player player;
+    public int ID = 800;
+    private Hashtable infor = new Hashtable();
+    // Use this for initialization
+    void Start()
+    {
+        EventManager.instance.RegisterReceiver(this);
+        //事件信息记录
+        
+        infor.Add("Name", transform.parent.name);
+
+        //注册事件
+        StaticVar.AddEvents(ID, infor);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        player = msg.Content as Player;
+        if (msg.Command == MyMessageType.Event_Bed)
+        {
+            if (StaticVar.PreferenceEvent(ID))
+            {
+                arriveStore = true;
+                Debug.LogError("dadasdasdadasda");
+            }
+            
+           
+           
+        }
+        else if (msg.Command == MyMessageType.Event_LeaveStore)
+        {
+            arriveStore = false;
+            if (GameObject.Find("Environment/Events/Tips") != null)
+            {
+                Destroy(GameObject.Find("Environment/Events/Tips"));
+            }
+            MessageSend.instance.triggerEventID.Remove(ID);
+        }
+    }
+}

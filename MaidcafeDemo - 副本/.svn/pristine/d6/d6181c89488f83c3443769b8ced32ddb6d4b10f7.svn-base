@@ -1,0 +1,119 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
+
+public class ChangeValue : MonoBehaviour
+{
+    //当前结账金额
+    int value = 0;
+    //金额
+    int damage = 0;
+    //起始金钱
+    int startValue = 0;
+    //结束金钱
+    int endValue = 0;
+    //结算初始时间
+    float startTime = 0;
+    //结算持续时间
+    public float duration = 1;
+    //是否递增时间
+    bool isChangeTime = false;
+    //金钱TEXT
+    Text damageShow;
+    //初始位置        
+    Vector3 pos_Start;
+    //结束位置
+    Vector3 pos_End;
+    //是否收款
+    public bool collectMoney = false;
+    void Awake()
+    {
+        damageShow = GetComponent<Text>();
+        damageShow.enabled = false;
+        pos_Start = transform.localPosition;
+        pos_End = pos_Start + new Vector3(0, 20, 0);
+
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ScrollNum();
+    }
+   
+    /// <summary>
+    /// 滚动数字显示
+    /// </summary>
+    void ScrollNum()
+    {
+        //顾客结账
+        if (collectMoney)
+        {
+            startValue = (int)StaticVar.PlayerAttribute["Money"];
+            Show();
+            isChangeTime = true;
+            //当前结账顾客消费数额
+            foreach (var item in MessageSend.instance.customer)
+            {
+                if (item._stateType == ActorStateType.PayMoney)
+                {
+                    damage = item.expenditure;
+                }
+            }
+            
+
+            startTime = 0;
+            endValue = startValue + damage;
+            StaticVar.PlayerAttribute["Money"] = endValue;
+            StaticVar.player.PlayerMoney = endValue;
+            collectMoney = false;
+        }
+        //时间递增
+        if (isChangeTime)
+        {
+            startTime += Time.deltaTime;
+            if (startTime <= duration)//是否到达一秒钟
+            {
+                value = (int)Mathf.Lerp(startValue, endValue,  startTime / duration);
+                damageShow.text = value.ToString();
+            }
+            else
+            {
+                damageShow.text = endValue.ToString();
+                value = 0;
+                isChangeTime = false;
+               
+                startValue = endValue;
+                TimerManager.instance.Invoke(3, Hide);
+            }
+        }
+    }
+   
+    /// <summary>
+    /// 延迟隐藏
+    /// </summary>
+    void  Hide() 
+    {
+        if (damageShow!= null)
+        {
+            damageShow.text = startValue.ToString();
+            damageShow.enabled = false;
+            transform.localPosition = pos_Start;
+
+        }
+      
+
+    }
+    /// <summary>
+    /// 显示
+    /// </summary>
+    void Show()
+    {
+        damageShow.enabled = true;
+    }
+   
+}
+

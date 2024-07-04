@@ -1,0 +1,76 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class MainMenuWnd : BaseWnd
+{
+    public void Initialize()
+    {
+        _transform.gameObject.AddComponent<MainMenuWndContro>();
+        Button startGame = _transform.Find("MenuList/StartGame").GetComponent<Button>();
+        StaticVar.CurrentMenu = startGame.transform;
+
+        startGame.onClick.AddListener(delegate {
+          
+        });
+    }
+
+   
+}
+
+public class MainMenuWndContro: MonoBehaviour
+{
+    //动画是否已经播放过了
+    private bool havePlayAni = false;
+
+    //选项列表
+    private ArrayList menuList = new ArrayList();
+    private void Start()
+    {
+        foreach (var item in GetComponentsInChildren<ButtonStateAdjust>())
+        {
+            if (!menuList.Contains(item.transform))
+            {
+                menuList.Add(item.transform);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (StaticVar.CurrentMenu!= null)
+            {
+                StaticVar.CurrentMenu.GetComponent<Animation>().Play("StartGame");
+                havePlayAni = true;
+            }
+        }
+
+        if (StaticVar.CurrentMenu != null)
+        {
+            if (havePlayAni)
+            {
+                TimerManager.instance.Invoke(1.5f, LoadScene);
+                havePlayAni = false;
+            }
+            else
+            {
+                StaticVar.InputControl1(menuList);
+            }
+        }
+    }
+
+    void LoadScene()
+    {
+        //场景的清算
+        WindowManager.instance.Close<MainMenuWnd>();
+        StaticVar.ClearScene();
+        SceneManager.LoadScene("Home_Normal_01");
+        Time.timeScale = 1;
+    }
+}
+

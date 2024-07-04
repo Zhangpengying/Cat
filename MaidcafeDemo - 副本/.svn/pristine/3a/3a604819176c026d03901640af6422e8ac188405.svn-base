@@ -1,0 +1,40 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+public class Talk2 : MonoBase
+{
+
+    // Use this for initialization
+    void Start()
+    {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+    public List<ActiveEvent> AA = new List<ActiveEvent>();
+
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+
+        if (msg.Command == MyMessageType.Event_Talk2)
+        {
+            Player player = msg.Content as Player;
+            if (player._stateType != ActorStateType.Player_Date)
+            {
+                if (MessageSend.instance.Events.ContainsKey(gameObject.name))
+                {
+                    player._ani.SetBool("IsWalk", false);
+                    StaticVar.MessageSendToFungus("New Block2", player);
+                    MessageSend.instance.Events[gameObject.name] = false;
+                    gameObject.SetActive(false);
+                }
+            }
+
+        }
+    }
+
+
+}

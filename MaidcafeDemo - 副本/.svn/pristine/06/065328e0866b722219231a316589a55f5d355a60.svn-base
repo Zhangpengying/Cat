@@ -1,0 +1,101 @@
+﻿
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System;
+using System.Collections.Generic;
+
+/// <summary>
+/// DIY窗口界面网格的控制
+/// </summary>
+public class DIYGrid : MonoBehaviour
+{
+    public BuildingController  bc;
+    public Vector2 ID;
+    private void Start()
+    {
+        bc = GameObject.FindWithTag("DIYController").GetComponent<BuildingController>();
+        
+
+    }
+
+    private void Update()
+    {                                      
+        if (StaticVar.CurrentMenu!= null)
+        {
+            if (StaticVar.CurrentMenu == bc.bagPropertys[0])
+            {
+                DeleteDIY();
+            }
+        }
+        else
+        {
+            CheckState();
+        }
+       
+    }
+    //判定该格子是否被占据
+    public void CheckState()
+    {
+        if (bc.currentBuildID.Contains(ID))
+        {
+            //该基准格已经被占据
+            if (!bc.normalizState[transform])
+            {
+                //判定占据该基准格的物体层级与当前放置物体是否相同
+                if (bc.CheckSortOrder())
+                {
+                    transform.GetComponent<Image>().color = new Color(1, 0, 0, 0.3f);
+                }
+                else
+                {
+                    
+                    transform.GetComponent<Image>().color = new Color(0, 1, 0, 0.3f);
+                }
+            }
+            //该基准格未被占据
+            else
+            {
+                transform.GetComponent<Image>().color = new Color(0, 1, 0, 0.3f);
+            }
+        }
+        //没有则恢复默认颜色
+        else
+        {
+            transform.GetComponent<Image>().color = new Color(1, 1, 1, 0.3f);
+        }
+    }
+
+    
+    //撤销DIY物品
+    public void DeleteDIY()
+    {
+        if (bc.deleteBuild != null)
+        {
+            if (MessageSend.instance.propertyIDs.ContainsKey(bc.deleteBuild))
+            {
+                ArrayList a = MessageSend.instance.propertyIDs[bc.deleteBuild];
+                if (MessageSend.instance.propertyIDs[bc.deleteBuild].Contains(ID))
+                {
+                    if (bc.deleteBuild.GetComponent<SpriteRenderer>().sortingOrder == 100)
+                    {
+                        transform.GetComponent<Image>().color = new Color(0, 1, 0, 0.3f);
+                    }
+                    else
+                    {
+                        transform.GetComponent<Image>().color = new Color(1, 1, 0, 0.3f);
+                    }
+                   
+                }
+                else
+                {
+                    transform.GetComponent<Image>().color = new Color(1, 1, 1, 0.3f);
+                }
+            }
+          
+        }
+    }
+
+    
+}

@@ -1,0 +1,46 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SecondFloor : MonoBase
+{ 
+    public bool openDoor = false;
+    public Player player;
+    // Use this for initialization
+    void Start()
+    {
+        EventManager.instance.RegisterReceiver(this);
+        //注册事件
+        StaticVar.AddEvents(gameObject);
+    }
+
+
+    private void Update()
+    {
+        if (openDoor)
+        {
+            if (player != null)
+            {
+                StaticVar.Door(904, player);
+            }
+
+        }
+    }
+
+    public override void ReciveMessage(Message msg)
+    {
+        base.ReciveMessage(msg);
+        if (msg.Command == MyMessageType.Event_OpenCfSecFl)
+        {
+            openDoor = true;
+            player = msg.Content as Player;
+            StaticVar.LastGateway = MessageSend.instance.doorsCfg[903].Position;
+
+        }
+        else if (msg.Command == MyMessageType.Event_CloseCfSecFl)
+        {
+            openDoor = false;
+
+        }
+    }
+}
