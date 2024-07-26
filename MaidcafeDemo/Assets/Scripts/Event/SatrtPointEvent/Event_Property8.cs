@@ -59,6 +59,7 @@ public class Event_Property8 : MonoBase
                     if (!StaticVar.GetItem(1005))
                     {
                         player.ItemList.Add(newItem);
+                        Destroy(transform.parent.gameObject);
                         StaticVar.MessageSendToFungus(transform.parent.name, player);
                     }
                 }

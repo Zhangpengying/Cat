@@ -83,6 +83,7 @@ public class StartPointSceneInit : MonoBehaviour, SceneInitManager
         TimerManager.instance.Invoke(1f, delegate {
             StaticVar.player.transform.Find("NormalTrigger").GetComponent<PlayerTrigger>().AutoTrigge();
         });
+        StaticVar.MessageSendToFungus("¿Ú¿ÚÀø", StaticVar.player);
     }
 
     public void Finalise()

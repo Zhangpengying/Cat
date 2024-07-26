@@ -48,6 +48,14 @@ public class Event_NPC2 : MonoBase
                 //进入互动
                 if (!player.IsLockPlayer)
                 {
+                    if (StaticVar.GetItem(1005))
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
                     StaticVar.MessageSendToFungus(transform.parent.name, player);
                     //解锁出口
                     SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_UnlockGateWay1, player);
