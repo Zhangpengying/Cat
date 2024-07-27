@@ -48,25 +48,25 @@ public class Event_NPC2 : MonoBase
                 //进入互动
                 if (!player.IsLockPlayer)
                 {
-                    if (StaticVar.GetItem(1005))
+                    if (StaticVar.GetItem(1002))
                     {
-
+                        StaticVar.MessageSendToFungus(transform.parent.name + 2, player);
                     }
                     else
                     {
-
+                        StaticVar.MessageSendToFungus(transform.parent.name+1, player);
+                        //解锁出口
+                        SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_UnlockGateWay1, player);
+                        //获得物品
+                        ItemInfo newItem = new ItemInfo();
+                        newItem.itemID = 1002;
+                        newItem.itemType = ItemType.SingleItem;
+                        newItem.itemName = "盾牌";
+                        newItem.itemNum = 1;
+                        newItem.itemDesc = "神奇之盾";
+                        player.ItemList.Add(newItem);
                     }
-                    StaticVar.MessageSendToFungus(transform.parent.name, player);
-                    //解锁出口
-                    SendCustomerMessage(MyMessageType.Type_Event, MyMessageType.Event_UnlockGateWay1, player);
-                    //获得物品
-                    ItemInfo newItem = new ItemInfo();
-                    newItem.itemID = 1002;
-                    newItem.itemType = ItemType.SingleItem;
-                    newItem.itemName = "盾牌";
-                    newItem.itemNum = 1;
-                    newItem.itemDesc = "神奇之盾";
-                    player.ItemList.Add(newItem);
+                    
                 }
             }
         }

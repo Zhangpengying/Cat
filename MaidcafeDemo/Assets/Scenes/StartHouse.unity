@@ -3459,7 +3459,7 @@ MonoBehaviour:
   scrollPos: {x: 24.434038, y: -17.40142}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 200
+  blockViewHeight: 338
   zoom: 0.97
   scrollViewRect:
     serializedVersion: 2
@@ -3467,8 +3467,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1558535055}
+  selectedCommands:
+  - {fileID: 1558535053}
   variables: []
   description: 
   stepPause: 0
@@ -3843,7 +3845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 266.55038
+    x: 264.48856
     y: 354.35043
     width: 93.298965
     height: 40
@@ -4059,7 +4061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 391.872
+    x: 390.8411
     y: 244.3832
     width: 74.74226
     height: 40
@@ -4130,13 +4132,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 461.90616
+    x: 463.968
     y: 313.89624
     width: 94.329895
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 22
+  itemId: 36
   blockName: "\u8389\u8389\u5B892"
   description: 
   eventHandler: {fileID: 0}
@@ -4158,7 +4160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1880148762417952, guid: 64891bb6680b7dd4e9a00ca889bf24bb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114772645094202026, guid: 64891bb6680b7dd4e9a00ca889bf24bb,
         type: 3}
@@ -4288,17 +4290,17 @@ PrefabInstance:
     - target: {fileID: 224514627191591320, guid: 64891bb6680b7dd4e9a00ca889bf24bb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 155.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224700329543549636, guid: 64891bb6680b7dd4e9a00ca889bf24bb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224700329543549636, guid: 64891bb6680b7dd4e9a00ca889bf24bb,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6299461382967453033, guid: 64891bb6680b7dd4e9a00ca889bf24bb,
         type: 3}
@@ -4313,12 +4315,12 @@ PrefabInstance:
     - target: {fileID: 6299461382967453033, guid: 64891bb6680b7dd4e9a00ca889bf24bb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6299461382967453033, guid: 64891bb6680b7dd4e9a00ca889bf24bb,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6299461382967453033, guid: 64891bb6680b7dd4e9a00ca889bf24bb,
         type: 3}
@@ -4333,7 +4335,7 @@ PrefabInstance:
     - target: {fileID: 6299461382967453033, guid: 64891bb6680b7dd4e9a00ca889bf24bb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -155.8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

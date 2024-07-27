@@ -19,7 +19,10 @@ public class PersonInforWndCon : MonoBehaviour
         Player player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
         player.IsLockPlayer = true;
-        player._ani.SetBool("IsWalk", false);
+
+        transform.Find("Title/MapBtn").GetComponent<Button>().onClick.AddListener(() => {
+            WindowManager.instance.Open<WorldMapWnd>();
+        });
         transform.Find("BackBtn").GetComponent<Button>().onClick.AddListener(() => {
             WindowManager.instance.Close<PersonInforWnd>();
             StaticVar.EndInteraction();

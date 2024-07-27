@@ -19,6 +19,10 @@ public class PlayerManager : ManageBase<PlayerManager>
         {
             PlayerControl();
         }
+        else
+        {
+            StopAni();
+        }
         
     }
     protected override byte SetMessageType()
@@ -152,7 +156,19 @@ public class PlayerManager : ManageBase<PlayerManager>
         {
             player._ani.SetBool(item, true);
         }
+        
 
     }
+    public void StopAni()
+    {
+        player._ani.SetBool("RightIdleToWalk", false);
+        player._ani.SetBool("RightIdleToAtt", false);
+        player._ani.SetBool("BackIdleToWalk", false);
+        player._ani.SetBool("BackIdleToAtt", false);
+        player._ani.SetBool("FrontIdleToWalk", false);
+        player._ani.SetBool("FrontIdleToAtt", false);
+    }
+
+
 
 }
