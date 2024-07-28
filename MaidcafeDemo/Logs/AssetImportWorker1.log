@@ -1,23 +1,23 @@
 Using pre-set license
 Built from 'HEAD' branch; Version is '2022.1.23f1c1 (46637c7592ee) revision 4612988'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit CoreCountrySpecific' Language: 'zh' Physical Memory: 16085 MB
+OS: 'Windows 11  (10.0.22631) 64bit Enterprise' Language: 'zh' Physical Memory: 32581 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2022.1.23f1c1\Editor\Unity.exe
+D:\Program Files\Unity3d Edition\Unity 2022.1.23f1c1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-C:/UnityProject/Cat/MaidcafeDemo
+E:/GitHub仓库/Cat/MaidcafeDemo
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-61947
-Successfully changed project path to: C:/UnityProject/Cat/MaidcafeDemo
-C:/UnityProject/Cat/MaidcafeDemo
+13701
+Successfully changed project path to: E:/GitHub仓库/Cat/MaidcafeDemo
+E:/GitHub仓库/Cat/MaidcafeDemo
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,128 +47,120 @@ C:/UnityProject/Cat/MaidcafeDemo
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 99.75 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 50.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.1.23f1c1 (46637c7592ee)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.1.23f1c1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/UnityProject/Cat/MaidcafeDemo/Assets
+[Subsystems] Discovering subsystems at path D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/GitHub仓库/Cat/MaidcafeDemo/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2520)
+    Renderer: NVIDIA GeForce RTX 4070 Ti (ID=0x2782)
     Vendor:   NVIDIA
-    VRAM:     6023 MB
-    Driver:   30.0.15.1165
+    VRAM:     11996 MB
+    Driver:   32.0.15.5599
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.1.23f1c1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.1.23f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.1.23f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56664
+Mono path[0] = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/Managed'
+Mono path[1] = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56908
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.23f1c1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.23f1c1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.23f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.23f1c1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.013994 seconds.
-Native extension for UWP target not found
+Register platform support module: D:/Program Files/Unity3d Edition/Unity 2022.1.23f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001179 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 80.06 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 45.64 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.728 seconds
+- Completed reload, in  0.347 seconds
 Domain Reload Profiling:
-	ReloadAssembly (729ms)
-		BeginReloadAssembly (70ms)
+	ReloadAssembly (347ms)
+		BeginReloadAssembly (37ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (522ms)
-			LoadAssemblies (67ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (251ms)
+			LoadAssemblies (36ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (119ms)
-				TypeCache.Initialize (118ms)
-					TypeCache.ScanAssembly (117ms)
+			SetupTypeCache (59ms)
+				TypeCache.Initialize (58ms)
+					TypeCache.ScanAssembly (58ms)
 				ResolveRequiredComponents (0ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (34ms)
-			SetupLoadedEditorAssemblies (312ms)
+			RebuildScriptCaches (14ms)
+			SetupLoadedEditorAssemblies (149ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (54ms)
-				SetLoadedEditorAssemblies (12ms)
-				RefreshPlugins (80ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (114ms)
-				ProcessInitializeOnLoadMethodAttributes (49ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (4ms)
+				RefreshPlugins (46ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (71ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.014623 seconds.
+Registered in 0.004664 seconds.
 Begin MonoManager ReloadAssembly
-Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 91.75 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 45.43 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  2.302 seconds
+- Completed reload, in  1.119 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2302ms)
-		BeginReloadAssembly (225ms)
+	ReloadAssembly (1120ms)
+		BeginReloadAssembly (61ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (139ms)
-		EndReloadAssembly (1970ms)
-			LoadAssemblies (84ms)
+			CreateAndSetChildDomain (11ms)
+		EndReloadAssembly (995ms)
+			LoadAssemblies (41ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (213ms)
-				TypeCache.Initialize (203ms)
-					TypeCache.ScanAssembly (199ms)
-				ResolveRequiredComponents (10ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (72ms)
-			SetupLoadedEditorAssemblies (1539ms)
+			SetupTypeCache (120ms)
+				TypeCache.Initialize (113ms)
+					TypeCache.ScanAssembly (111ms)
+				ResolveRequiredComponents (7ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (38ms)
+			SetupLoadedEditorAssemblies (762ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
-				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (92ms)
-				BeforeProcessingInitializeOnLoad (85ms)
-				ProcessInitializeOnLoadAttributes (1272ms)
-				ProcessInitializeOnLoadMethodAttributes (56ms)
-				AfterProcessingInitializeOnLoad (10ms)
+				InitializePlatformSupportModulesInManaged (2ms)
+				SetLoadedEditorAssemblies (4ms)
+				RefreshPlugins (45ms)
+				BeforeProcessingInitializeOnLoad (38ms)
+				ProcessInitializeOnLoadAttributes (631ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (3ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.65 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 0.59 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3583 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 59 unused Assets / (60.0 KB). Loaded Objects now: 4031.
-Memory consumption went from 0.54 GB to 0.54 GB.
-Total: 7.871100 ms (FindLiveObjects: 0.299300 ms CreateObjectMapping: 0.250200 ms MarkObjects: 7.198000 ms  DeleteObjects: 0.122400 ms)
+Unloading 3607 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (60.1 KB). Loaded Objects now: 4055.
+Memory consumption went from 0.55 GB to 0.55 GB.
+Total: 3.727700 ms (FindLiveObjects: 0.154300 ms CreateObjectMapping: 0.042200 ms MarkObjects: 3.470500 ms  DeleteObjects: 0.060000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -176,137 +168,18 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 384133.252630 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/BagWnd.prefab
-  artifactKey: Guid(e7bdd1b8b43b7f24182eeb779c98088f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/BagWnd.prefab using Guid(e7bdd1b8b43b7f24182eeb779c98088f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50714f6fd8baa50aae586ff752976787') in 0.081853 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/SecondFloorItems.prefab
-  artifactKey: Guid(6924603e8c85b2046ad0a6b3f3220383) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/SecondFloorItems.prefab using Guid(6924603e8c85b2046ad0a6b3f3220383) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6554093bac172cb13ac00eb4402b4846') in 0.009728 seconds 
+  Time since last request: 193677.259986 seconds.
+  path: Assets/Sprites/UI/UI效果图/DIY/UI-经营-DIY-调整尺寸3.png
+  artifactKey: Guid(ca89c865941761e4380114bd4d9af4e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/UI效果图/DIY/UI-经营-DIY-调整尺寸3.png using Guid(ca89c865941761e4380114bd4d9af4e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c413faf43820e387d178e151d43d78b9') in 0.103552 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000026 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/SellWnd.prefab
-  artifactKey: Guid(dc8c2ee6f9bd95845a899d6c0c7e718a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/SellWnd.prefab using Guid(dc8c2ee6f9bd95845a899d6c0c7e718a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f28a71a99d2e80fe13169a44378c6646') in 0.010039 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/NewDIYWmd.prefab
-  artifactKey: Guid(405749920ea98c845883d08ff5c03d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/NewDIYWmd.prefab using Guid(405749920ea98c845883d08ff5c03d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dd221d14bbfc873629b79b4949a0efd') in 0.036703 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/WaiterInfor.prefab
-  artifactKey: Guid(ee64adf6802c985489acba3572c8e918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/WaiterInfor.prefab using Guid(ee64adf6802c985489acba3572c8e918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d87c66194a94da65c40b778efd920b3') in 0.008524 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/WaiterInforListsWnd.prefab
-  artifactKey: Guid(dd8e90f2df53fd9449048a0ffa482133) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/WaiterInforListsWnd.prefab using Guid(dd8e90f2df53fd9449048a0ffa482133) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20fccab5281b783a54325c1db53292dd') in 0.006925 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/LoadWnd.prefab
-  artifactKey: Guid(8744d6a015a697b4780f44b83d6d4445) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/LoadWnd.prefab using Guid(8744d6a015a697b4780f44b83d6d4445) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16310286f2a87cc7df94ae0a4c62a7c7') in 0.008925 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/CoffeeMenuWnd.prefab
-  artifactKey: Guid(cd977c89ec46cb045af58adaa8360095) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/CoffeeMenuWnd.prefab using Guid(cd977c89ec46cb045af58adaa8360095) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9a4acb88d32989f3f5d7205c7dad2b8') in 0.012893 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/CoffeeWnd.prefab
-  artifactKey: Guid(a424e9fba40cc7a4a8176a68937f010b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/CoffeeWnd.prefab using Guid(a424e9fba40cc7a4a8176a68937f010b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4b1b6aabeb0700534a2b127630d7b12') in 0.006309 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/CustomerInfor.prefab
-  artifactKey: Guid(693f9baabfdb7fb4a8c13e680a915a78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/CustomerInfor.prefab using Guid(693f9baabfdb7fb4a8c13e680a915a78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccd7a318bd489c7e40a3a706081254a9') in 0.006452 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/MainMenuWnd.prefab
-  artifactKey: Guid(52fd00376888f284caa2d0f883bab624) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/MainMenuWnd.prefab using Guid(52fd00376888f284caa2d0f883bab624) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ca34e9083dd5c1f9368f9511c0d53c7') in 0.006916 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/StayPoints.prefab
-  artifactKey: Guid(516aa24b85d605941acb648603f2a963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/StayPoints.prefab using Guid(516aa24b85d605941acb648603f2a963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec7f426868f64f8e8b25f1f480539625') in 0.008245 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/MenuWnd.prefab
-  artifactKey: Guid(f0918195ef466f044a1192fd35041d13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/MenuWnd.prefab using Guid(f0918195ef466f044a1192fd35041d13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf56cab7c989f04d36bc1217bd1ab6b8') in 0.005783 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/CoffeeDecWnd.prefab
-  artifactKey: Guid(26205bfce38ace04399b0f9e2e41d2fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/CoffeeDecWnd.prefab using Guid(26205bfce38ace04399b0f9e2e41d2fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ac5499e145b4b8fb0c9190605148195') in 0.010304 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/StartPreparationWnd.prefab
-  artifactKey: Guid(3ddf5fb5cd5f1464dba7e2f6c0cae92c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/StartPreparationWnd.prefab using Guid(3ddf5fb5cd5f1464dba7e2f6c0cae92c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa522954f0b3000185e793e543bf6919') in 0.007537 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/Customer2Say.prefab
-  artifactKey: Guid(23d70970e33cf9f4fa9b97bba85d0d30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/Customer2Say.prefab using Guid(23d70970e33cf9f4fa9b97bba85d0d30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '171dff0c5da242db55a0418d1edf1eff') in 0.006358 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/Say.prefab
-  artifactKey: Guid(5e70e612056003c46b35f3e01c7e49f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/Say.prefab using Guid(5e70e612056003c46b35f3e01c7e49f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b34cde1b7997c2437fa5d47825f4f6d') in 0.010253 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/StartMenuWnd.prefab
-  artifactKey: Guid(a9cc12a5c83c10d469c367a2ecef25b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/StartMenuWnd.prefab using Guid(a9cc12a5c83c10d469c367a2ecef25b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b165f4364f2c9bbb03ade7557dae13e1') in 0.007162 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/SystemMenuWnd.prefab
-  artifactKey: Guid(3fc310157fde8294a9f72bf74c93863e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/SystemMenuWnd.prefab using Guid(3fc310157fde8294a9f72bf74c93863e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dbfd78a9588db9b367939114a53b2ed') in 0.008604 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/JingYing.prefab
-  artifactKey: Guid(2b77e3a782574254e856f23f1dc54e32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/JingYing.prefab using Guid(2b77e3a782574254e856f23f1dc54e32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9136f3882cfc7949de14562202045f2') in 0.011028 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/SelectWnd1.prefab
-  artifactKey: Guid(2fe0719d3b6cb6b4ca42af7be66b9082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/SelectWnd1.prefab using Guid(2fe0719d3b6cb6b4ca42af7be66b9082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7536d4f091db26cec794cbad4b47d2d') in 0.009129 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 25.456013 seconds.
-  path: Assets/Resources/Prefabs/UIWnd/BackGround.prefab
-  artifactKey: Guid(bd0bbd54f933cc0439c407c0a2dbfeb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/UIWnd/BackGround.prefab using Guid(bd0bbd54f933cc0439c407c0a2dbfeb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fd73b3e91a245e74c87407f53bfdd45') in 0.005568 seconds 
+  path: Assets/Sprites/UI/头像/Waiter1.png
+  artifactKey: Guid(a0c2381869607e14a887006ca57c3fd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/头像/Waiter1.png using Guid(a0c2381869607e14a887006ca57c3fd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '187ebf71da6466b05d875fa4d7013f9b') in 0.043500 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
 AssetImportWorker is now disconnected from the server
 Process exiting
 Exiting without the bug reporter. Application will terminate with return code 0
